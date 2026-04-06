@@ -164,6 +164,7 @@
 <script setup>
   import { ref, computed, watch, nextTick, inject, onMounted } from 'vue'
   import { roundedMap } from '../../lib/componentConfig'
+  import { getDefault } from '../../lib/config'
   import { Base, Checkbox } from '../../'
   // import Base from '@/components/fields/Base.vue'
   // import Icon from '@/components/icons/Icon.vue'
@@ -200,7 +201,7 @@
     searchable: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     errorMessages: { type: Array, default: () => [] },
-    rounded: { type: String, default: 'd' },
+    rounded: { type: String, default: () => getDefault('Select', 'rounded') },
     size: { type: String },
     border: { type: String },
     textColor: { type: String },

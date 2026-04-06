@@ -202,6 +202,7 @@
 import { ref, computed, watch, onMounted, onBeforeUnmount, provide } from 'vue'
 import { InputText } from '../../'
 import { useLanguageSelected, roundedMap, sizes, iconSizes, heights } from '../../lib/componentConfig'
+import { getDefault } from '../../lib/config'
 
 const props = defineProps({
   modelValue: { type: Boolean, default: true },
@@ -236,7 +237,7 @@ const props = defineProps({
   bordered: { type: Boolean, default: true },
   elevated: { type: Boolean, default: false },
   floating: { type: Boolean, default: false },
-  rounded: { type: String, default: 'md' },
+  rounded: { type: String, default: () => getDefault('NavBar', 'rounded') },
   
   // Behavior
   closeOnClick: { type: Boolean, default: false },

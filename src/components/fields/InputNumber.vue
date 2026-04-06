@@ -173,6 +173,7 @@
 <script setup>
 import { ref, computed, watch, inject } from 'vue'
 import { Base } from '../../'
+import { getDefault } from '../../lib/config'
 
 const emit = defineEmits(['update:modelValue', 'change', 'blur', 'focus'])
 
@@ -191,8 +192,8 @@ const props = defineProps({
     required: { type: Boolean, default: false },
     clearable: { type: Boolean, default: false },
     errorMessages: { type: Array, default: () => [] },
-    rounded: { type: String, default: 'd' },
-    size: { type: String, default: 'md' },
+    rounded: { type: String, default: () => getDefault('InputNumber', 'rounded') },
+    size: { type: String, default: () => getDefault('InputNumber', 'size') },
     border: { type: String },
     textColor: { type: String },
     bg: { type: String },

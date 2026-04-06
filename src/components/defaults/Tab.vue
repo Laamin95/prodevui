@@ -138,7 +138,7 @@
 
 <script setup>
 import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
-import { globalRtl } from '../../lib/rtl/rtl.ts'
+import { globalRtl } from '../../lib/rtl/rtl'
 
 const props = defineProps({
   // Data

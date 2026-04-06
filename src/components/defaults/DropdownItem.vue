@@ -36,9 +36,9 @@
 </template>
 
 <script setup>
-import { computed, inject } from 'vue'
+import { computed, inject, ref } from 'vue'
 import { sizes, iconSizes, roundedMap, colorMap, useLanguageSelected } from '../../lib/componentConfig'
-const { language } = inject('i18n')
+const { language } = inject('i18n', { language: ref('en'), t: (key) => key, setLanguage: () => {} })
 
 const props = defineProps({
     disabled: { type: Boolean, default: false },

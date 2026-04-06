@@ -1,5 +1,4 @@
 import { globalRtl } from './rtl'
-import { computed, inject, ref, onMounted } from 'vue'
 
 export function setRtl(value: boolean) {
     globalRtl.value = value

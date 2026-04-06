@@ -1,6 +1,6 @@
 import type { Directive, DirectiveBinding } from 'vue'
 import { watch } from 'vue'
-import { globalRtl } from '@/lib/rtl/rtl.ts'
+import { globalRtl } from '@/lib/rtl/rtl'
 import { useLanguageSelected } from '@/lib/componentConfig'
 import { useI18n } from '@/lib/i18n/useI18n'
 
@@ -76,7 +76,7 @@ function normalizeOptions(binding: DirectiveBinding<string | TooltipOptions>): T
   return base
 }
 
-function applyTriggerModifiers(base: TooltipOptions, modifiers: Record<string, boolean>): TooltipOptions {
+function applyTriggerModifiers(base: TooltipOptions, modifiers: Partial<Record<string, boolean>>): TooltipOptions {
   const hasPreset = !!(modifiers?.hover || modifiers?.click || modifiers?.focus)
   if (!hasPreset) return base
   return {
@@ -87,7 +87,7 @@ function applyTriggerModifiers(base: TooltipOptions, modifiers: Record<string, b
   }
 }
 
-function applyPlacementModifiers(base: TooltipOptions, modifiers: Record<string, boolean>): TooltipOptions {
+function applyPlacementModifiers(base: TooltipOptions, modifiers: Partial<Record<string, boolean>>): TooltipOptions {
   if (!modifiers) return base
   const order: Placement[] = ['top', 'bottom', 'left', 'right']
   const chosen = order.find(p => (modifiers as any)[p])
@@ -95,7 +95,7 @@ function applyPlacementModifiers(base: TooltipOptions, modifiers: Record<string,
   return { ...base, placement: chosen }
 }
 
-function getClassModifiers(modifiers: Record<string, boolean> | undefined): string[] {
+function getClassModifiers(modifiers: Partial<Record<string, boolean>> | undefined): string[] {
   const supported = ['faruma']
   const mods: string[] = []
   if (!modifiers) return mods
@@ -330,7 +330,7 @@ export const tooltipDirective: Directive<HTMLElement, string | TooltipOptions> =
     ;(state as any).unwatchLanguage = unwatchLanguage
 
     // Event handlers
-    state.handlers.mouseover = (evt: MouseEvent) => {
+    state.handlers.mouseover = (_evt: MouseEvent) => {
       if (!state.options.openOnHover) return
       open(el, state, 'hover')
     }

@@ -53,6 +53,7 @@
 // import { colorMap } from '@/lib/componentConfig'
 import { ref, computed, onMounted, onBeforeUnmount, nextTick, watch } from 'vue'
 import { sizes, iconSizes, roundedMap, colorMap } from '../../lib/componentConfig'
+import { getDefault } from '../../lib/config'
 
 const props = defineProps({
   modelValue: { type: Boolean, default: false },
@@ -68,11 +69,11 @@ const props = defineProps({
   closeOnContentClick: { type: Boolean, default: true },
   disabled: { type: Boolean, default: false },
   elevation: { type: Number, default: 8 },
-  rounded: { type: String, default: 'd' }, // none | sm | md | lg | xl
+  rounded: { type: String, default: () => getDefault('Dropdown', 'rounded') }, // none | sm | md | lg | xl
   dense: { type: Boolean, default: false },
-  color: { type: String, default: 'primary' },
+  color: { type: String, default: () => getDefault('Dropdown', 'color') },
   variant: { type: String, default: 'contained' }, // contained | outlined | text | tonal | plain
-  size: { type: String, default: 'md' }, // xs | sm | md | lg | xl
+  size: { type: String, default: () => getDefault('Dropdown', 'size') }, // xs | sm | md | lg | xl
   icon: {type: String, default: '' },
 })
 

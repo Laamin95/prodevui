@@ -8,23 +8,33 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.js'),
-      name: 'UIComponents',
+      entry: resolve(__dirname, 'src/index.ts'),
+      name: 'ProdevUI',
       formats: ['es', 'cjs'],
       fileName: (format) => `index.${format === 'es' ? 'js' : 'cjs'}`
     },
     rollupOptions: {
       // Externalize dependencies that shouldn't be bundled
-      external: ['vue', '@heroicons/vue'],
+      external: [
+        'vue',
+        '@heroicons/vue',
+        '@vuepic/vue-datepicker',
+        '@vueuse/core',
+        '@vueuse/components',
+      ],
       output: {
+        exports: 'named' as const,
         globals: {
           vue: 'Vue',
-          '@heroicons/vue': 'HeroiconsVue'
+          '@heroicons/vue': 'HeroiconsVue',
+          '@vuepic/vue-datepicker': 'VueDatePicker',
+          '@vueuse/core': 'VueUseCore',
+          '@vueuse/components': 'VueUseComponents',
         },
         // Preserve CSS
         assetFileNames: (assetInfo) => {
           if (assetInfo.name === 'style.css') return 'style.css'
-          return assetInfo.name
+          return assetInfo.name ?? 'assets/[name]-[hash][extname]'
         }
       }
     },

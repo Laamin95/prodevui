@@ -37,8 +37,9 @@
 <script setup>
 // import { provide } from 'vue'
 import { useLanguageSelected, roundedMap, topRounded, bottomRounded } from '../../lib/componentConfig'
+import { getDefault } from '../../lib/config'
 import { computed, inject, ref, provide } from 'vue'
-const { language } = inject('i18n')
+const { language } = inject('i18n', { language: ref('en'), t: (key) => key, setLanguage: () => {} })
 
 // console.log('language in Card.vue', language.value)
 // provide('lang', language)
@@ -65,7 +66,7 @@ const { language } = inject('i18n')
         overflow: { type: String, default: 'overflow-auto' },
         bg: { type: String, default: 'ui-bg-color' },
         border: { type: String, default: 'ui-border-color' },
-        rounded: { type: String, default: 'd' },
+        rounded: { type: String, default: () => getDefault('Card', 'rounded') },
         shadow: { type: String, default: '' },
         dir: { type: String, default: '' },
         item: { type: Object, default: null },

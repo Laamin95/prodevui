@@ -79,6 +79,7 @@
 <script setup>
 import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
 import { roundedMap } from '../../lib/componentConfig'
+import { getDefault } from '../../lib/config'
 
 const props = defineProps({
   modelValue: { type: Boolean, default: true },
@@ -91,7 +92,7 @@ const props = defineProps({
   position: { type: String, default: 'top' }, // top | bottom
   timeout: { type: Number, default: 0 }, // Auto-dismiss after X ms (0 = no auto-dismiss)
   showProgress: { type: Boolean, default: false },
-  rounded: { type: String, default: 'd' }, // none | sm | md | lg
+  rounded: { type: String, default: () => getDefault('Banner', 'rounded') }, // none | sm | md | lg
   elevation: { type: Boolean, default: true },
   outlined: { type: Boolean, default: false },
   dense: { type: Boolean, default: false },

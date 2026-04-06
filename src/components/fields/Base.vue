@@ -59,9 +59,9 @@
 <script setup>
   import { computed, inject, ref, watch, onMounted, nextTick, onBeforeUnmount, getCurrentInstance, useSlots } from 'vue'
   import { useLanguageSelected, roundedMap, sizes, iconSizes, heights } from '../../lib/componentConfig'
-  // import Icon from '@/components/icons/Icon.vue'
+  import { getDefault } from '../../lib/config'
   import { vOnClickOutside } from '@vueuse/components'
-  const { language } = inject('i18n')
+  const { language } = inject('i18n', { language: ref('en'), t: (key) => key, setLanguage: () => {} })
   const slots = useSlots() 
 
   const emit = defineEmits(['update:modelValue', 'focus', 'blur', 'change', 'click:prepend', 'click:append', 'click:clear'])
@@ -89,7 +89,7 @@
     isOpen: { type: Boolean, default: false },
     prepend: { type: String, default: '' },
     append: { type: String, default: '' },
-    size: { type: String, default: 'md' }, // xs | sm | md | lg | xl
+    size: { type: String, default: () => getDefault('Base', 'size') },
     id: { type: String, default: '' },
     width: { type: String, default: 'w-full' },
     border: { type: String, default: 'border-color-2' },
@@ -98,7 +98,7 @@
     bg: { type: String, default: 'bg-color-1' },
     hover: { type: String, default: 'hover:border-color-3' },
     focus: { type: String, default: 'focus:border-color-4' },
-    rounded: { type: String, default: 'd' },
+    rounded: { type: String, default: () => getDefault('Base', 'rounded') },
     multiple: { type: Boolean, default: false },
     searchable: { type: Boolean, default: false },
     bgColorVariant: { type: String, default: '' },

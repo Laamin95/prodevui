@@ -38,38 +38,35 @@
 
 <script setup>
   import { computed, inject, provide, ref } from 'vue'
-   import { Icon } from '../../'
+  import { Icon } from '../../'
   import { sizes, iconSizes, roundedMap, colorMap } from '../../lib/componentConfig'
+  import { getDefault } from '../../lib/config'
 
-  const { t, setLanguage } = inject('i18n')
+  const { t, setLanguage } = inject('i18n', { t: (key) => key, setLanguage: () => {} })
 
   const emit = defineEmits(['click'])
 
-    const injectedLang = inject('parentLang', '')
-    const currentLang = computed(() => {
-      return props.lang ? props.lang : injectedLang
-    })
-
-    // provide('parentLang', currentLang.value)
-  // console.log("languge in Button.vue", injectedLang)
-  // const lang = inject('lang')
+  const injectedLang = inject('parentLang', '')
+  const currentLang = computed(() => {
+    return props.lang ? props.lang : injectedLang
+  })
 
   const props = defineProps({
     variant: {
       type: String,
-      default: 'contained' // contained | outlined | text | tonal | plain
+      default: () => getDefault('Button', 'variant')
     },
     color: {
       type: String,
-      default: 'primary'
+      default: () => getDefault('Button', 'color')
     },
     size: {
       type: String,
-      default: 'md' // xs | sm | md | lg | xl
+      default: () => getDefault('Button', 'size')
     },
     rounded: {
       type: String,
-      default: 'd' // none | d (default) | sm | md | lg | xl | full
+      default: () => getDefault('Button', 'rounded')
     },
     block: {
       type: Boolean,

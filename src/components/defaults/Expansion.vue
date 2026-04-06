@@ -117,6 +117,7 @@
 <script setup>
     import { ref, computed, useSlots } from 'vue'
     import { roundedMap, useLanguageSelected, sizes } from '../../lib/componentConfig'
+    import { getDefault } from '../../lib/config'
     import { ChipGroup } from '../../'
 
   const props = defineProps({
@@ -135,7 +136,7 @@
     containerStyle: { type: Object, default: () => ({}) },
     hasLeftIcon: { type: Boolean, default: false },
     border: { type: String, default: 'ui-border-color ' },
-    rounded: { type: String, default: 'd' }
+    rounded: { type: String, default: () => getDefault('Expansion', 'rounded') }
 
   })
 

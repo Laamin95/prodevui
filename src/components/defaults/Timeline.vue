@@ -132,10 +132,10 @@
 </template>
 
 <script setup>
-  import { computed, inject, useSlots } from 'vue'
+  import { computed, inject, ref, useSlots } from 'vue'
 
   import { globalRtl } from '../../lib/rtl/rtl'
-  const { language } = inject('i18n')
+  const { language } = inject('i18n', { language: ref('en'), t: (key) => key, setLanguage: () => {} })
 
   const props = defineProps({
     items: {

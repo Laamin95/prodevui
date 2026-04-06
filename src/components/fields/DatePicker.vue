@@ -96,6 +96,7 @@
 <script setup>
     import { ref, computed, watch, nextTick, inject } from 'vue'
     import { roundedMap } from '../../lib/componentConfig'
+    import { getDefault } from '../../lib/config'
     import { VueDatePicker } from '@vuepic/vue-datepicker'
     import '@vuepic/vue-datepicker/dist/main.css'
     import { Base } from '../../'
@@ -115,7 +116,7 @@
         append: { type: String, default: '' },
         disabled: { type: Boolean, default: false },
         errorMessages: { type: Array, default: () => [] },
-        rounded: { type: String, default: 'd' },
+        rounded: { type: String, default: () => getDefault('DatePicker', 'rounded') },
         size: { type: String },
         border: { type: String },
         textColor: { type: String },
