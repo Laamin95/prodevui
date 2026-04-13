@@ -1,0 +1,54 @@
+Sure! Here's the workflow:
+
+### Step-by-step: Update ProDevUI and pull changes into new_ems
+
+**1. Make your change in the UI project**
+```
+C:\xampp\htdocs\ui\src\components\...  ← edit the component
+```
+
+**2. Build ProDevUI**
+```bash
+cd C:\xampp\htdocs\ui
+npm run build
+```
+This rebuilds `dist/index.js`, `dist/index.cjs`, and `dist/prodevui.css`.
+
+**3. (Optional) Commit in the UI project**
+```bash
+cd C:\xampp\htdocs\ui
+git add .
+git commit -m "fix: add v-if guard on AppBar drawer button"
+```
+
+**4. Update in new_ems**
+```bash
+cd C:\xampp\htdocs\new_ems\web
+npm install file:../../ui
+```
+Since `package.json` has `"prodevui": "file:../../ui"`, this re-links to the latest built dist.
+
+**5. Restart dev server**
+```
+Ctrl+C  (stop current npm run dev)
+npm run dev
+```
+Vite will pick up the updated package.
+
+---
+
+### That's it — 3 commands:
+
+| # | Where | Command |
+|---|---|---|
+| 1 | `C:\xampp\htdocs\ui` | `npm run build` |
+| 2 | `C:\xampp\htdocs\new_ems\web` | `npm install file:../../ui` |
+| 3 | `C:\xampp\htdocs\new_ems\web` | Restart `npm run dev` |
+
+> **Tip:** If you ever feel the update didn't take effect, delete the cache and reinstall:
+> ```bash
+> cd C:\xampp\htdocs\new_ems\web
+> rm -rf node_modules/.vite
+> npm install file:../../ui
+> npm run dev
+> ```

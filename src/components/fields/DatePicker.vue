@@ -1,5 +1,5 @@
 <template>
-    <div v-on-click-outside="close" :class="['relative', width, margin]">
+    <div ref="containerRef" v-on-click-outside="close" :class="['relative', width, margin]">
     <Base v-bind="baseProps"
         :model-value="formattedDate"
         @update:model-value="handleUpdate"
@@ -60,14 +60,15 @@
     </template>
     </Base>
     
+    <Teleport to="body">
     <Transition name="fade">
     <div
         v-if="isOpen"
         :class="[
-            'absolute left-0 right-0 mt-1 z-50 w-fit',
+            'fixed mt-1 z-[9999] w-fit',
             menuClass
         ]"
-        :style="menuStyle"
+        :style="floatingStyle"
     >
         <VueDatePicker
             v-model="internalDate"
@@ -90,6 +91,7 @@
         />
     </div>
     </Transition>
+    </Teleport>
     </div>
 </template>
 
@@ -168,8 +170,20 @@
     const internalDate = ref(props.modelValue)
     const displayValue = ref('')
     const inputRef = ref(null)
+    const containerRef = ref(null)
     const isTyping = ref(false)
     const isFocused = ref(false)
+
+    // Position the teleported calendar below the input
+    const floatingStyle = computed(() => {
+        if (!containerRef.value) return { ...props.menuStyle }
+        const rect = containerRef.value.getBoundingClientRect()
+        return {
+            top: `${rect.bottom + window.scrollY}px`,
+            left: `${rect.left + window.scrollX}px`,
+            ...props.menuStyle,
+        }
+    })
 
     // Date formatter function
     const formatDate = (date, format) => {

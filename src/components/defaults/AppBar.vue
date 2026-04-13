@@ -29,7 +29,7 @@
 
             <!-- drawer/menu button -->
             <button
-              
+              v-if="drawer || menu"
               @click="$emit('toggle-drawer')"
               class="inline-flex items-center justify-center .vts-pa-2 rounded-md"
             >

@@ -20,18 +20,21 @@
         @mouseleave="onMouseLeave"
       >
         <!-- Header -->
-        <div v-if="$slots.prepend || title" 
+        <div v-if="$slots.prepend || avatarName" 
             class="flex items-center px-4 py-4 border-b border-color-3"
             :class="isCollapsed ? 'justify-center' : 'justify-between'"
         >
           <slot name="prepend">
             <div class="flex items-center gap-2 text-gray-500" >
-                <Icon
+                <!-- <Icon
                     name="bug-ant"
                     size="22"
                     class=" fill-yellow-500"
-                />
-                <span v-if="title && !isCollapsed" class=" font-semibold text-foreground truncate">{{ title }}</span>
+                /> -->
+                <div class="flex items-center gap-2 cursor-pointer px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700">
+                  <Avatar v-if="avatarName" :name="avatarName || ''" size="sm" variant="primary" />
+                  <span v-if="avatarName" class="hidden md:inline text-sm font-medium">{{ avatarName }}</span>
+                </div>
             </div>
             <button
                 v-if="rail && !temporary && !isCollapsed"
@@ -203,10 +206,11 @@ import { ref, computed, watch, onMounted, onBeforeUnmount, provide } from 'vue'
 import { InputText } from '../../'
 import { useLanguageSelected, roundedMap, sizes, iconSizes, heights } from '../../lib/componentConfig'
 import { getDefault } from '../../lib/config'
+import Avatar from './Avatar.vue'
 
 const props = defineProps({
   modelValue: { type: Boolean, default: true },
-  title: { type: String, default: '' },
+  avatarName: { type: String, default: '' },
   items: { type: Array, default: () => [] },
   
   // Drawer modes
