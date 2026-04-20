@@ -19,7 +19,7 @@
     ]"
     :style="[customStyle, appBarZStyle]"
   >
-    <div :class="['max-w-7xl mx-auto w-full flex items-center justify-between', innerDirectionClass, dense ? 'h-12' : 'h-16']">
+    <div :class="['w-full flex items-center justify-between', innerDirectionClass, dense ? 'h-12' : 'h-16']">
       <!-- DYNAMIC REGION ORDER -->
       <template v-for="region in orderedRegions" :key="region">
         <!-- PREPEND -->

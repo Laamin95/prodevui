@@ -1,5 +1,5 @@
 <template>
-  <div v-on-click-outside="handleClickOutside" :class="['relative group', width, margin]">
+  <div ref="triggerRef" v-on-click-outside="[handleClickOutside, { ignore: [dropdownRef] }]" :class="['relative group', width, margin]">
     <Base
       v-bind="baseProps"
       :model-value="modelValue"
@@ -95,19 +95,21 @@
         <Icon v-else :name="append" type="outline" size="16" class="text-input-border" />
       </template>
     </Base>
+    <Teleport to="body">
     <Transition name="fade">
       <div
+        ref="dropdownRef"
         v-if="isOpen"
         :class="[
-          'absolute left-0 right-0 mt-1 shadow-lg z-50',
-          bg ?? 'bg-white',
+          'shadow-lg z-[9999]',
+          bg ?? 'ui-bg-color',
           border ? 'border ' + border : 'border border-color-2',
           rounded ? roundedMap[rounded] : '',
           menuClass
         ]"
-        :style="menuStyle"
+        :style="dropdownPositionStyle"
       >
-        <ul class="max-h-60 overflow-auto py-1">
+        <ul class="py-1">
           <!-- No items found -->
           <li v-if="filteredItems.length === 0" :class="['px-4 py-2 ui-text-secondary text-center text-sm']">
             <slot name="no-data">No items found</slot>
@@ -159,6 +161,7 @@
         </ul>
       </div>
     </Transition>
+    </Teleport>
   </div>
 </template>
 <script setup>
@@ -176,6 +179,9 @@
 
   const searchQuery = ref('')
   const searchInputRef = ref(null)
+  const triggerRef = ref(null)
+  const dropdownRef = ref(null)
+  const dropdownPositionStyle = ref({ position: 'fixed' })
   const localValue = ref('')
   const isFocused = ref(false)
   const loading = ref(false)
@@ -491,11 +497,42 @@
     emit('close')
   }
 
-  watch(isOpen, newVal => {
+  watch(isOpen, async newVal => {
     if (!newVal) {
       searchQuery.value = ''
+      return
     }
+    await nextTick()
+    updateDropdownPosition()
   })
+
+  function updateDropdownPosition() {
+    if (!triggerRef.value) return
+    const rect = triggerRef.value.getBoundingClientRect()
+    const gap = 4
+    const spaceBelow = window.innerHeight - rect.bottom - gap
+    const spaceAbove = rect.top - gap
+    const minFlipThreshold = 80 // only flip upward when fewer than 80px below
+
+    const openUpward = spaceBelow < minFlipThreshold && spaceAbove > spaceBelow
+
+    dropdownPositionStyle.value = {
+      position: 'fixed',
+      left: `${rect.left}px`,
+      width: `${rect.width}px`,
+      zIndex: 9999,
+      overflowY: 'auto',
+      ...(openUpward
+        ? {
+            bottom: `${window.innerHeight - rect.top + gap}px`,
+            maxHeight: `${Math.min(spaceAbove, 240)}px`,
+          }
+        : {
+            top: `${rect.bottom + gap}px`,
+            maxHeight: `${Math.max(Math.min(spaceBelow, 240), minFlipThreshold)}px`,
+          }),
+    }
+  }
 
   defineExpose({
     close,

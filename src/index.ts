@@ -1,10 +1,11 @@
 import type { App } from 'vue'
+import './assets/tailwind.css'
 
 // plugins
 import validationPlugin from './plugins/validation-plugin'
 import { i18nPlugin } from './lib/i18n/i18nPlugin'
 import { tooltipDirective } from './lib/tooltip-directive'
-import { useSnackbar } from '@/lib/useSnackbar'
+import { useSnackbar } from './lib/useSnackbar'
 import { applyConfig, type UiConfig } from './lib/config'
 
 // Components

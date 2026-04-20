@@ -18,7 +18,7 @@
             v-if="show"
             :title="title"
             :card-class="[
-              fullscreen ? 'h-screen w-full rounded-none' : 'mx-4 sm:max-w-lg max-h-screen',
+              fullscreen ? 'h-screen w-full rounded-none' : `mx-4 ${width} max-h-screen`,
               modalClass,
               shake && 'animate-shake'
             ]"
@@ -116,6 +116,10 @@
     closebutton: {
       type: Boolean,
       default: false
+    },
+    width: {
+      type: String,
+      default: 'md:w-[800px] w-[90vw]'
     }
   })
 

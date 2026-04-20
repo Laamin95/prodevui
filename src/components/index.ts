@@ -31,6 +31,15 @@ import Timeline from './defaults/Timeline.vue'
 import TimelineItem from './defaults/TimelineItem.vue'
 import Tab from './defaults/Tab.vue'
 import ThemeToggle from './defaults/ThemeToggle.vue'
+import Toolbar from './defaults/Toolbar.vue'
+import Table from './defaults/table/Table.vue'
+import TableHead from './defaults/table/TableHead.vue'
+import TableBody from './defaults/table/TableBody.vue'
+import TableRow from './defaults/table/TableRow.vue'
+import Th from './defaults/table/Th.vue'
+import Td from './defaults/table/Td.vue'
+import TableEmpty from './defaults/table/TableEmpty.vue'
+import TableSkeleton from './defaults/table/TableSkeleton.vue'
 
 // Field components
 import Base from './fields/Base.vue'
@@ -81,6 +90,15 @@ export {
   Timeline,
   TimelineItem,
   Tab,
+  Toolbar,
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  Th,
+  Td,
+  TableEmpty,
+  TableSkeleton,
 
   // Fields
   Base,
@@ -129,6 +147,15 @@ const components: Record<string, any> = {
   UiTimeline: Timeline,
   UiTimelineItem: TimelineItem,
   UiTab: Tab,
+  UiToolbar: Toolbar,
+  UiTable: Table,
+  UiTableHead: TableHead,
+  UiTableBody: TableBody,
+  UiTableRow: TableRow,
+  UiTh: Th,
+  UiTd: Td,
+  UiTableEmpty: TableEmpty,
+  UiTableSkeleton: TableSkeleton,
   UiBase: Base,
   UiCheckbox: Checkbox,
   UiChip: Chip,

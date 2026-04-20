@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen w-full  bg-bg-color">
+  <div class="min-h-screen w-full bg-bg-color">
     <!-- Sidebar Slot -->
     <slot name="sidebar" />
 
@@ -11,7 +11,7 @@
       class=""
       :style="mainStyles"
     >
-        <div class="w-full mx-auto p-4">
+        <div class="w-full px-6 py-5">
           <slot />
         </div>
         <!-- <router-view /> -->
