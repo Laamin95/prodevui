@@ -2,9 +2,6 @@
   <Teleport to="body">
     <Transition :name="transitionName">
       <div v-if="show" class="fixed inset-0 z-50 flex items-center justify-center">
-        <div v-if="closebutton" class="absolute top-4 right-4 z-50">
-            <Button icon="x-mark" variant="outlined" color="gray" size="xl" @click="show = false"/>
-        </div>
         <!-- Overlay -->
         <div
           class="absolute inset-0 transition-opacity duration-300 bg-black/30 backdrop-blur-sm"
@@ -18,7 +15,7 @@
             v-if="show"
             :title="title"
             :card-class="[
-              fullscreen ? 'h-screen w-full rounded-none' : `mx-4 ${width} max-h-screen`,
+              fullscreen ? 'h-screen rounded-none' : `mx-4 max-h-screen`,
               modalClass,
               shake && 'animate-shake'
             ]"
@@ -28,6 +25,7 @@
             :border="border"
             :header-class="headerClass"
             :footer-class="footerClass"
+            :width="fullscreen ? 'w-full' : `${width}`"
             @click.stop
           >
             <!-- Header slot from parent -->
@@ -36,7 +34,17 @@
             </template>
 
             <!-- Body/Content slot from parent -->
-            <div class="flex-1 overflow-x-hidden" :class="contentClass">
+            <div class="flex-1 pt-2" style="overflow-x: clip;" :class="contentClass">
+                <button
+                  v-if="closebutton"
+                  type="button"
+                  class="absolute top-3 right-3 z-10 text-ui-text-secondary hover:text-ui-text-primary transition-colors"
+                  @click="show = false"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>
+                </button>
                 <slot />
             </div>
 
@@ -65,7 +73,7 @@
     },
     persistent: {
       type: Boolean,
-      default: false
+      default: true
     },
     fullscreen: {
       type: Boolean,
@@ -119,7 +127,7 @@
     },
     width: {
       type: String,
-      default: 'md:w-[800px] w-[90vw]'
+      default: 'md:w-[800px] w-[600px]'
     }
   })
 

@@ -20,6 +20,7 @@
         :rounded="rounded"
         :width="width"
         :hint="hint"
+        icon-color="text-ui-text-secondary"
         :persistent-hint="!!hint"
         :rules="rules"
         :clearable="true"
@@ -415,5 +416,36 @@ const handleDateSelect = (date) => {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+</style>
+
+<style>
+/* Map vue-datepicker CSS vars to prodevui theme */
+.dp__theme_light,
+.dp__theme_dark {
+  --dp-primary-color:              var(--primary);
+  --dp-primary-text-color:         #ffffff;
+  --dp-primary-disabled-color:     color-mix(in srgb, var(--primary) 40%, transparent);
+  --dp-hover-color:                var(--hover-bg);
+  --dp-hover-text-color:           var(--text-color);
+  --dp-hover-icon-color:           var(--primary);
+  --dp-background-color:           var(--bg-color);
+  --dp-text-color:                 var(--text-color);
+  --dp-border-color:               var(--border-color);
+  --dp-border-color-hover:         var(--primary);
+  --dp-border-color-focus:         var(--primary);
+  --dp-menu-border-color:          var(--border-color);
+  --dp-icon-color:                 var(--text-secondary);
+  --dp-disabled-color:             var(--color-3);
+  --dp-disabled-color-text:        var(--text-secondary);
+  --dp-secondary-color:            var(--color-3);
+  --dp-range-between-dates-background-color: color-mix(in srgb, var(--primary) 12%, transparent);
+  --dp-range-between-dates-text-color:       var(--text-color);
+  --dp-range-between-border-color:           color-mix(in srgb, var(--primary) 12%, transparent);
+  --dp-highlight-color:            color-mix(in srgb, var(--primary) 12%, transparent);
+  --dp-scroll-bar-color:           var(--primary);
+  --dp-scroll-bar-background:      var(--color-3);
+  --dp-font-family:                inherit;
+  --dp-border-radius:              0.5rem;
 }
 </style>

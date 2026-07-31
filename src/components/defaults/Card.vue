@@ -5,8 +5,8 @@
   >
     <!-- Card Header -->
     <div
-      v-if="$slots.header || title || (labels && (labels.en || labels.dv))"
-      class=""
+      v-if="$slots.header || title || (labels && (labels.en.title !== '' || labels.dv.title !== '' ))"
+      class="rr"
     >
       <slot name="header">
         <div
@@ -60,7 +60,7 @@ const { language } = inject('i18n', { language: ref('en'), t: (key) => key, setL
                 }
         }) },
         id: { type: String, default: '' },
-        width: { type: String, default: '' },
+        width: { type: String, default: 'w-[300px] md:w-full' },
         title: { type: [String, Object], default: '' },
         cardClass: { type: [String, Object], default: '' },
         overflow: { type: String, default: 'overflow-auto' },

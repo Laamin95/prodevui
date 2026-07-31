@@ -31,6 +31,8 @@
       <template #content-22><PaginationExample /></template>
       <template #content-23><DividerExample /></template>
       <template #content-24><BadgeExample /></template>
+      <template #content-25><ToolbarExample /></template>
+      <template #content-26><ConfirmDialogExample /></template>
     </Tab>
   </div>
 </template>
@@ -44,7 +46,8 @@ import {
   DatePickerExample, SelectExample, InputNumberExample, TextAreaExample, ChipExample,
   FileUploadExample, BannerExample, DropdownExample, SearchExample, SnackbarExample,
   TimelineExample, OverlayExample, FooterExample, ExpansionExample, FormExample,
-  AvatarExample, BreadcrumbsExample, PaginationExample, DividerExample, BadgeExample
+  AvatarExample, BreadcrumbsExample, PaginationExample, DividerExample, BadgeExample,
+  ToolbarExample, ConfirmDialogExample
 } from '../examples'
 
 const activeTab10 = ref(0)
@@ -74,6 +77,8 @@ const tabsData = [
   { label: 'Breadcrumbs' },
   { label: 'Pagination' },
   { label: 'Divider' },
-  { label: 'Badge' }
+  { label: 'Badge' },
+  { label: 'Toolbar' },
+  { label: 'Confirm Dialog' },
 ]
 </script>

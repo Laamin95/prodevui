@@ -126,8 +126,7 @@ const props = defineProps({
   },
   size: {
     type: String,
-    default: 'default',
-    validator: (value) => ['small', 'default', 'large'].includes(value)
+    default: 'default'
   },
   rounded: {
     type: String,
@@ -186,7 +185,9 @@ const sizeClasses = computed(() => {
     default: 'px-3 py-1.5 text-sm min-h-8',
     large: 'px-4 py-2 text-base min-h-10'
   }
-  return sizes[props.size] || sizes.default
+  if (sizes[props.size]) return sizes[props.size]
+  // Unrecognized size: treat it as a raw custom class string (e.g. "px-6 py-3 text-lg min-h-12")
+  return props.size || sizes.default
 })
 
 const roundedClasses = computed(() => {
@@ -248,11 +249,23 @@ const variantClasses = computed(() => {
       outlined: 'bg-transparent text-cyan-600 border border-cyan-300 hover:bg-cyan-50',
       filled: 'bg-cyan-600 text-white hover:bg-cyan-700',
       tonal: 'bg-cyan-50 text-cyan-700 hover:bg-cyan-100'
+    },
+    gray: {
+      default: 'bg-neutral-100 text-neutral-800 hover:bg-neutral-200',
+      outlined: 'bg-transparent text-neutral-600 border border-neutral-300 hover:bg-neutral-50',
+      filled: 'bg-neutral-600 text-white hover:bg-neutral-700',
+      tonal: 'bg-neutral-50 text-neutral-700 hover:bg-neutral-100'
     }
   }
 
-  const colorScheme = colorVariants[props.color] || colorVariants.primary
-  return colorScheme[props.variant] || colorScheme.default
+  const colorScheme = colorVariants[props.color]
+  if (colorScheme && colorScheme[props.variant]) {
+    return colorScheme[props.variant]
+  } else if (props.color) {
+    return props.color
+  } else {
+    return colorVariants.primary.default
+  }
 })
 
 const textClasses = computed(() => {

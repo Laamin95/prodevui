@@ -14,13 +14,16 @@ import Badge from './defaults/Badge.vue'
 import Banner from './defaults/Banner.vue'
 import Breadcrumbs from './defaults/Breadcrumbs.vue'
 import Card from './defaults/Card.vue'
+import ConfirmDialog from './defaults/ConfirmDialog.vue'
 import Divider from './defaults/Divider.vue'
 import Dropdown from './defaults/Dropdown.vue'
 import DropdownItem from './defaults/DropdownItem.vue'
 import Expansion from './defaults/Expansion.vue'
 import Footer from './defaults/Footer.vue'
 import Form from './defaults/Form.vue'
+import GroupCard from './defaults/GroupCard.vue'
 import Layout from './defaults/Layout.vue'
+import SplitLayout from './defaults/SplitLayout.vue'
 import NavBar from './defaults/NavBar.vue'
 import Overlay from './defaults/Overlay.vue'
 import Pagination from './defaults/Pagination.vue'
@@ -73,13 +76,16 @@ export {
   Banner,
   Breadcrumbs,
   Card,
+  ConfirmDialog,
   Divider,
   Dropdown,
   DropdownItem,
   Expansion,
   Footer,
   Form,
+  GroupCard,
   Layout,
+  SplitLayout,
   NavBar,
   Overlay,
   Pagination,
@@ -106,6 +112,7 @@ export {
   Chip,
   ChipGroup,
   Datepicker,
+  Datepicker as DatePicker,
   File,
   InputNumber,
   InputText,
@@ -130,13 +137,16 @@ const components: Record<string, any> = {
   UiBanner: Banner,
   UiBreadcrumbs: Breadcrumbs,
   UiCard: Card,
+  UiConfirmDialog: ConfirmDialog,
   UiDivider: Divider,
   UiDropdown: Dropdown,
   UiDropdownItem: DropdownItem,
   UiExpansion: Expansion,
   UiFooter: Footer,
   UiForm: Form,
+  UiGroupCard: GroupCard,
   UiLayout: Layout,
+  UiSplitLayout: SplitLayout,
   UiNavBar: NavBar,
   UiOverlay: Overlay,
   UiPagination: Pagination,
@@ -161,6 +171,7 @@ const components: Record<string, any> = {
   UiChip: Chip,
   UiChipGroup: ChipGroup,
   UiDatepicker: Datepicker,
+  UiDatePicker: Datepicker,
   UiFile: File,
   UiInputNumber: InputNumber,
   UiInputText: InputText,

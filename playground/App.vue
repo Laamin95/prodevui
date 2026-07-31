@@ -108,6 +108,9 @@
     <router-view />
 
   </Layout>
+
+  <!-- Global ConfirmDialog mount point -->
+  <ConfirmDialog />
    <div class="fixed inset-0 pointer-events-none z-[9999]">
       <!-- Bottom snackbars -->
       <div class="fixed bottom-4 left-0 right-0 flex flex-col items-center gap-2">
@@ -157,7 +160,7 @@
 
 <script setup>
 import { ref, computed, provide, watch   } from 'vue'
-import { Layout, AppBar, NavBar, ThemeToggle, Snackbar } from '../src/index'
+import { Layout, AppBar, NavBar, ThemeToggle, Snackbar, ConfirmDialog } from '../src/index'
 import Icon from '@/components/icons/Icon.vue'
 import { globalRtl } from '@/lib/rtl/rtl'
 import { useSnackbar } from '@/lib/useSnackbar'

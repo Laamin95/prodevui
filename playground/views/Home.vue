@@ -1,8 +1,15 @@
 <template>
-  <div class="w-full p-6 bg-transparent">
-    <h1>Home</h1>
-    <p>Welcome to your Vue app!</p>
-  </div>
+  
+
+
+  <GroupCard title="Group Card Example" >
+      <div>
+        <div class="w-full p-6 bg-transparent">
+          <h1>Home</h1>
+          <p>Welcome to your Vue app!</p>
+        </div>
+      </div>
+  </GroupCard>
 
     <InputText 
       v-model="inputValue"

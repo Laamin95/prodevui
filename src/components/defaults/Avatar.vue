@@ -24,9 +24,11 @@
     />
 
     <!-- Icon -->
-    <i
+    <Icon
       v-else-if="icon"
-      :class="[icon, iconSizeClasses, 'text-current']"
+      :name="icon"
+      :size="iconPixelSizes[props.size]"
+      color="text-current"
     />
 
     <!-- Initials -->
@@ -38,9 +40,11 @@
     </span>
 
     <!-- Fallback Icon -->
-    <i
+    <Icon
       v-else
-      :class="['fas fa-user', iconSizeClasses, 'text-current']"
+      name="user"
+      :size="iconPixelSizes[props.size]"
+      color="text-current"
     />
 
     <!-- Badge/Dot (status indicator) -->
@@ -176,18 +180,15 @@ const textSizeClasses = computed(() => {
   return sizes[props.size] || sizes.md
 })
 
-// Icon size
-const iconSizeClasses = computed(() => {
-  const sizes = {
-    xs: 'text-xs',
-    sm: 'text-sm',
-    md: 'text-base',
-    lg: 'text-lg',
-    xl: 'text-xl',
-    '2xl': 'text-2xl'
-  }
-  return sizes[props.size] || sizes.md
-})
+// Icon pixel sizes for <Icon> component
+const iconPixelSizes = {
+  xs:  14,
+  sm:  16,
+  md:  20,
+  lg:  24,
+  xl:  30,
+  '2xl': 36,
+}
 
 // Variant classes
 const variantClasses = computed(() => {

@@ -43,7 +43,7 @@
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-color-3 text-ui-text-color hover:bg-primary hover:text-white transition-all duration-200"
             >
-              <i :class="['text-sm', social.icon]" />
+              <Icon :name="social.icon" :size="16" color="text-current" />
             </a>
           </div>
         </div>
@@ -113,7 +113,7 @@
               class="p-2 rounded-md hover:bg-color-2 transition-colors"
               :title="isDark ? 'Light mode' : 'Dark mode'"
             >
-              <i :class="isDark ? 'fas fa-sun' : 'fas fa-moon'" />
+              <Icon :name="isDark ? 'sun' : 'moon'" :size="18" color="text-current" />
             </button>
           </div>
         </div>
@@ -159,10 +159,10 @@
         {
           title: 'Follow',
           social: [
-            { icon: 'fab fa-twitter', href: '#twitter', label: 'Twitter', target: '_blank' },
-            { icon: 'fab fa-github', href: '#github', label: 'GitHub', target: '_blank' },
-            { icon: 'fab fa-linkedin', href: '#linkedin', label: 'LinkedIn', target: '_blank' },
-            { icon: 'fab fa-facebook', href: '#facebook', label: 'Facebook', target: '_blank' }
+            { icon: 'at-symbol', href: '#twitter', label: 'Twitter', target: '_blank' },
+            { icon: 'command-line', href: '#github', label: 'GitHub', target: '_blank' },
+            { icon: 'briefcase', href: '#linkedin', label: 'LinkedIn', target: '_blank' },
+            { icon: 'user-group', href: '#facebook', label: 'Facebook', target: '_blank' }
           ]
         }
       ]

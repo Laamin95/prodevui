@@ -33,7 +33,7 @@
                 /> -->
                 <div class="flex items-center gap-2 cursor-pointer px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700">
                   <Avatar v-if="avatarName" :name="avatarName || ''" size="sm" variant="primary" />
-                  <span v-if="avatarName" class="hidden md:inline text-sm font-medium">{{ avatarName }}</span>
+                  <span v-if="avatarName && !isCollapsed" class="hidden md:inline text-sm font-medium">{{ avatarName }}</span>
                 </div>
             </div>
             <button
@@ -110,9 +110,9 @@
               <ul class="space-y-1 px-2">
                 <li v-for="item in group.items" :key="item.id || item.label">
                   <component
-                    :is="item.href ? 'a' : 'a'"
+                    :is="item.href ? 'a' : 'div'"
                     :href="item.href"
-                    @click="onItemClick(item)"
+                    @click.prevent="onItemClick(item)"
                     :class="[
                       'group flex items-center gap-3 w-full text-sm font-medium transition-colors',
                       isCollapsed ? 'justify-center px-2 py-2.5' : 'px-3 py-2',
@@ -148,13 +148,13 @@
                     >
                       <li v-for="child in item.children" :key="child.id || child.label">
                         <component
-                          :is="child.href ? 'a' : 'a'"
+                          :is="child.href ? 'a' : 'div'"
                           :href="child.href"
-                          @click="onItemClick(child)"
+                          @click.prevent="onItemClick(child)"
                           :class="[
                             'flex items-center gap-3 w-full px-3 py-2 text-sm transition-colors',
                             child.active
-                              ? 'bg-color-2 ui-text-secondary font-medium'
+                              ? 'bg-color-3 ui-text-secondary'
                               : 'ui-text-secondary hover:bg-color-1',
                             roundedMap[rounded],
                             child.disabled ? 'opacity-50 pointer-events-none' : 'cursor-pointer'
@@ -223,6 +223,9 @@ const props = defineProps({
   railWidth: { type: [String, Number], default: 64 },
   railExpanded: { type: Boolean, default: false },
   expandOnHover: { type: Boolean, default: false },
+  // Delay (ms) before expand-on-hover opens/closes the rail, so quick
+  // mouse passes don't make the sidebar snap open/shut.
+  hoverDelay: { type: [String, Number], default: 200 },
   
   // Layout offset
   appBarOffset: { type: [String, Number], default: 0 },
@@ -422,15 +425,28 @@ const toggleRail = () => {
   emit('update:railExpanded', !isRailExpanded.value)
 }
 
+// Timers for the expand-on-hover delay
+let hoverEnterTimer = null
+let hoverLeaveTimer = null
+
+const clearHoverTimers = () => {
+  if (hoverEnterTimer) { clearTimeout(hoverEnterTimer); hoverEnterTimer = null }
+  if (hoverLeaveTimer) { clearTimeout(hoverLeaveTimer); hoverLeaveTimer = null }
+}
+
 const onMouseEnter = () => {
   if (props.expandOnHover && props.rail) {
-    isHovered.value = true
+    clearHoverTimers()
+    const delay = Number(props.hoverDelay) || 0
+    hoverEnterTimer = setTimeout(() => { isHovered.value = true }, delay)
   }
 }
 
 const onMouseLeave = () => {
   if (props.expandOnHover && props.rail) {
-    isHovered.value = false
+    clearHoverTimers()
+    const delay = Number(props.hoverDelay) || 0
+    hoverLeaveTimer = setTimeout(() => { isHovered.value = false }, delay)
   }
 }
 
@@ -458,11 +474,27 @@ const onKeydown = (e) => {
   }
 }
 
+// Auto-expand parent items that have an active child
+function autoExpandActiveParents() {
+  if (!props.items) return
+  for (const item of props.items) {
+    if (item.children && item.children.some(child => child.active)) {
+      if (!expandedItems.value.includes(item.id)) {
+        expandedItems.value.push(item.id)
+      }
+    }
+  }
+}
+
+watch(() => props.items, autoExpandActiveParents, { deep: true })
+
 onMounted(() => {
+  autoExpandActiveParents()
   document.addEventListener('keydown', onKeydown)
 })
 
 onBeforeUnmount(() => {
+  clearHoverTimers()
   document.removeEventListener('keydown', onKeydown)
 })
 

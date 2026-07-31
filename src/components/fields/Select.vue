@@ -36,7 +36,7 @@
             :required="attrs.required"
             :dir="attrs.dir"
             type="text"
-            :placeholder="isFocused && !searchQuery ? placeholder : ''"
+            :placeholder="(isFocused && !searchQuery && !selectedLabel) || (!searchQuery && !label) ? placeholder : ''"
             :class="inputClasses"
             @focus="handleFocus"
             @blur="handleBlur"
@@ -44,8 +44,12 @@
           />
 
             <!-- Single select label -->
-            <div v-if="selectedLabel && !multiple && !searchQuery" 
-                :class="['absolute left-0 px-3 truncate pointer-events-none',]">
+            <div v-if="!selectedLabel && !multiple && !searchQuery && !label"
+                :class="['absolute left-0 right-8 px-3 truncate pointer-events-none text-gray-400',]">
+                {{ placeholder }}
+            </div>
+            <div v-if="selectedLabel && !multiple && !searchQuery"
+                :class="['absolute left-0 right-8 px-3 truncate pointer-events-none',]">
                 {{ selectedLabel }}
             </div>
             <!-- Multi-select badges - Show BEFORE input -->
@@ -363,7 +367,7 @@
     if (props.multiple) {
       return Array.isArray(props.modelValue) ? props.modelValue : []
     }
-    return props.modelValue ? [props.modelValue] : []
+    return (props.modelValue !== null && props.modelValue !== undefined) ? [props.modelValue] : []
   })
 
   const selectedLabel = computed(() => {
@@ -399,7 +403,8 @@
     if (!item) return ''
     if (typeof item === 'string' || typeof item === 'number') return item
     if (typeof props.itemValue === 'function') return props.itemValue(item)
-    return item[props.itemValue] || item
+    const val = item[props.itemValue]
+    return val !== undefined ? val : item
   }
 
   const getDisplayTextForValue = value => {

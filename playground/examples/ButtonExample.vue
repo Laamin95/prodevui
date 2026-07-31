@@ -143,11 +143,11 @@
     <section class="space-y-4">
       <h2 class="text-lg font-semibold ui-text-primary border-b border-color-3 pb-2">Icon Buttons</h2>
       <div class="flex flex-wrap items-center gap-4">
-        <Button icon="plus" size="xs" />
-        <Button icon="plus" size="sm" />
-        <Button icon="plus" size="md" />
-        <Button icon="plus" size="lg" />
-        <Button icon="plus" size="xl" />
+        <Button icon="plus" size="xs" rounded="full" />
+        <Button icon="plus" size="sm" rounded="full" />
+        <Button icon="plus" size="md" rounded="full" />
+        <Button icon="plus" size="lg" rounded="full" />
+        <Button icon="plus" color="danger" size="xl" rounded="sm" />
       </div>
       <div class="flex flex-wrap items-center gap-4 mt-4">
         <Button icon="heart" color="danger" />

@@ -1,4 +1,5 @@
 import AvatarExample from './AvatarExample.vue'
+import ConfirmDialogExample from './ConfirmDialogExample.vue'
 import BadgeExample from './BadgeExample.vue'
 import BannerExample from './BannerExample.vue'
 import BreadcrumbsExample from './BreadcrumbsExample.vue'
@@ -24,10 +25,12 @@ import SnackbarExample from './SnackbarExample.vue'
 import SwitchExample from './SwitchExample.vue'
 import TextAreaExample from './TextAreaExample.vue'
 import TimelineExample from './TimelineExample.vue'
+import ToolbarExample from './ToolbarExample.vue'
 
 
 export {
     AvatarExample,
+    ConfirmDialogExample,
     BadgeExample,
     BannerExample,
     BreadcrumbsExample,
@@ -53,4 +56,5 @@ export {
     SwitchExample,
     TextAreaExample,
     TimelineExample,
+    ToolbarExample,
 }

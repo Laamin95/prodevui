@@ -29,11 +29,11 @@
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
-    "vue": "^3.4.0",
     "@heroicons/vue": "^2.2.0",
     "@vuepic/vue-datepicker": "^12.1.0",
     "@vueuse/components": "^14.1.0",
-    "@vueuse/core": "^14.1.0"
+    "@vueuse/core": "^14.1.0",
+    "vue": "^3.4.0"
   },
   "peerDependenciesMeta": {
     "@vuepic/vue-datepicker": {

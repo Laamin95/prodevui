@@ -25,10 +25,10 @@
             'hover:text-primary'
           ]"
         >
-          <i :class="[homeIcon, 'text-current']" />
+          <Icon :name="homeIcon" :size="16" color="text-current" />
         </a>
         <span :class="['mx-2', separatorClasses]">
-          <i v-if="separatorIcon" :class="separatorIcon" />
+          <Icon v-if="separatorIcon" :name="separatorIcon" :size="12" color="text-current" />
           <span v-else>{{ separator }}</span>
         </span>
       </li>
@@ -53,7 +53,7 @@
               item.class
             ]"
           >
-            <i v-if="item.icon" :class="[item.icon, 'text-current']" />
+            <Icon v-if="item.icon" :name="item.icon" :size="14" color="text-current" />
             <span>{{ item.label }}</span>
           </a>
 
@@ -68,7 +68,7 @@
             ]"
             :aria-current="index === items.length - 1 ? 'page' : undefined"
           >
-            <i v-if="item.icon" :class="[item.icon, 'text-current']" />
+            <Icon v-if="item.icon" :name="item.icon" :size="14" color="text-current" />
             <span :class="truncate && 'truncate max-w-[200px]'">{{ item.label }}</span>
           </span>
         </slot>
@@ -80,7 +80,7 @@
           aria-hidden="true"
         >
           <slot name="separator">
-            <i v-if="separatorIcon" :class="separatorIcon" />
+            <Icon v-if="separatorIcon" :name="separatorIcon" :size="12" color="text-current" />
             <span v-else>{{ separator }}</span>
           </slot>
         </span>
@@ -112,7 +112,7 @@ const props = defineProps({
   },
   homeIcon: {
     type: String,
-    default: 'fas fa-home'
+    default: 'home'
   },
   homeHref: {
     type: String,

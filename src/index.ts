@@ -14,6 +14,8 @@ export * from './components/index'
 
 // Composables & Config
 export { useSnackbar } from './lib/useSnackbar'
+export { useConfirm } from './lib/useConfirm'
+export type { ConfirmOptions } from './lib/useConfirm'
 export { useI18n } from './lib/i18n/useI18n'
 export { useRtl } from './lib/core/useRtl'
 export { defineUiConfig, useUiConfig, getDefault } from './lib/config'

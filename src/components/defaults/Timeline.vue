@@ -10,12 +10,14 @@
       :class="[
         'absolute top-0 bottom-0 w-0.5 bg-color-4',
         direction === 'vertical' && side === 'both' ? 'left-1/2 -translate-x-1/2' : '',
-        direction === 'vertical' && side === 'one' ? (isRtl ? 'right-[7px]' : 'left-[7px]') : '',
         direction === 'horizontal' ? 'left-0 right-0 h-0.5 w-full' : 'h-full',
         lineStyle === 'dashed' ? 'timeline-dashed-line' : ''
       ]"
       :style="{
-        top: direction === 'horizontal' ? `calc(24px + (${dotSizePx}px / 2))` : '0'
+        top: direction === 'horizontal' ? `calc(24px + (${dotSizePx}px / 2))` : '0',
+        ...(direction === 'vertical' && side === 'one'
+          ? (isRtl ? { right: `${dotSizePx / 2 - 1}px` } : { left: `${dotSizePx / 2 - 1}px` })
+          : {})
       }"
     ></div>
 
@@ -47,7 +49,7 @@
         <!-- Content card -->
         <div
           :class="[
-            'border border-color-2rounded-md py-3 px-4 transition-all',
+            'border border-color-2 rounded-md py-3 px-4 transition-all',
             'align-' + align,
             clickable ? 'cursor-pointer hover:shadow-md' : '',
             elevation === 0 ? 'shadow-none' : elevation === 1 ? 'shadow-sm' : elevation === 2 ? 'shadow-md' : 'shadow-lg'

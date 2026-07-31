@@ -1,19 +1,19 @@
 <template>
   <button :class="buttonClasses" :disabled="disabled || loading" @click="handleClick">
-    <!-- Loader -->
-    <span v-if="loading" class="loader mr-2" />
 
     <!-- Prepend Icon -->
-    <span v-if="($slots.prepend || prependIcon) && !loading" class="mr-2">
-      <slot name="prepend">
-        <Icon v-if="prependIcon" :name="prependIcon" type="outline" :size="iconSizes[props.size]" color="text-current" />
+    <span v-if="($slots.prepend || prependIcon) || loading" class="mr-2">
+      <!-- Loader -->
+      <span v-if="loading" class="loader " />
+      <slot v-if="!loading" name="prepend">
+        <Icon v-if="prependIcon" :name="prependIcon" type="outline" :size="iconSizes[props.size]" color="text-current" :class="iconClass" />
       </slot>
     </span>
 
     <!-- Label -->
-    <span v-if="!loading">
+    <span class="whitespace-nowrap " >
       <slot>
-        <Icon v-if="icon" :name="icon" type="mini" :size="iconSizes[props.size]" color="text-current" />
+        <Icon v-if="icon" :name="icon" type="mini" :size="iconSizes[props.size]" color="text-current" :class="iconClass" />
         <div v-if="!icon">
           {{ displayLabel }}
         </div>
@@ -21,13 +21,15 @@
     </span>
 
     <!-- Append Icon -->
-    <span v-if="($slots.append || appendIcon) && !loading" class="ml-2">
+    <span v-if="$slots.append || appendIcon" class="ml-2">
+      
       <slot name="append">
         <Icon
           v-if="appendIcon"
           :name="appendIcon"
           type="outline"
           :size="iconSizes[props.size]"
+          :class="iconClass"
           stroke="currentColor"
           color="text-current"
         />
@@ -68,6 +70,10 @@
       type: String,
       default: () => getDefault('Button', 'rounded')
     },
+    iconClass: {
+      type: String,
+      default: ''
+    },
     block: {
       type: Boolean,
       default: false
@@ -98,13 +104,21 @@
     },
     padding: {
       type: Boolean,
-      default: false
+      default: false // true = force IconPadding, false = no padding on icon-only buttons
     },
     lang: {
       type: String,
       default: '' // Component-level language override
     }
   })
+
+  const IconPadding = {
+    xs:  'p-2',
+    sm:  'p-1.5',
+    md:  'p-2',
+    lg:  'p-2.5',
+    xl:  'p-3',
+  }
 
   const variantClasses = computed(() => {
     // Classes only for layout/structure, colors handled by buttonThemeStyles
@@ -114,12 +128,12 @@
 
   const buttonClasses = computed(() => [
     'inline-flex items-center justify-center font-medium transition-all select-none',
-    props.icon && !props.padding ? '' : sizes[props.size],
+    props.padding ? IconPadding[props.size] : (props.icon ? '' : sizes[props.size]),
     roundedMap[props.rounded],
     variantClasses.value,
     props.block ? 'w-full' : '',
     currentLang.value === 'dv' ? 'faruma' : '',
-    props.disabled || props.loading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+    props.disabled || props.loading ? 'opacity-90 cursor-not-allowed' : 'cursor-pointer'
   ])
 
   const handleClick = event => {
@@ -148,15 +162,18 @@
 <style scoped>
   /* Simple Loader */
   .loader {
+    display: inline-block;
     width: 16px;
     height: 16px;
-    border: 2px solid transparent;
-    border-top-color: white;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-top-color: currentColor;
     border-radius: 50%;
-    animation: spin 0.7s linear infinite;
+    animation: btn-spin 0.7s linear infinite;
+    vertical-align: middle;
+    flex-shrink: 0;
   }
 
-  @keyframes spin {
+  @keyframes btn-spin {
     to {
       transform: rotate(360deg);
     }

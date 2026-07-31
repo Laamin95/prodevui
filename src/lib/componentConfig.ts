@@ -33,37 +33,37 @@ export const colorMap = {
   primary: {
     contained: 'bg-primary text-white transition-colors hover:bg-primary/60',
     outlined: 'border border-primary text-primary bg-transparent transition-colors hover:bg-primary/10',
-    text: 'text-primary bg-transparent transition-colors hover:bg-primary/10',
+    text: 'text-primary bg-transparent transition-colors hover:text-primary/80',
     tonal: 'bg-surface text-primary transition-colors hover:bg-primary/10'
   },
   success: {
     contained: 'bg-green-500 text-white transition-colors hover:bg-green-600',
     outlined: 'border border-green-500 text-green-500 bg-transparent transition-colors hover:bg-green-100',
-    text: 'text-green-500 bg-transparent transition-colors hover:bg-green-100',
+    text: 'text-green-500 bg-transparent transition-colors hover:text-green-400',
     tonal: 'bg-green-100 text-green-500 transition-colors hover:bg-green-100'
   },
   danger: {
     contained: 'bg-red-500 text-white transition-colors hover:bg-red-600',
     outlined: 'border border-red-500 text-red-500 bg-transparent transition-colors hover:bg-red-100',
-    text: 'text-red-500 bg-transparent transition-colors hover:bg-red-100',
+    text: 'text-red-500 bg-transparent transition-colors hover:text-red-400',
     tonal: 'bg-red-100 text-red-500 transition-colors hover:bg-red-100'
   },
   warning: {
     contained: 'bg-yellow-500 text-white transition-colors hover:bg-yellow-600',
     outlined: 'border border-yellow-500 text-yellow-500 bg-transparent transition-colors hover:bg-yellow-100',
-    text: 'text-yellow-500 bg-transparent transition-colors hover:bg-yellow-100',
+    text: 'text-yellow-500 bg-transparent transition-colors hover:text-yellow-400',
     tonal: 'bg-yellow-100 text-yellow-500 transition-colors hover:bg-yellow-100'
   },
   info: {
     contained: 'bg-blue-500 text-white transition-colors hover:bg-blue-600',
     outlined: 'border border-blue-500 text-blue-500 bg-transparent transition-colors hover:bg-blue-100',
-    text: 'text-blue-500 bg-transparent transition-colors hover:bg-blue-100',
+    text: 'text-blue-500 bg-transparent transition-colors hover:text-blue-400',
     tonal: 'bg-blue-100 text-blue-500 transition-colors hover:bg-blue-100'
   },
   gray: {
     contained: 'bg-gray-500 dark:bg-gray-800 text-gray-50  transition-colors hover:bg-gray-600 dark:hover:bg-gray-700',
     outlined: 'border border-gray-500 text-gray-500 bg-transparent transition-colors hover:bg-gray-100',
-    text: 'text-gray-500 bg-transparent transition-colors hover:bg-gray-100',
+    text: 'text-gray-500 bg-transparent transition-colors hover:text-gray-400',
     tonal: 'bg-gray-100 text-gray-500 transition-colors hover:bg-gray-100'
   },
   disable: {

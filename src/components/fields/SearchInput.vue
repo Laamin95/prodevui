@@ -36,7 +36,7 @@
           v-on="events"
           type="search"
           :value="modelValue"
-          :placeholder="isFocused && !modelValue ? placeholder : ''"
+          :placeholder="(isFocused && !modelValue) || (!label && !modelValue) ? placeholder : ''"
           :class="inputClasses"
           @input="handleInput"
           @keydown.enter="handleEnter"

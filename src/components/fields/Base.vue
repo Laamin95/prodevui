@@ -15,13 +15,13 @@
       ]"
     >
       <div v-if="label" :class="labelClasses" aria-hidden="true">
-        {{ selectedlabels ? selectedlabels.label : label }}
+        {{ selectedlabels ? selectedlabels.label : label }} <span v-if="isRequired" class="text-red-500">*</span>
       </div>
       <!-- main -->
       <div class="flex items-center w-full gap-2">
         <div v-if="$slots.prepend || prepend" class="">
           <slot name="prepend">
-            <Icon :size="iconSizes[size]" :name="prepend" :type="iconType == 'outline' ? 'outline' : 'solid'" />
+            <Icon :size="iconSizes[size]" :name="prepend" :type="iconType == 'outline' ? 'outline' : 'solid'" :color="iconColor" />
           </slot>
         </div>
         <div class="flex-1 w-full">
@@ -43,7 +43,7 @@
         </button>
         <div v-if="$slots.append || append" class="">
           <slot name="append">
-            <Icon :size="iconSizes[size]" :name="append" :type="iconType == 'outline' ? 'outline' : 'solid'" />
+            <Icon :size="iconSizes[size]" :name="append" :type="iconType == 'outline' ? 'outline' : 'solid'" :color="iconColor" />
           </slot>
         </div>
       </div>
@@ -61,6 +61,7 @@
   import { useLanguageSelected, roundedMap, sizes, iconSizes, heights } from '../../lib/componentConfig'
   import { getDefault } from '../../lib/config'
   import { vOnClickOutside } from '@vueuse/components'
+  import validationRules from '../../validations/validationRules'
   const { language } = inject('i18n', { language: ref('en'), t: (key) => key, setLanguage: () => {} })
   const slots = useSlots() 
 
@@ -104,6 +105,7 @@
     bgColorVariant: { type: String, default: '' },
     borderColorVariant: { type: String, default: '' },
     textColorVariant: { type: String, default: '' },
+    iconColor: { type: String, default: 'currentcolor' },
     labelTextSize: { type: String, default: 'text-base' },
     iconType: { type: String, default: 'outline' },
     labelTextColor: { type: String, default: 'ui-text-secondary' },
@@ -144,6 +146,12 @@
     // Only show internal errors after field has been blurred
     if (hasBlurred.value && internalErrorMessages.value && internalErrorMessages.value.length > 0) return true
     return false
+  })
+
+  // Show the required marker when the `required` prop is set, or a `rules.required` rule is present
+  const isRequired = computed(() => {
+    if (props.required) return true
+    return Array.isArray(props.rules) && props.rules.includes(validationRules.required)
   })
 
   // FIXED: Better hasValue logic to handle empty arrays and empty strings
@@ -244,7 +252,7 @@
       disabled: props.disabled,
       readonly: props.readonly,
       value: props.modelValue,
-      required: props.required,
+      required: isRequired.value,
       'aria-invalid': isErrored.value,
       dir: selectedDirection.value
     }
@@ -265,7 +273,7 @@
   // FIXED: Label positioning logic - use isFocused instead of focused
   const labelY = computed(() => {
     // Label should be at top if focused, has value, or is open
-    if (isFocused.value || hasValue.value || props.isOpen) {
+    if (focused.value || hasValue.value || props.isOpen) {
       return '-top-[1px]'
     } else {
       return 'top-[48%]'
@@ -300,8 +308,10 @@
     if (isFocused.value || hasValue.value || props.isOpen) {
       if (selectLanguage.value === 'dv') {
         positionX = 'right-8'
+        // console.log('Floating RTL positionX:', positionX)
       } else {
         positionX = 'left-8'
+        // console.log('Floating RTL positionX:', positionX)
       }
       fontSize = 'text-xs'
     }
@@ -310,16 +320,16 @@
   })
 
   const labelClasses = computed(() => {
-    const classes = ['absolute flex px-2 items-center transition-all pointer-events-none h-[1px]', LabelX.value, labelY.value]
+    const classes = ['absolute flex gap-1 px-2 items-center transition-all pointer-events-none h-[1px]', LabelX.value, labelY.value]
 
-    // Add background only when label is floating - use isFocused
+    // Add background only when label is floating
     if (isFocused.value || hasValue.value || props.isOpen) {
       classes.push('bg-inherit')
     } else {
       classes.push('bg-transparent')
     }
 
-    // Color based on error state - use isFocused
+    // Color based on error state
     if (isErrored.value) {
       classes.push('text-error')
     } else if (isFocused.value) {
@@ -435,11 +445,11 @@
   watch(
     () => props.isOpen,
     (newVal, oldVal) => {
-      if (oldVal === true && newVal === false && formContext) {
+      if (oldVal === true && newVal === false) {
         // Dropdown closed, act as blur
         hasBlurred.value = true
         const isValid = validate()
-        if (formContext.validate) {
+        if (formContext?.validate) {
           formContext.validate(uid, isValid, internalErrorMessages.value)
         }
       }

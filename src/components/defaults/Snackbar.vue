@@ -1,11 +1,11 @@
 <template>
   <transition
     enter-active-class="transition-all duration-300"
-    enter-from-class="translate-y-full opacity-0"
-    enter-to-class="translate-y-0 opacity-100"
+    enter-from-class="translate-x-full opacity-0"
+    enter-to-class="translate-x-0 opacity-100"
     leave-active-class="transition-all duration-200"
-    leave-from-class="translate-y-0 opacity-100"
-    leave-to-class="translate-y-full opacity-0"
+    leave-from-class="translate-x-0 opacity-100"
+    leave-to-class="translate-x-full opacity-0"
   >
     <div
       v-if="modelValue"
@@ -19,7 +19,7 @@
     >
       <!-- Icon -->
       <div v-if="icon || variant !== 'default'" class="flex-shrink-0">
-        <i :class="[iconClass, 'text-xl']" />
+        <Icon :name="iconName" :size="20" color="text-current" />
       </div>
 
       <!-- Content -->
@@ -47,7 +47,7 @@
         @click="close"
         class="flex-shrink-0 p-1 rounded hover:bg-black/10 transition-colors"
       >
-        <i class="fas fa-times text-sm" />
+        <Icon name="x-mark" :size="16" color="text-current" />
       </button>
 
       <!-- Progress Bar -->
@@ -128,25 +128,24 @@ let progressInterval = null
 const variantClasses = computed(() => {
   const variants = {
     default: 'bg-color-2 text-ui-text-color border-color',
-    success: 'bg-green-50 text-success border-green-200',
-    error: 'bg-red-50 text-error border-red-200',
-    warning: 'bg-yellow-50 text-warning border-yellow-200',
-    info: 'bg-blue-50 text-info border-blue-200'
+    success: 'bg-green-50 text-success border-green-400',
+    error: 'bg-red-50 text-error border-red-400',
+    warning: 'bg-yellow-50 text-warning border-yellow-400',
+    info: 'bg-blue-50 text-info border-blue-400'
   }
   return variants[props.variant] || variants.default
 })
 
-const iconClass = computed(() => {
-  if (props.icon && props.icon !== 'success' && props.icon !== 'error' && props.icon !== 'warning' && props.icon !== 'info') {
+const iconName = computed(() => {
+  if (props.icon && !['success', 'error', 'warning', 'info'].includes(props.icon)) {
     return props.icon
   }
-
   const icons = {
-    success: 'fas fa-check-circle',
-    error: 'fas fa-exclamation-circle',
-    warning: 'fas fa-exclamation-triangle',
-    info: 'fas fa-info-circle',
-    default: 'fas fa-bell'
+    success: 'check-circle',
+    error:   'x-circle',
+    warning: 'exclamation-triangle',
+    info:    'information-circle',
+    default: 'bell',
   }
   return icons[props.variant] || icons.default
 })
