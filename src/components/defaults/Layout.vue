@@ -11,7 +11,7 @@
       class=""
       :style="mainStyles"
     >
-        <div class="w-full px-6 py-5">
+        <div class="w-full px-6 py-5 ">
           <slot />
         </div>
         <!-- <router-view /> -->
@@ -32,19 +32,22 @@ const props = defineProps({
 })
 
 const mainStyles = computed(() => {
-  const styles = {}
-  
+  const styles = {
+    height: '100vh',
+    overflowY: 'auto',
+  }
+
   // Top padding for AppBar
   if (props.appBarHeight) {
-    const height = typeof props.appBarHeight === 'number' 
-      ? `${props.appBarHeight}px` 
+    const height = typeof props.appBarHeight === 'number'
+      ? `${props.appBarHeight}px`
       : props.appBarHeight
     styles.paddingTop = height
   }
-  
+
   // Side margin ONLY for permanent or rail NavBar (NOT temporary)
   const shouldShift = (props.navPermanent || props.navRail) && !props.navTemporary
-  
+
   if (shouldShift && props.navWidth) {
     if (props.navLocation === 'right') {
       styles.marginRight = props.navWidth
@@ -52,7 +55,7 @@ const mainStyles = computed(() => {
       styles.marginLeft = props.navWidth
     }
   }
-  
+
   return styles
 })
 </script>

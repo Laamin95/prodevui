@@ -57,7 +57,7 @@
   }
 
   html {
-    color-scheme: light dark;
+    color-scheme: light;
   }
 
   body {
@@ -117,6 +117,22 @@
     border-left: 1.5px solid var(--border-color);
     pointer-events: none;
 }
+
+  /* .hero-icon is a <span> wrapper around the SVG.
+     The span carries all sizing (set via inline style per-instance).
+     HeroIcons are plain render functions that don't spread $attrs to the SVG,
+     so we target the SVG with a CSS child selector instead of passing style
+     through Vue's attr chain (which would be silently dropped). */
+  .hero-icon {
+    display: block;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .hero-icon > svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 
   /* hide native scrollbars when we intentionally don't want scrolling visible */
   .no-scrollbar {

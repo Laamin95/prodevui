@@ -62,7 +62,7 @@
         <span
           v-if="label || $slots.default"
           :class="[
-            'ui-text-primary leading-tight',
+            'ui-text-color leading-tight',
             labelSizeClasses
           ]"
         >
@@ -266,23 +266,23 @@ const colorClasses = computed(() => {
   const colors = {
     primary: {
       checked: 'bg-primary border-primary',
-      unchecked: 'border-color-3 hover:border-primary'
+      unchecked: 'cb-unchecked hover:border-primary'
     },
     success: {
       checked: 'bg-green-500 border-green-500',
-      unchecked: 'border-color-3 hover:border-green-500'
+      unchecked: 'cb-unchecked hover:border-green-500'
     },
     warning: {
       checked: 'bg-yellow-500 border-yellow-500',
-      unchecked: 'border-color-3 hover:border-yellow-500'
+      unchecked: 'cb-unchecked hover:border-yellow-500'
     },
     danger: {
       checked: 'bg-red-500 border-red-500',
-      unchecked: 'border-color-3 hover:border-red-500'
+      unchecked: 'cb-unchecked hover:border-red-500'
     },
     info: {
       checked: 'bg-blue-500 border-blue-500',
-      unchecked: 'border-color-3 hover:border-blue-500'
+      unchecked: 'cb-unchecked hover:border-blue-500'
     }
   }
   return colors[props.color] || colors.primary
@@ -310,6 +310,15 @@ const stateClasses = computed(() => {
 </script>
 
 <style scoped>
+/* Unchecked box: surface background + subtle adaptive border */
+.cb-unchecked {
+  background-color: var(--card-bg);
+  border-color: var(--color-4);
+}
+.dark .cb-unchecked {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
 .scale-enter-active,
 .scale-leave-active {
   transition: transform 0.15s ease, opacity 0.15s ease;

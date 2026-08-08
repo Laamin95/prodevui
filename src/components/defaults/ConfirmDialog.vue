@@ -3,6 +3,7 @@
     :model-value="show"
     :persistent="false"
     width="md:w-[420px] w-[90vw]"
+    z-index="z-[200]"
     @update:model-value="dismiss"
   >
     <!-- Body -->

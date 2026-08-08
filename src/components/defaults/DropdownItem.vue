@@ -37,8 +37,17 @@
 
 <script setup>
 import { computed, inject, ref } from 'vue'
-import { sizes, iconSizes, roundedMap, colorMap, useLanguageSelected } from '../../lib/componentConfig'
+import { iconSizes, roundedMap, useLanguageSelected } from '../../lib/componentConfig'
 const { language } = inject('i18n', { language: ref('en'), t: (key) => key, setLanguage: () => {} })
+
+// Compact sizes specifically for dropdown items (smaller than button sizes)
+const itemSizes = {
+  xs:  'text-xs  px-2   py-1',
+  sm:  'text-xs  px-2.5 py-1.5',
+  md:  'text-sm  px-2.5 py-1.5',
+  lg:  'text-sm  px-3   py-2',
+  xl:  'text-base px-3  py-2.5',
+}
 
 const props = defineProps({
     disabled: { type: Boolean, default: false },
@@ -46,9 +55,9 @@ const props = defineProps({
     dense: { type: Boolean, default: false },
     lang: { type: String, default: '' },
     dir: { type: String, default: '' },
-    rounded: { 
+    rounded: {
         type: String,
-        default: 'd' // none | d (default) | sm | md | lg | xl | full
+        default: 'lg' // none | sm | md | lg | xl | full
     },
     label: {
       type: String,
@@ -82,11 +91,11 @@ const itemClasses = computed(() => [
   'relative flex cursor-pointer select-none items-center gap-2',
   'outline-none transition-colors',
   roundedMap[props.rounded],
-  sizes[props.size],
-  props.disabled 
+  itemSizes[props.size] ?? itemSizes.md,
+  props.disabled
     ? 'pointer-events-none opacity-50'
-    : 'hover:bg-color-1 hover:ui-text-secondary focus:bg-color-3 focus:ui-text-secondary',
-  props.active ? 'bg-color-3 ui-text-secondary' : '',
+    : 'hover:bg-color-1 ui-text-color focus:bg-color-2',
+  props.active ? 'bg-color-2 ui-text-color' : '',
 ])
 
 const handleClick = () => {

@@ -100,21 +100,20 @@ const triggerClasses = computed(() => [
 ])
 
 const menuClasses = computed(() => [
-  'fixed z-50 bg-white text-gray-700',
-  'border border-gray-200 shadow-lg',
-  'animate-in fade-in-0 zoom-in-95',
+  'fixed z-50 ui-bg-color',
+  'border border-color shadow-lg',
   roundedMap[props.rounded],
-  props.dense ? 'p-1' : 'p-2',
+  'p-1.5',
   'overflow-auto'
 ])
 
 const itemClasses = computed(() => [
   'relative flex cursor-pointer select-none items-center',
-  'rounded-sm px-2 outline-none transition-colors',
-  'hover:bg-color-1 hover:ui-text-secondary',
-  'focus:bg-color-2 focus:ui-text-secondary',
+  roundedMap[props.rounded],
+  'px-2.5 py-1.5 text-sm outline-none transition-colors',
+  'hover:bg-color-1 ui-text-color',
+  'focus:bg-color-2',
   'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
-  props.dense ? 'py-1 text-sm' : 'py-2 text-sm'
 ])
 
 // Watch modelValue

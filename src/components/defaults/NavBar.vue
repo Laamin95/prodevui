@@ -15,7 +15,7 @@
         v-show="isVisible"
         ref="navRef"
         :class="navClasses"
-        :style="navStyles"
+        :style="{ ...navStyles, transition: 'width 300ms ease-in-out' }"
         @mouseenter="onMouseEnter"
         @mouseleave="onMouseLeave"
       >
@@ -124,16 +124,18 @@
                     ]"
                     :title="isCollapsed ? item.label : undefined"
                   >
-                    <Icon v-if="item.icon" :name="item.icon" size="20" class="flex-shrink-0" />
-                    <span v-if="!isCollapsed" class="truncate">{{ item.label }}</span>
+                    <span v-if="item.icon" class="flex-shrink-0 w-5 h-5 flex items-center justify-center" style="min-width:20px;max-width:20px;min-height:20px;max-height:20px;overflow:hidden">
+                      <Icon :name="item.icon" size="20" />
+                    </span>
+                    <span v-show="!isCollapsed" class="truncate">{{ item.label }}</span>
                     <span
-                      v-if="item.badge && !isCollapsed"
+                      v-show="item.badge && !isCollapsed"
                       class="ml-auto flex items-center justify-center px-2 py-0.5 text-xs font-medium rounded-full bg-red-100 text-red-600"
                     >
                       {{ item.badge }}
                     </span>
                     <Icon
-                      v-if="item.children && !isCollapsed"
+                      v-show="item.children && !isCollapsed"
                       name="chevron-right"
                       size="16"
                       :class="['ml-auto transition-transform', expandedItems.includes(item.id) ? 'rotate-90' : '']"
@@ -337,7 +339,6 @@ const navClasses = computed(() => {
   const classes = [
     'fixed bottom-0 z-40 flex flex-col',
     'bg-color-1 ui-text-secondary',
-    'transition-all duration-300 ease-in-out'
   ]
 
   if (props.location === 'right') {

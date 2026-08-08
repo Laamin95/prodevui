@@ -105,17 +105,17 @@
         ref="dropdownRef"
         v-if="isOpen"
         :class="[
-          'shadow-lg z-[9999]',
+          'shadow-lg z-[9999] overflow-hidden',
           bg ?? 'ui-bg-color',
-          border ? 'border ' + border : 'border border-color-2',
-          rounded ? roundedMap[rounded] : '',
+          border ? 'border ' + border : 'border border-color',
+          rounded ? roundedMap[rounded] : 'rounded-lg',
           menuClass
         ]"
-        :style="dropdownPositionStyle"
+        :style="{ ...dropdownPositionStyle, ...menuStyle }"
       >
-        <ul class="py-1">
+        <ul class="p-1.5">
           <!-- No items found -->
-          <li v-if="filteredItems.length === 0" :class="['px-4 py-2 ui-text-secondary text-center text-sm']">
+          <li :class="['px-2.5 py-1.5 ui-text-secondary text-center text-sm rounded-lg']" v-if="filteredItems.length === 0">
             <slot name="no-data">No items found</slot>
           </li>
 
@@ -125,8 +125,8 @@
             :key="getItemValue(item)"
             @mousedown="(e) => { e.preventDefault(); handleSelect(item); }"
             :class="[
-              'px-4 py-2 cursor-pointer transition flex items-center text-sm',
-              isSelected(getItemValue(item)) ? selectedItemClass || 'bg-color-4' : itemClass || 'hover:bg-color-3',
+              'px-2.5 py-1.5 cursor-pointer transition flex items-center text-sm rounded-lg ui-text-color',
+              isSelected(getItemValue(item)) ? selectedItemClass || 'bg-primary/10 text-primary font-medium' : itemClass || 'hover:bg-color-1',
               itemHoverClass
             ]"
           >
@@ -217,6 +217,7 @@
     textColor: { type: String },
     menuClass: { type: String, default: '' },
     menuStyle: { type: Object, default: () => ({}) },
+    dropdownWidth: { type: String, default: '' },
     itemClass: { type: String, default: '' },
     itemHoverClass: { type: String, default: '' },
     selectedItemClass: { type: String, default: '' },
@@ -355,7 +356,7 @@
   // Input classes
   const inputClasses = computed(() => [
     'bg-transparent outline-none border-none flex-1 min-w-0 max-w-auto',
-    'placeholder:text-gray-400',
+    'placeholder:text-neutral-300',
     'focus:outline-none',
     // For multiple select with badges, make input flexible to fit remaining space
     props.multiple && selectedValues.value.length > 0 ? 'flex-1 min-w-0' : 'w-full',
@@ -524,7 +525,7 @@
     dropdownPositionStyle.value = {
       position: 'fixed',
       left: `${rect.left}px`,
-      width: `${rect.width}px`,
+      width: props.dropdownWidth || `${rect.width}px`,
       zIndex: 9999,
       overflowY: 'auto',
       ...(openUpward
