@@ -114,7 +114,13 @@
       "Bash(node -e ' *)",
       "Bash(npm ls *)",
       "Bash(node create_ppt.js)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(node gen.js)",
+      "Bash(cd /tmp)",
+      "Bash(rm -rf verify)",
+      "Bash(mkdir verify *)",
+      "Bash(unzip -q \"/d/Employment Contract - Simplified.docx\" -d verify/)",
+      "Read(//tmp/verify/**)"
     ]
   }
 }
