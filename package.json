@@ -26,6 +26,9 @@
     "build": "vue-tsc -b && vite build",
     "build:lib": "vite build --mode lib",
     "preview": "vite preview",
+    "release": "node release.js",
+    "release:minor": "node release.js minor",
+    "release:major": "node release.js major",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
