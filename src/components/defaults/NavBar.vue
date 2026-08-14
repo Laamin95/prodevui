@@ -33,7 +33,7 @@
                 /> -->
                 <div class="flex items-center gap-2 cursor-pointer px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700">
                   <Avatar v-if="avatarName" :name="avatarName || ''" size="sm" variant="primary" />
-                  <span v-if="avatarName && !isCollapsed" class="hidden md:inline text-sm font-medium">{{ avatarName }}</span>
+                  <span v-if="avatarName && !isCollapsed" class="text-sm font-medium truncate">{{ avatarName }}</span>
                 </div>
             </div>
             <button

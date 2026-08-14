@@ -1,6 +1,6 @@
 {
   "name": "prodevui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -30,26 +30,19 @@
     "release:major": "node release.js major",
     "prepublishOnly": "npm run build"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@heroicons/vue": "^2.2.0",
     "@vuepic/vue-datepicker": "^12.1.0",
     "@vueuse/components": "^14.1.0",
-    "@vueuse/core": "^14.1.0",
+    "@vueuse/core": "^14.1.0"
+  },
+  "peerDependencies": {
     "vue": "^3.4.0"
   },
-  "peerDependenciesMeta": {
-    "@vuepic/vue-datepicker": {
-      "optional": true
-    }
-  },
   "devDependencies": {
-    "@heroicons/vue": "^2.2.0",
     "@types/node": "^24.10.1",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/tsconfig": "^0.8.1",
-    "@vuepic/vue-datepicker": "^12.1.0",
-    "@vueuse/components": "^14.1.0",
-    "@vueuse/core": "^14.1.0",
     "autoprefixer": "^10.4.23",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.19",

@@ -186,19 +186,11 @@
   const effectiveWidth = computed(() => {
     if (props.fullscreen) return 'w-full'
     if (!props.mobileFull) return props.width
-    // Bump each bare w-* class to sm:!w-* so !w-full wins on mobile but the
-    // sm/md breakpoint classes (also !) override it at those viewport widths.
-    const bumped = props.width
-      .trim()
-      .split(/\s+/)
-      .filter(Boolean)
-      .map(cls => {
-        const m = cls.match(/^((?:sm|md|lg|xl|2xl):)?w-(.+)$/)
-        if (!m) return cls
-        return m[1] ? `${m[1]}!w-${m[2]}` : `sm:!w-${m[2]}`
-      })
-      .join(' ')
-    return `!w-full ${bumped}`
+    // Full width only below the `sm` breakpoint; `props.width` drives every
+    // wider viewport. `max-sm:!w-full` is a static class so Tailwind's JIT
+    // emits it (classes assembled at runtime are never seen by the scanner,
+    // which is why the previous approach left modals stuck at !w-full).
+    return `max-sm:!w-full ${props.width}`
   })
 </script>
 
