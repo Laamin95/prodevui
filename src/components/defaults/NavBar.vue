@@ -20,55 +20,45 @@
         @mouseleave="onMouseLeave"
       >
         <!-- Header -->
-        <div v-if="$slots.prepend || avatarName" 
-            class="flex items-center px-4 py-4 border-b border-color-3"
-            :class="isCollapsed ? 'justify-center' : 'justify-between'"
+        <div v-if="$slots.prepend || avatarName"
+            class="flex items-center gap-2 px-4 py-4 border-b border-color-3"
+            :class="isCollapsed ? 'justify-center' : ''"
         >
           <slot name="prepend">
-            <div class="flex items-center gap-2 text-gray-500" >
-                <!-- <Icon
-                    name="bug-ant"
-                    size="22"
-                    class=" fill-yellow-500"
-                /> -->
-                <div class="flex items-center gap-2 cursor-pointer px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700">
-                  <Avatar v-if="avatarName" :name="avatarName || ''" size="sm" variant="primary" class="flex-shrink-0" />
-                  <span v-if="avatarName && !isCollapsed" class="text-sm font-medium break-words min-w-0">{{ avatarName }}</span>
-                </div>
+            <!-- Avatar + name -->
+            <div class="flex items-center gap-2 cursor-pointer px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 flex-1 min-w-0">
+              <Avatar v-if="avatarName" :name="avatarName || ''" size="sm" variant="primary" class="flex-shrink-0" />
+              <span v-if="avatarName && !isCollapsed" class="text-sm font-medium break-words min-w-0">{{ avatarName }}</span>
             </div>
-            <button
-                v-if="rail && !temporary && !isCollapsed"
-                @click="toggleRail"
-                :class="[
-                    'p-1.5 py-2 rounded-full bg-color-1 shadow-sm hover:bg-color-4 transition-colors',
-                    location === 'left' ? '-right-3' : '-left-3'
-                ]"
-                aria-label="Toggle navigation width"
-            >
-                <svg 
-                    class="fill-gray-600 dark:fill-gray-200 w-3" 
-                    :class="location === 'right' ? 'rotate-180' : ''"
-                    xmlns="http://www.w3.org/2000/svg" 
-                    shape-rendering="geometricPrecision" 
-                    text-rendering="geometricPrecision" 
-                    image-rendering="optimizeQuality" 
-                    fill-rule="evenodd" clip-rule="evenodd" 
-                    viewBox="0 0 512 389.24"
-                >
-                
-                    <path fill-rule="nonzero" d="M0 0h275.1v50.04H0V0zm361.79 115.14 54.44 54.44H0v50.04h416.2l-54.41 54.41 35.39 35.39L512 194.6v-.03l-35.39-35.36-79.43-79.46-35.39 35.39zM0 339.2h275.1v50.04H0V339.2z"/>
-                </svg>
-            <!-- <Icon
-                :name="isCollapsed ? 'chevron-right' : 'chevron-left'"
-                size="14"
-                :class="location === 'right' ? 'rotate-180' : ''"
-            /> -->
-            </button>
           </slot>
+
+          <!-- Rail toggle (always inside sidebar) -->
+          <button
+            v-if="rail && !temporary && !isCollapsed"
+            @click="toggleRail"
+            class="flex-shrink-0 p-1.5 rounded-md hover:bg-color-2 transition-colors"
+            aria-label="Toggle navigation width"
+          >
+            <svg
+              class="fill-gray-600 dark:fill-gray-200 w-3"
+              :class="location === 'right' ? 'rotate-180' : ''"
+              xmlns="http://www.w3.org/2000/svg"
+              shape-rendering="geometricPrecision"
+              text-rendering="geometricPrecision"
+              image-rendering="optimizeQuality"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              viewBox="0 0 512 389.24"
+            >
+              <path fill-rule="nonzero" d="M0 0h275.1v50.04H0V0zm361.79 115.14 54.44 54.44H0v50.04h416.2l-54.41 54.41 35.39 35.39L512 194.6v-.03l-35.39-35.36-79.43-79.46-35.39 35.39zM0 339.2h275.1v50.04H0V339.2z"/>
+            </svg>
+          </button>
+
+          <!-- Close (non-rail, non-permanent) -->
           <button
             v-if="!permanent && !rail"
             @click="close"
-            class="p-1.5 rounded-md hover:bg-color-2 ui-text-secondary hover:text-foreground transition-colors"
+            class="flex-shrink-0 p-1.5 rounded-md hover:bg-color-2 ui-text-secondary hover:text-foreground transition-colors"
             aria-label="Close navigation"
           >
             <Icon name="x-mark" size="18" />

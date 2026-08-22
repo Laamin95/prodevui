@@ -415,7 +415,7 @@ const al = {
   defaults: { ...al },
   components: {}
 });
-function ti(e = {}) {
+function ei(e = {}) {
   return e;
 }
 function ol(e) {
@@ -425,7 +425,7 @@ function he(e, r) {
   const t = Ge.components[e];
   return t && t[r] !== void 0 ? t[r] : Ge.defaults[r];
 }
-function li() {
+function ti() {
   return Rt(Ge);
 }
 const de = (e, r) => {
@@ -3817,26 +3817,26 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ]))
     ], 6));
   }
-}), zr = { class: "relative" }, Br = { class: "flex items-center gap-2 text-gray-500" }, Ir = { class: "flex items-center gap-2 cursor-pointer px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700" }, Vr = {
+}), zr = { class: "relative" }, Br = { class: "flex items-center gap-2 cursor-pointer px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 flex-1 min-w-0" }, Ir = {
   key: 1,
   class: "text-sm font-medium break-words min-w-0"
-}, Tr = {
+}, Vr = {
   key: 1,
   class: "px-3 py-2"
-}, Lr = { class: "relative" }, Mr = { class: "flex-1 overflow-y-auto py-2" }, Ar = {
+}, Tr = { class: "relative" }, Lr = { class: "flex-1 overflow-y-auto py-2" }, Mr = {
   key: 0,
   class: "text-xs font-medium text-color-4 uppercase tracking-wider"
-}, Pr = {
+}, Ar = {
   key: 1,
   class: "w-6 h-px bg-border"
-}, Dr = { class: "space-y-1 px-2" }, Er = {
+}, Pr = { class: "space-y-1 px-2" }, Dr = {
   key: 0,
   class: "flex-shrink-0 w-5 h-5 flex items-center justify-center",
   style: { "min-width": "20px", "max-width": "20px", "min-height": "20px", "max-height": "20px", overflow: "hidden" }
-}, Or = { class: "truncate" }, jr = {
+}, Er = { class: "truncate" }, Or = {
   key: 2,
   class: "mt-auto border-t border-color-3 px-4 py-4"
-}, Nr = {
+}, jr = {
   __name: "NavBar",
   props: {
     modelValue: { type: Boolean, default: !0 },
@@ -4003,51 +4003,46 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             }, [
               w.$slots.prepend || e.avatarName ? (n(), a("div", {
                 key: 0,
-                class: f(["flex items-center px-4 py-4 border-b border-color-3", m.value ? "justify-center" : "justify-between"])
+                class: f(["flex items-center gap-2 px-4 py-4 border-b border-color-3", m.value ? "justify-center" : ""])
               }, [
                 D(w.$slots, "prepend", {}, () => [
                   d("div", Br, [
-                    d("div", Ir, [
-                      e.avatarName ? (n(), Z(Pt, {
-                        key: 0,
-                        name: e.avatarName || "",
-                        size: "sm",
-                        variant: "primary",
-                        class: "flex-shrink-0"
-                      }, null, 8, ["name"])) : v("", !0),
-                      e.avatarName && !m.value ? (n(), a("span", Vr, T(e.avatarName), 1)) : v("", !0)
-                    ])
-                  ]),
-                  e.rail && !e.temporary && !m.value ? (n(), a("button", {
-                    key: 0,
-                    onClick: E,
-                    class: f([
-                      "p-1.5 py-2 rounded-full bg-color-1 shadow-sm hover:bg-color-4 transition-colors",
-                      e.location === "left" ? "-right-3" : "-left-3"
-                    ]),
-                    "aria-label": "Toggle navigation width"
-                  }, [
-                    (n(), a("svg", {
-                      class: f(["fill-gray-600 dark:fill-gray-200 w-3", e.location === "right" ? "rotate-180" : ""]),
-                      xmlns: "http://www.w3.org/2000/svg",
-                      "shape-rendering": "geometricPrecision",
-                      "text-rendering": "geometricPrecision",
-                      "image-rendering": "optimizeQuality",
-                      "fill-rule": "evenodd",
-                      "clip-rule": "evenodd",
-                      viewBox: "0 0 512 389.24"
-                    }, [...z[1] || (z[1] = [
-                      d("path", {
-                        "fill-rule": "nonzero",
-                        d: "M0 0h275.1v50.04H0V0zm361.79 115.14 54.44 54.44H0v50.04h416.2l-54.41 54.41 35.39 35.39L512 194.6v-.03l-35.39-35.36-79.43-79.46-35.39 35.39zM0 339.2h275.1v50.04H0V339.2z"
-                      }, null, -1)
-                    ])], 2))
-                  ], 2)) : v("", !0)
+                    e.avatarName ? (n(), Z(Pt, {
+                      key: 0,
+                      name: e.avatarName || "",
+                      size: "sm",
+                      variant: "primary",
+                      class: "flex-shrink-0"
+                    }, null, 8, ["name"])) : v("", !0),
+                    e.avatarName && !m.value ? (n(), a("span", Ir, T(e.avatarName), 1)) : v("", !0)
+                  ])
                 ], !0),
-                !e.permanent && !e.rail ? (n(), a("button", {
+                e.rail && !e.temporary && !m.value ? (n(), a("button", {
                   key: 0,
+                  onClick: E,
+                  class: "flex-shrink-0 p-1.5 rounded-md hover:bg-color-2 transition-colors",
+                  "aria-label": "Toggle navigation width"
+                }, [
+                  (n(), a("svg", {
+                    class: f(["fill-gray-600 dark:fill-gray-200 w-3", e.location === "right" ? "rotate-180" : ""]),
+                    xmlns: "http://www.w3.org/2000/svg",
+                    "shape-rendering": "geometricPrecision",
+                    "text-rendering": "geometricPrecision",
+                    "image-rendering": "optimizeQuality",
+                    "fill-rule": "evenodd",
+                    "clip-rule": "evenodd",
+                    viewBox: "0 0 512 389.24"
+                  }, [...z[1] || (z[1] = [
+                    d("path", {
+                      "fill-rule": "nonzero",
+                      d: "M0 0h275.1v50.04H0V0zm361.79 115.14 54.44 54.44H0v50.04h416.2l-54.41 54.41 35.39 35.39L512 194.6v-.03l-35.39-35.36-79.43-79.46-35.39 35.39zM0 339.2h275.1v50.04H0V339.2z"
+                    }, null, -1)
+                  ])], 2))
+                ])) : v("", !0),
+                !e.permanent && !e.rail ? (n(), a("button", {
+                  key: 1,
                   onClick: q,
-                  class: "p-1.5 rounded-md hover:bg-color-2 ui-text-secondary hover:text-foreground transition-colors",
+                  class: "flex-shrink-0 p-1.5 rounded-md hover:bg-color-2 ui-text-secondary hover:text-foreground transition-colors",
                   "aria-label": "Close navigation"
                 }, [
                   K(N, {
@@ -4056,8 +4051,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                   })
                 ])) : v("", !0)
               ], 2)) : v("", !0),
-              e.filterable && !m.value ? (n(), a("div", Tr, [
-                d("div", Lr, [
+              e.filterable && !m.value ? (n(), a("div", Vr, [
+                d("div", Tr, [
                   K(F(yt), {
                     modelValue: b.value,
                     "onUpdate:modelValue": z[0] || (z[0] = (V) => b.value = V),
@@ -4067,7 +4062,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                   }, null, 8, ["modelValue", "placeholder"])
                 ])
               ])) : v("", !0),
-              d("div", Mr, [
+              d("div", Lr, [
                 e.items && e.items.length ? (n(!0), a(oe, { key: 0 }, ie(B.value, (V, S) => (n(), a(oe, { key: S }, [
                   V.title ? (n(), a("div", {
                     key: 0,
@@ -4076,9 +4071,9 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                       m.value ? "justify-center" : ""
                     ])
                   }, [
-                    m.value ? (n(), a("div", Pr)) : (n(), a("span", Ar, T(V.title), 1))
+                    m.value ? (n(), a("div", Ar)) : (n(), a("span", Mr, T(V.title), 1))
                   ], 2)) : v("", !0),
-                  d("ul", Dr, [
+                  d("ul", Pr, [
                     (n(!0), a(oe, null, ie(V.items, (k) => (n(), a("li", {
                       key: k.id || k.label
                     }, [
@@ -4095,7 +4090,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                         title: m.value ? k.label : void 0
                       }, {
                         default: te(() => [
-                          k.icon ? (n(), a("span", Er, [
+                          k.icon ? (n(), a("span", Dr, [
                             K(N, {
                               name: k.icon,
                               size: "20"
@@ -4142,7 +4137,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                                     name: j.icon,
                                     size: "18"
                                   }, null, 8, ["name"])) : v("", !0),
-                                  d("span", Or, T(j.label), 1)
+                                  d("span", Er, T(j.label), 1)
                                 ]),
                                 _: 2
                               }, 1032, ["href", "onClick", "class"]))
@@ -4155,7 +4150,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                   ])
                 ], 64))), 128)) : D(w.$slots, "default", { key: 1 }, void 0, !0)
               ]),
-              w.$slots.append ? (n(), a("div", jr, [
+              w.$slots.append ? (n(), a("div", Or, [
                 D(w.$slots, "append", {}, void 0, !0)
               ])) : v("", !0)
             ], 38), [
@@ -4167,7 +4162,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ]);
     };
   }
-}, Rr = /* @__PURE__ */ de(Nr, [["__scopeId", "data-v-3a288b96"]]), Hr = {
+}, Nr = /* @__PURE__ */ de(jr, [["__scopeId", "data-v-fa2c91fa"]]), Rr = {
   __name: "Overlay",
   props: {
     modelValue: {
@@ -4352,7 +4347,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ]);
     };
   }
-}, Ur = ["aria-label"], qr = { key: 0 }, Fr = ["disabled", "aria-label"], Wr = { key: 1 }, Kr = { key: 1 }, Gr = ["disabled", "aria-label"], Yr = { key: 1 }, Xr = ["disabled", "onClick", "aria-label", "aria-current"], Jr = { key: 2 }, Qr = ["disabled", "aria-label"], Zr = { key: 1 }, _r = { key: 3 }, ea = ["disabled", "aria-label"], ta = { key: 1 }, la = {
+}, Hr = ["aria-label"], Ur = { key: 0 }, qr = ["disabled", "aria-label"], Fr = { key: 1 }, Wr = { key: 1 }, Kr = ["disabled", "aria-label"], Gr = { key: 1 }, Yr = ["disabled", "onClick", "aria-label", "aria-current"], Xr = { key: 2 }, Jr = ["disabled", "aria-label"], Qr = { key: 1 }, Zr = { key: 3 }, _r = ["disabled", "aria-label"], ea = { key: 1 }, ta = {
   __name: "Pagination",
   props: {
     modelValue: {
@@ -4551,7 +4546,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             I.value
           ])
         }, [
-          e.showFirstLast ? (n(), a("li", qr, [
+          e.showFirstLast ? (n(), a("li", Ur, [
             d("button", {
               type: "button",
               disabled: s.value === 1 || e.disabled,
@@ -4565,15 +4560,15 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               ]),
               "aria-label": e.firstText || "First page"
             }, [
-              e.firstText ? (n(), a("span", Wr, T(e.firstText), 1)) : (n(), Z(re, {
+              e.firstText ? (n(), a("span", Fr, T(e.firstText), 1)) : (n(), Z(re, {
                 key: 0,
                 name: "chevron-double-left",
                 size: x.value,
                 type: e.iconType
               }, null, 8, ["size", "type"]))
-            ], 10, Fr)
+            ], 10, qr)
           ])) : v("", !0),
-          e.showPrevNext ? (n(), a("li", Kr, [
+          e.showPrevNext ? (n(), a("li", Wr, [
             d("button", {
               type: "button",
               disabled: s.value === 1 || e.disabled,
@@ -4587,13 +4582,13 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               ]),
               "aria-label": e.prevText || "Previous page"
             }, [
-              e.prevText ? (n(), a("span", Yr, T(e.prevText), 1)) : (n(), Z(re, {
+              e.prevText ? (n(), a("span", Gr, T(e.prevText), 1)) : (n(), Z(re, {
                 key: 0,
                 name: "chevron-left",
                 size: x.value,
                 type: e.iconType
               }, null, 8, ["size", "type"]))
-            ], 10, Gr)
+            ], 10, Kr)
           ])) : v("", !0),
           (n(!0), a(oe, null, ie(h.value, (O) => (n(), a("li", { key: O }, [
             O === "..." ? (n(), a("span", {
@@ -4618,9 +4613,9 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               ]),
               "aria-label": `Page ${O}`,
               "aria-current": O === s.value ? "page" : void 0
-            }, T(O), 11, Xr))
+            }, T(O), 11, Yr))
           ]))), 128)),
-          e.showPrevNext ? (n(), a("li", Jr, [
+          e.showPrevNext ? (n(), a("li", Xr, [
             d("button", {
               type: "button",
               disabled: s.value === e.totalPages || e.disabled,
@@ -4634,15 +4629,15 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               ]),
               "aria-label": e.nextText || "Next page"
             }, [
-              e.nextText ? (n(), a("span", Zr, T(e.nextText), 1)) : (n(), Z(re, {
+              e.nextText ? (n(), a("span", Qr, T(e.nextText), 1)) : (n(), Z(re, {
                 key: 0,
                 name: "chevron-right",
                 size: x.value,
                 type: e.iconType
               }, null, 8, ["size", "type"]))
-            ], 10, Qr)
+            ], 10, Jr)
           ])) : v("", !0),
-          e.showFirstLast ? (n(), a("li", _r, [
+          e.showFirstLast ? (n(), a("li", Zr, [
             d("button", {
               type: "button",
               disabled: s.value === e.totalPages || e.disabled,
@@ -4656,13 +4651,13 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               ]),
               "aria-label": e.lastText || "Last page"
             }, [
-              e.lastText ? (n(), a("span", ta, T(e.lastText), 1)) : (n(), Z(re, {
+              e.lastText ? (n(), a("span", ea, T(e.lastText), 1)) : (n(), Z(re, {
                 key: 0,
                 name: "chevron-double-right",
                 size: x.value,
                 type: e.iconType
               }, null, 8, ["size", "type"]))
-            ], 10, ea)
+            ], 10, _r)
           ])) : v("", !0)
         ], 2),
         e.showPageInfo ? (n(), a("div", {
@@ -4679,29 +4674,29 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             b.value
           ])
         }, T(B.value) + "-" + T(C.value) + " of " + T(e.totalItems), 3)) : v("", !0)
-      ], 14, Ur);
+      ], 14, Hr);
     };
   }
-}, na = /* @__PURE__ */ de(la, [["__scopeId", "data-v-862a1617"]]), ra = { class: "relative" }, aa = ["aria-hidden"], oa = {
+}, la = /* @__PURE__ */ de(ta, [["__scopeId", "data-v-862a1617"]]), na = { class: "relative" }, ra = ["aria-hidden"], aa = {
   class: "flex h-full flex-col",
   style: { minHeight: "100vh" }
-}, sa = { class: "flex items-center justify-between px-4 py-3" }, ia = { class: "flex items-center gap-2" }, ua = {
+}, oa = { class: "flex items-center justify-between px-4 py-3" }, sa = { class: "flex items-center gap-2" }, ia = {
   key: 0,
   class: /* @__PURE__ */ f(["pa-2"]),
   "aria-label": "Toggle drawer"
-}, da = { class: "flex-1 overflow-auto" }, ca = { key: 0 }, fa = {
+}, ua = { class: "flex-1 overflow-auto" }, da = { key: 0 }, ca = {
   key: 0,
   class: "px-3 py-2"
-}, ga = ["tabindex", "onClick", "onKeydown", "aria-expanded"], ma = { class: "flex items-center gap-2" }, pa = {
+}, fa = ["tabindex", "onClick", "onKeydown", "aria-expanded"], ga = { class: "flex items-center gap-2" }, ma = {
   key: 0,
   class: "mr-2"
-}, va = {
+}, pa = {
   key: 1,
   class: "mr-2"
-}, ya = {
+}, va = {
   key: 0,
   class: "mr-2"
-}, ba = ["onClick", "onKeydown", "aria-expanded"], ha = { class: "rail-label" }, xa = { key: 1 }, wa = { class: "px-4 py-3" }, ka = {
+}, ya = ["onClick", "onKeydown", "aria-expanded"], ba = { class: "rail-label" }, ha = { key: 1 }, xa = { class: "px-4 py-3" }, wa = {
   __name: "SideBar",
   props: {
     id: {
@@ -4996,7 +4991,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       });
     }), (P, _) => {
       const le = me("Icon");
-      return n(), a("div", ra, [
+      return n(), a("div", na, [
         L.value && e.temporary ? (n(), a("div", {
           key: 0,
           class: f(["fixed inset-0", bt.value]),
@@ -5022,14 +5017,14 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           "aria-hidden": !L.value && !e.permanent,
           onClick: V
         }, [
-          d("div", oa, [
-            d("div", sa, [
+          d("div", aa, [
+            d("div", oa, [
               Je.value ? D(P.$slots, "prepend", { key: 0 }, () => [
                 _[1] || (_[1] = d("span", { class: "font-semibold" }, "Menu", -1))
               ], !0) : v("", !0),
-              d("div", ia, [
+              d("div", sa, [
                 D(P.$slots, "append", {}, void 0, !0),
-                !e.permanent && !e.temporary ? (n(), a("button", ua, [
+                !e.permanent && !e.temporary ? (n(), a("button", ia, [
                   e.location === "left" && !F(Te) && k.value && !e.rail ? (n(), Z(le, {
                     key: 0,
                     name: "chevron-right",
@@ -5069,9 +5064,9 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 ])) : v("", !0)
               ])
             ]),
-            d("div", da, [
-              t.items ? (n(), a("div", ca, [
-                t.filterable && !(t.rail && k.value) ? (n(), a("div", fa, [
+            d("div", ua, [
+              t.items ? (n(), a("div", da, [
+                t.filterable && !(t.rail && k.value) ? (n(), a("div", ca, [
                   K(F(yt), {
                     prepend: "magnifying-glass",
                     label: "Search",
@@ -5096,7 +5091,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                     ],
                     "aria-expanded": c(W.group)
                   }, [
-                    d("span", ma, [
+                    d("span", ga, [
                       t.renderGroupParent ? (n(), Z(Oe(t.groupParents && t.groupParents[W.group] && t.groupParents[W.group].href ? "a" : "button"), {
                         key: 0,
                         href: t.groupParents && t.groupParents[W.group] && t.groupParents[W.group].href || void 0,
@@ -5105,12 +5100,12 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                         onKeydown: (ae) => u(ae, W.group)
                       }, {
                         default: te(() => [
-                          t.groupParents && t.groupParents[W.group] && t.groupParents[W.group].icon ? (n(), a("span", pa, [
+                          t.groupParents && t.groupParents[W.group] && t.groupParents[W.group].icon ? (n(), a("span", ma, [
                             K(le, {
                               name: t.groupParents[W.group].icon,
                               size: "18"
                             }, null, 8, ["name"])
-                          ])) : t.groupIcons && t.groupIcons[W.group] ? (n(), a("span", va, [
+                          ])) : t.groupIcons && t.groupIcons[W.group] ? (n(), a("span", pa, [
                             K(le, {
                               name: t.groupIcons[W.group],
                               size: "18"
@@ -5123,7 +5118,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                         ]),
                         _: 2
                       }, 1064, ["href", "onClick", "onKeydown"])) : (n(), a(oe, { key: 1 }, [
-                        t.groupIcons && t.groupIcons[W.group] ? (n(), a("span", ya, [
+                        t.groupIcons && t.groupIcons[W.group] ? (n(), a("span", va, [
                           K(le, {
                             name: t.groupIcons[W.group],
                             size: "18"
@@ -5151,8 +5146,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                         size: "16",
                         class: f({ "rotate-180": c(W.group) })
                       }, null, 8, ["class"])
-                    ], 42, ba)) : v("", !0)
-                  ], 42, ga)) : v("", !0),
+                    ], 42, ya)) : v("", !0)
+                  ], 42, fa)) : v("", !0),
                   ze(d("ul", {
                     class: f(["py-1", k.value ? "py-0" : ""])
                   }, [
@@ -5178,7 +5173,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                           size: "20",
                           class: "rail-icon mr-2"
                         }, null, 8, ["name"])) : v("", !0),
-                        d("span", ha, T(ae.label), 1)
+                        d("span", ba, T(ae.label), 1)
                       ]),
                       _: 2
                     }, 1032, ["id", "href", "draggable", "dragging", "is-drag-over", "drag-pos", "onDragleave"]))), 128))
@@ -5186,19 +5181,19 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                     [Ee, c(W.group)]
                   ])
                 ], 2))), 128))
-              ])) : (n(), a("div", xa, [
+              ])) : (n(), a("div", ha, [
                 D(P.$slots, "default", {}, void 0, !0)
               ]))
             ]),
-            d("div", wa, [
+            d("div", xa, [
               D(P.$slots, "footer", {}, void 0, !0)
             ])
           ])
-        ], 14, aa)
+        ], 14, ra)
       ]);
     };
   }
-}, Sa = /* @__PURE__ */ de(ka, [["__scopeId", "data-v-5da8f8e8"]]), Ca = ["data-drawer-item-id", "draggable"], $a = ["href"], za = {
+}, ka = /* @__PURE__ */ de(wa, [["__scopeId", "data-v-5da8f8e8"]]), Sa = ["data-drawer-item-id", "draggable"], Ca = ["href"], $a = {
   __name: "SideBarItem",
   props: {
     id: { type: [String, Number], default: "" },
@@ -5244,19 +5239,19 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         class: "flex items-center w-full"
       }, [
         D(I.$slots, "default", {}, void 0, !0)
-      ], 8, $a)) : D(I.$slots, "default", { key: 1 }, void 0, !0)
-    ], 42, Ca));
+      ], 8, Ca)) : D(I.$slots, "default", { key: 1 }, void 0, !0)
+    ], 42, Sa));
   }
-}, Dt = /* @__PURE__ */ de(za, [["__scopeId", "data-v-464014e1"]]), Ba = {
+}, Dt = /* @__PURE__ */ de($a, [["__scopeId", "data-v-464014e1"]]), za = {
   key: 0,
   class: "flex-shrink-0"
-}, Ia = { class: "flex-1 min-w-0" }, Va = {
+}, Ba = { class: "flex-1 min-w-0" }, Ia = {
   key: 0,
   class: "font-semibold text-sm mb-1"
-}, Ta = {
+}, Va = {
   key: 3,
   class: "absolute bottom-0 left-0 right-0 h-1 bg-black/20 rounded-b overflow-hidden"
-}, La = {
+}, Ta = {
   __name: "Snackbar",
   props: {
     modelValue: {
@@ -5370,15 +5365,15 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             ]),
             role: "alert"
           }, [
-            e.icon || e.variant !== "default" ? (n(), a("div", Ba, [
+            e.icon || e.variant !== "default" ? (n(), a("div", za, [
               K(m, {
                 name: y.value,
                 size: 20,
                 color: "text-current"
               }, null, 8, ["name"])
             ])) : v("", !0),
-            d("div", Ia, [
-              e.title ? (n(), a("h3", Va, T(e.title), 1)) : v("", !0),
+            d("div", Ba, [
+              e.title ? (n(), a("h3", Ia, T(e.title), 1)) : v("", !0),
               d("p", {
                 class: f(["text-sm", e.multiline ? "" : "truncate"])
               }, T(e.message), 3)
@@ -5399,7 +5394,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 color: "text-current"
               })
             ])) : v("", !0),
-            e.showProgress && e.timeout > 0 ? (n(), a("div", Ta, [
+            e.showProgress && e.timeout > 0 ? (n(), a("div", Va, [
               d("div", {
                 class: "h-full bg-current transition-all ease-linear",
                 style: ue({ width: o.value + "%" })
@@ -5411,28 +5406,28 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       });
     };
   }
-}, Ma = /* @__PURE__ */ de(La, [["__scopeId", "data-v-5076a311"]]), Aa = {
+}, La = /* @__PURE__ */ de(Ta, [["__scopeId", "data-v-5076a311"]]), Ma = {
   key: 0,
   class: "block"
-}, Pa = ["onClick", "onKeydown"], Da = {
+}, Aa = ["onClick", "onKeydown"], Pa = {
   key: 0,
   class: "font-semibold mb-1"
+}, Da = {
+  key: 1,
+  class: "text-secondary text-xs mb-2"
 }, Ea = {
-  key: 1,
-  class: "text-secondary text-xs mb-2"
-}, Oa = {
   key: 2,
   class: "text-sm"
-}, ja = ["onClick", "onKeydown"], Na = {
+}, Oa = ["onClick", "onKeydown"], ja = {
   key: 0,
   class: "font-semibold mb-1"
-}, Ra = {
+}, Na = {
   key: 1,
   class: "text-secondary text-xs mb-2"
-}, Ha = {
+}, Ra = {
   key: 2,
   class: "text-sm"
-}, Ua = {
+}, Ha = {
   __name: "Timeline",
   props: {
     items: {
@@ -5554,7 +5549,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           ...e.direction === "vertical" && e.side === "one" ? o.value ? { right: `${x.value / 2 - 1}px` } : { left: `${x.value / 2 - 1}px` } : {}
         })
       }, null, 6),
-      e.direction === "vertical" ? (n(), a("div", Aa, [
+      e.direction === "vertical" ? (n(), a("div", Ma, [
         (n(!0), a(oe, null, ie(e.items, (h, B) => (n(), a("div", {
           key: h.id ?? B,
           class: f([
@@ -5603,11 +5598,11 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               item: h,
               index: B
             }, void 0, !0) : (n(), a(oe, { key: 2 }, [
-              h.title ? (n(), a("div", Da, T(h.title), 1)) : v("", !0),
-              h.time ? (n(), a("div", Ea, T(h.time), 1)) : v("", !0),
-              h.content ? (n(), a("div", Oa, T(h.content), 1)) : v("", !0)
+              h.title ? (n(), a("div", Pa, T(h.title), 1)) : v("", !0),
+              h.time ? (n(), a("div", Da, T(h.time), 1)) : v("", !0),
+              h.content ? (n(), a("div", Ea, T(h.content), 1)) : v("", !0)
             ], 64))
-          ], 46, Pa)
+          ], 46, Aa)
         ], 2))), 128))
       ])) : (n(), a("div", {
         key: 1,
@@ -5653,19 +5648,19 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               item: h,
               index: B
             }, void 0, !0) : (n(), a(oe, { key: 2 }, [
-              h.title ? (n(), a("div", Na, T(h.title), 1)) : v("", !0),
-              h.time ? (n(), a("div", Ra, T(h.time), 1)) : v("", !0),
-              h.content ? (n(), a("div", Ha, T(h.content), 1)) : v("", !0)
+              h.title ? (n(), a("div", ja, T(h.title), 1)) : v("", !0),
+              h.time ? (n(), a("div", Na, T(h.time), 1)) : v("", !0),
+              h.content ? (n(), a("div", Ra, T(h.content), 1)) : v("", !0)
             ], 64))
-          ], 42, ja)
+          ], 42, Oa)
         ]))), 128))
       ], 2))
     ], 2));
   }
-}, qa = /* @__PURE__ */ de(Ua, [["__scopeId", "data-v-0987c29e"]]), Fa = { class: "v-timeline-item" }, Wa = { class: "v-timeline-item__opposite py-2 px-4" }, Ka = {
+}, Ua = /* @__PURE__ */ de(Ha, [["__scopeId", "data-v-0987c29e"]]), qa = { class: "v-timeline-item" }, Fa = { class: "v-timeline-item__opposite py-2 px-4" }, Wa = {
   key: 0,
   class: "v-timeline-item__icon"
-}, Ga = { class: "v-timeline-item__content py-2 px-4 rounded-md" }, Ya = {
+}, Ka = { class: "v-timeline-item__content py-2 px-4 rounded-md" }, Ga = {
   __name: "TimelineItem",
   props: {
     color: {
@@ -5690,8 +5685,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
     return i(() => ({
       "v-timeline-item": !0,
       "v-timeline-item--alternate": r?.align === "alternate"
-    })), (t, l) => (n(), a("div", Fa, [
-      d("div", Wa, [
+    })), (t, l) => (n(), a("div", qa, [
+      d("div", Fa, [
         D(t.$slots, "opposite", {}, void 0, !0)
       ]),
       e.hideDot ? v("", !0) : (n(), a("div", {
@@ -5700,18 +5695,18 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         style: ue({ background: e.color })
       }, [
         D(t.$slots, "icon", {}, () => [
-          e.icon ? (n(), a("span", Ka, T(e.icon), 1)) : v("", !0)
+          e.icon ? (n(), a("span", Wa, T(e.icon), 1)) : v("", !0)
         ], !0)
       ], 4)),
-      d("div", Ga, [
+      d("div", Ka, [
         D(t.$slots, "default", {}, void 0, !0)
       ])
     ]));
   }
-}, Xa = /* @__PURE__ */ de(Ya, [["__scopeId", "data-v-6b3c0fc8"]]), Ja = ["id", "dir"], Qa = ["aria-orientation", "aria-label"], Za = ["id", "aria-selected", "aria-controls", "tabindex", "disabled", "onClick", "onKeydown"], _a = ["aria-label", "onClick"], eo = {
+}, Ya = /* @__PURE__ */ de(Ga, [["__scopeId", "data-v-6b3c0fc8"]]), Xa = ["id", "dir"], Ja = ["aria-orientation", "aria-label"], Qa = ["id", "aria-selected", "aria-controls", "tabindex", "disabled", "onClick", "onKeydown"], Za = ["aria-label", "onClick"], _a = {
   key: 0,
   class: "absolute top-1/2 -translate-y-1/2 right-0 flex items-center gap-1 bg-gradient-to-l from-color-1 via-color-1 to-transparent pl-6 pr-1"
-}, to = ["id", "aria-labelledby"], lo = {
+}, eo = ["id", "aria-labelledby"], to = {
   __name: "Tab",
   props: {
     // Data
@@ -5937,10 +5932,10 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                   d: "M6 18L18 6M6 6l12 12"
                 })
               ], -1)
-            ])], 8, _a)) : v("", !0)
-          ], 42, Za))), 128))
+            ])], 8, Za)) : v("", !0)
+          ], 42, Qa))), 128))
         ], 2),
-        !e.vertical && e.scrollable && e.showScrollButtons && (x.value || I.value) ? (n(), a("div", eo, [
+        !e.vertical && e.scrollable && e.showScrollButtons && (x.value || I.value) ? (n(), a("div", _a, [
           x.value ? (n(), a("button", {
             key: 0,
             type: "button",
@@ -5982,7 +5977,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             ], -1)
           ])])) : v("", !0)
         ])) : v("", !0)
-      ], 10, Qa),
+      ], 10, Ja),
       d("div", {
         class: f($.value)
       }, [
@@ -5998,26 +5993,26 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             D(w.$slots, `content-${V}`, { tab: N }, () => [
               fe(T(N.content), 1)
             ])
-          ], 10, to)), [
+          ], 10, eo)), [
             [Ee, b.value === V]
           ]) : v("", !0)
         ], 64))), 128))
       ], 2)
-    ], 10, Ja));
+    ], 10, Xa));
   }
-}, no = ["title"], ro = {
+}, lo = ["title"], no = {
   key: 0,
   class: "w-5 h-5 transition-transform duration-300 ease-in-out hover:rotate-15",
   viewBox: "0 0 24 24",
   fill: "none",
   xmlns: "http://www.w3.org/2000/svg"
-}, ao = {
+}, ro = {
   key: 1,
   class: "w-5 h-5 transition-transform duration-300 ease-in-out hover:rotate-15",
   viewBox: "0 0 24 24",
   fill: "none",
   xmlns: "http://www.w3.org/2000/svg"
-}, oo = { class: "sr-only" }, so = /* @__PURE__ */ Ie({
+}, ao = { class: "sr-only" }, oo = /* @__PURE__ */ Ie({
   __name: "ThemeToggle",
   setup(e) {
     const r = M(!1);
@@ -6037,9 +6032,9 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       class: "flex items-center justify-center w-10 h-10 p-2 bg-transparent rounded-full cursor-pointer transition-all duration-300 ease-in-out text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-105 focus:outline-none",
       title: r.value ? "Switch to light mode" : "Switch to dark mode"
     }, [
-      r.value ? (n(), a("svg", ro, [...s[0] || (s[0] = [
+      r.value ? (n(), a("svg", no, [...s[0] || (s[0] = [
         Ut('<circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" data-v-8069750e></circle><path d="m12 2 0 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-v-8069750e></path><path d="m12 20 0 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-v-8069750e></path><path d="m4.93 4.93 1.41 1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-v-8069750e></path><path d="m17.66 17.66 1.41 1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-v-8069750e></path><path d="m2 12 2 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-v-8069750e></path><path d="m20 12 2 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-v-8069750e></path><path d="m6.34 17.66-1.41 1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-v-8069750e></path><path d="m19.07 4.93-1.41 1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-v-8069750e></path>', 9)
-      ])])) : (n(), a("svg", ao, [...s[1] || (s[1] = [
+      ])])) : (n(), a("svg", ro, [...s[1] || (s[1] = [
         d("path", {
           d: "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z",
           stroke: "currentColor",
@@ -6047,10 +6042,10 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           fill: "currentColor"
         }, null, -1)
       ])])),
-      d("span", oo, T(r.value ? "Switch to light mode" : "Switch to dark mode"), 1)
-    ], 8, no));
+      d("span", ao, T(r.value ? "Switch to light mode" : "Switch to dark mode"), 1)
+    ], 8, lo));
   }
-}), io = /* @__PURE__ */ de(so, [["__scopeId", "data-v-8069750e"]]), uo = {
+}), so = /* @__PURE__ */ de(oo, [["__scopeId", "data-v-8069750e"]]), io = {
   __name: "Toolbar",
   props: {
     title: { type: String },
@@ -6077,20 +6072,20 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       D(r.$slots, "default")
     ], 2));
   }
-}, co = { class: "relative w-full overflow-auto rounded-lg border border-color-3" }, fo = /* @__PURE__ */ Ie({
+}, uo = { class: "relative w-full overflow-auto rounded-lg border border-color-3" }, co = /* @__PURE__ */ Ie({
   inheritAttrs: !1,
   __name: "Table",
   props: {
     class: {}
   },
   setup(e) {
-    return (r, t) => (n(), a("div", co, [
+    return (r, t) => (n(), a("div", uo, [
       d("table", ve({ class: "w-full caption-bottom text-sm" }, r.$attrs), [
         D(r.$slots, "default")
       ], 16)
     ]));
   }
-}), go = /* @__PURE__ */ Ie({
+}), fo = /* @__PURE__ */ Ie({
   inheritAttrs: !1,
   __name: "TableHead",
   setup(e) {
@@ -6098,7 +6093,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       D(r.$slots, "default")
     ], 16));
   }
-}), mo = /* @__PURE__ */ Ie({
+}), go = /* @__PURE__ */ Ie({
   inheritAttrs: !1,
   __name: "TableBody",
   setup(e) {
@@ -6106,7 +6101,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       D(r.$slots, "default")
     ], 16));
   }
-}), po = ["data-state"], vo = /* @__PURE__ */ Ie({
+}), mo = ["data-state"], po = /* @__PURE__ */ Ie({
   inheritAttrs: !1,
   __name: "TableRow",
   props: {
@@ -6120,27 +6115,27 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       "data-state": e.selected ? "selected" : void 0
     }, r.$attrs), [
       D(r.$slots, "default")
-    ], 16, po));
+    ], 16, mo));
   }
-}), yo = { class: "inline-flex items-center gap-1" }, bo = {
+}), vo = { class: "inline-flex items-center gap-1" }, yo = {
   key: 0,
   class: "ml-1 flex flex-col opacity-40 group-hover:opacity-100 transition-opacity"
-}, ho = {
+}, bo = {
   key: 0,
   class: "w-3 h-3 opacity-100 text-primary",
   fill: "currentColor",
   viewBox: "0 0 20 20"
-}, xo = {
+}, ho = {
   key: 1,
   class: "w-3 h-3 opacity-100 text-primary",
   fill: "currentColor",
   viewBox: "0 0 20 20"
-}, wo = {
+}, xo = {
   key: 2,
   class: "w-3 h-3",
   fill: "currentColor",
   viewBox: "0 0 20 20"
-}, ko = /* @__PURE__ */ Ie({
+}, wo = /* @__PURE__ */ Ie({
   inheritAttrs: !1,
   __name: "Th",
   props: {
@@ -6163,22 +6158,22 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
     }, s.$attrs, {
       onClick: b[0] || (b[0] = (y) => e.sortable ? l("sort") : void 0)
     }), [
-      d("div", yo, [
+      d("div", vo, [
         D(s.$slots, "default"),
-        e.sortable ? (n(), a("span", bo, [
-          e.sortDirection === "asc" ? (n(), a("svg", ho, [...b[1] || (b[1] = [
+        e.sortable ? (n(), a("span", yo, [
+          e.sortDirection === "asc" ? (n(), a("svg", bo, [...b[1] || (b[1] = [
             d("path", {
               "fill-rule": "evenodd",
               d: "M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z",
               "clip-rule": "evenodd"
             }, null, -1)
-          ])])) : e.sortDirection === "desc" ? (n(), a("svg", xo, [...b[2] || (b[2] = [
+          ])])) : e.sortDirection === "desc" ? (n(), a("svg", ho, [...b[2] || (b[2] = [
             d("path", {
               "fill-rule": "evenodd",
               d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
               "clip-rule": "evenodd"
             }, null, -1)
-          ])])) : (n(), a("svg", wo, [...b[3] || (b[3] = [
+          ])])) : (n(), a("svg", xo, [...b[3] || (b[3] = [
             d("path", { d: "M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" }, null, -1),
             d("path", {
               "fill-rule": "evenodd",
@@ -6190,7 +6185,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ])
     ], 16));
   }
-}), So = /* @__PURE__ */ Ie({
+}), ko = /* @__PURE__ */ Ie({
   inheritAttrs: !1,
   __name: "Td",
   props: {
@@ -6214,14 +6209,14 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       D(l.$slots, "default")
     ], 16));
   }
-}), Co = ["colspan"], $o = { class: "flex flex-col items-center gap-2 ui-text-secondary" }, zo = {
+}), So = ["colspan"], Co = { class: "flex flex-col items-center gap-2 ui-text-secondary" }, $o = {
   key: 0,
   class: "w-8 h-8 opacity-40",
   fill: "none",
   stroke: "currentColor",
   "stroke-width": "1.5",
   viewBox: "0 0 24 24"
-}, Bo = { class: "text-sm" }, Io = /* @__PURE__ */ Ie({
+}, zo = { class: "text-sm" }, Bo = /* @__PURE__ */ Ie({
   __name: "TableEmpty",
   props: {
     colspan: {},
@@ -6234,8 +6229,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         colspan: e.colspan ?? 99,
         class: "px-4 py-12 text-center"
       }, [
-        d("div", $o, [
-          r.$slots.icon ? v("", !0) : (n(), a("svg", zo, [...t[0] || (t[0] = [
+        d("div", Co, [
+          r.$slots.icon ? v("", !0) : (n(), a("svg", $o, [...t[0] || (t[0] = [
             d("path", {
               "stroke-linecap": "round",
               "stroke-linejoin": "round",
@@ -6243,13 +6238,13 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             }, null, -1)
           ])])),
           D(r.$slots, "icon"),
-          d("span", Bo, T(e.message ?? "No results found."), 1),
+          d("span", zo, T(e.message ?? "No results found."), 1),
           D(r.$slots, "default")
         ])
-      ], 8, Co)
+      ], 8, So)
     ]));
   }
-}), Vo = /* @__PURE__ */ Ie({
+}), Io = /* @__PURE__ */ Ie({
   __name: "TableSkeleton",
   props: {
     cols: {},
@@ -6271,13 +6266,13 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ]))), 128))
     ]))), 128));
   }
-}), To = ["dir"], Lo = {
+}), Vo = ["dir"], To = {
   key: 0,
   class: "text-red-500"
-}, Mo = { class: "flex items-center w-full gap-2" }, Ao = {
+}, Lo = { class: "flex items-center w-full gap-2" }, Mo = {
   key: 0,
   class: ""
-}, Po = { class: "flex-1 w-full" }, Do = { class: "flex items-center gap-2" }, Eo = {
+}, Ao = { class: "flex-1 w-full" }, Po = { class: "flex items-center gap-2" }, Do = {
   key: 1,
   class: ""
 }, De = {
@@ -6467,10 +6462,10 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             "aria-hidden": "true"
           }, [
             fe(T(Y.value ? Y.value.label : e.label) + " ", 1),
-            $.value ? (n(), a("span", Lo, "*")) : v("", !0)
+            $.value ? (n(), a("span", To, "*")) : v("", !0)
           ], 2)) : v("", !0),
-          d("div", Mo, [
-            S.$slots.prepend || e.prepend ? (n(), a("div", Ao, [
+          d("div", Lo, [
+            S.$slots.prepend || e.prepend ? (n(), a("div", Mo, [
               D(S.$slots, "prepend", {}, () => [
                 K(j, {
                   size: F(Me)[e.size],
@@ -6480,14 +6475,14 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 }, null, 8, ["size", "name", "type", "color"])
               ])
             ])) : v("", !0),
-            d("div", Po, [
+            d("div", Ao, [
               D(S.$slots, "control", {
                 attrs: Q.value,
                 events: L
               })
             ])
           ]),
-          d("div", Do, [
+          d("div", Po, [
             e.clearable && h.value && !e.disabled ? (n(), a("button", {
               key: 0,
               class: "hover:text-input-focus-border text-input-text flex items-center invisible group-hover/select:visible transition-all cursor-pointer",
@@ -6510,7 +6505,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 })
               ], -1)
             ])])) : v("", !0),
-            S.$slots.append || e.append ? (n(), a("div", Eo, [
+            S.$slots.append || e.append ? (n(), a("div", Do, [
               D(S.$slots, "append", {}, () => [
                 K(j, {
                   size: F(Me)[e.size],
@@ -6531,22 +6526,22 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             class: f(u.value ? "text-red-500" : "")
           }, T(F(Ke)(X, H.value, "")), 3))), 128))
         ], 2)) : v("", !0)
-      ], 10, To);
+      ], 10, Vo);
     };
   }
-}, Oo = {
+}, Eo = {
   key: 0,
   class: "flex flex-col"
-}, jo = {
+}, Oo = {
   key: 0,
   class: "text-red-500 ml-0.5"
-}, No = {
+}, jo = {
   key: 0,
   class: "mt-1 text-sm text-red-500"
-}, Ro = {
+}, No = {
   key: 1,
   class: "mt-1 text-sm ui-text-secondary"
-}, Ho = {
+}, Ro = {
   __name: "Checkbox",
   props: {
     modelValue: {
@@ -6760,7 +6755,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             _: 1
           })
         ], 2),
-        e.label || e.description || p.$slots.default ? (n(), a("div", Oo, [
+        e.label || e.description || p.$slots.default ? (n(), a("div", Eo, [
           e.label || p.$slots.default ? (n(), a("span", {
             key: 0,
             class: f([
@@ -6771,7 +6766,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             D(p.$slots, "default", {}, () => [
               fe(T(e.label), 1)
             ], !0),
-            e.required ? (n(), a("span", jo, "*")) : v("", !0)
+            e.required ? (n(), a("span", Oo, "*")) : v("", !0)
           ], 2)) : v("", !0),
           e.description ? (n(), a("span", {
             key: 1,
@@ -6782,17 +6777,17 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           }, T(e.description), 3)) : v("", !0)
         ])) : v("", !0)
       ], 2),
-      e.error ? (n(), a("p", No, T(typeof e.error == "string" ? e.error : ""), 1)) : v("", !0),
-      e.hint && !e.error ? (n(), a("p", Ro, T(e.hint), 1)) : v("", !0)
+      e.error ? (n(), a("p", jo, T(typeof e.error == "string" ? e.error : ""), 1)) : v("", !0),
+      e.hint && !e.error ? (n(), a("p", No, T(e.hint), 1)) : v("", !0)
     ], 2));
   }
-}, Et = /* @__PURE__ */ de(Ho, [["__scopeId", "data-v-2c11cca3"]]), Uo = ["tabindex", "onKeydown"], qo = {
+}, Et = /* @__PURE__ */ de(Ro, [["__scopeId", "data-v-2c11cca3"]]), Ho = ["tabindex", "onKeydown"], Uo = {
   key: 0,
   class: "flex items-center"
-}, Fo = ["src", "alt"], Wo = { class: "flex items-center gap-1 min-w-0" }, Ko = {
+}, qo = ["src", "alt"], Fo = { class: "flex items-center gap-1 min-w-0" }, Wo = {
   key: 1,
   class: "flex items-center"
-}, Go = ["disabled", "onKeydown"], Yo = {
+}, Ko = ["disabled", "onKeydown"], Go = {
   __name: "Chip",
   props: {
     // Content
@@ -6986,14 +6981,14 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         pe(ee(m, ["prevent"]), ["space"])
       ]
     }, [
-      u.$slots.prepend || e.avatar || e.prependIcon ? (n(), a("div", qo, [
+      u.$slots.prepend || e.avatar || e.prependIcon ? (n(), a("div", Uo, [
         D(u.$slots, "prepend", {}, () => [
           e.avatar ? (n(), a("img", {
             key: 0,
             src: e.avatar,
             alt: e.avatarAlt,
             class: f(I.value)
-          }, null, 10, Fo)) : e.prependIcon ? (n(), Z(Oe(e.prependIcon), {
+          }, null, 10, qo)) : e.prependIcon ? (n(), Z(Oe(e.prependIcon), {
             key: 1,
             class: f(x.value)
           }, null, 8, ["class"])) : (n(), a("svg", {
@@ -7012,7 +7007,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           ])], 2))
         ], !0)
       ])) : v("", !0),
-      d("div", Wo, [
+      d("div", Fo, [
         d("span", {
           class: f(["truncate", y.value])
         }, [
@@ -7021,7 +7016,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           ], !0)
         ], 2)
       ]),
-      u.$slots.append || e.appendIcon || e.closable ? (n(), a("div", Ko, [
+      u.$slots.append || e.appendIcon || e.closable ? (n(), a("div", Wo, [
         D(u.$slots, "append", {}, () => [
           e.closable ? (n(), a("button", {
             key: 0,
@@ -7050,15 +7045,15 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 d: "M6 18L18 6M6 6l12 12"
               }, null, -1)
             ])], 2))
-          ], 42, Go)) : e.appendIcon ? (n(), Z(Oe(e.appendIcon), {
+          ], 42, Ko)) : e.appendIcon ? (n(), Z(Oe(e.appendIcon), {
             key: 1,
             class: f(x.value)
           }, null, 8, ["class"])) : v("", !0)
         ], !0)
       ])) : v("", !0)
-    ], 42, Uo));
+    ], 42, Ho));
   }
-}, Ot = /* @__PURE__ */ de(Yo, [["__scopeId", "data-v-013c4835"]]), Xo = ["aria-label"], Jo = {
+}, Ot = /* @__PURE__ */ de(Go, [["__scopeId", "data-v-013c4835"]]), Yo = ["aria-label"], Xo = {
   __name: "ChipGroup",
   props: {
     // Data
@@ -7231,11 +7226,11 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           key: "2"
         } : void 0
       ]), 1032, ["label", "variant", "color", "size", "rounded", "clickable", "closable", "disabled", "avatar", "avatar-alt", "prepend-icon", "append-icon", "chip-class", "text-class", "bg-color", "text-color", "border-color", "onClick", "onClose"]))), 128))
-    ], 10, Xo));
+    ], 10, Yo));
   }
-}, jt = /* @__PURE__ */ de(Jo, [["__scopeId", "data-v-045fbbbb"]]), Qo = {
+}, jt = /* @__PURE__ */ de(Xo, [["__scopeId", "data-v-045fbbbb"]]), Jo = {
   class: /* @__PURE__ */ f(["flex-1", "flex", "items-center", "gap-2", "justify-between", "w-full", "h-full"])
-}, Zo = ["placeholder", "disabled", "readonly", "onBlur"], _o = {
+}, Qo = ["placeholder", "disabled", "readonly", "onBlur"], Zo = {
   __name: "DatePicker",
   props: {
     modelValue: {
@@ -7392,7 +7387,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         clearable: !0
       }), {
         control: te(({ attrs: z, events: N }) => [
-          d("div", Qo, [
+          d("div", Jo, [
             ze(d("input", {
               ref_key: "inputRef",
               ref: p,
@@ -7414,7 +7409,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               onBlur: (V) => {
                 L(), N.blur(V);
               }
-            }, null, 40, Zo), [
+            }, null, 40, Qo), [
               [mt, m.value]
             ])
           ])
@@ -7464,13 +7459,13 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       [F(Lt), O]
     ]);
   }
-}, Vt = /* @__PURE__ */ de(_o, [["__scopeId", "data-v-7da6bb02"]]), es = ["aria-disabled", "onKeydown"], ts = ["id", "accept", "multiple", "disabled", "readonly", "required"], ls = { class: "w-full flex items-center gap-2 sm:gap-3 flex-wrap" }, ns = { class: "" }, rs = { class: "text-xs text-input-text mt-1 hidden sm:block" }, as = {
+}, Vt = /* @__PURE__ */ de(Zo, [["__scopeId", "data-v-7da6bb02"]]), _o = ["aria-disabled", "onKeydown"], es = ["id", "accept", "multiple", "disabled", "readonly", "required"], ts = { class: "w-full flex items-center gap-2 sm:gap-3 flex-wrap" }, ls = { class: "" }, ns = { class: "text-xs text-input-text mt-1 hidden sm:block" }, rs = {
   key: 0,
   class: "mt-2 space-y-2"
-}, os = {
+}, as = {
   key: 0,
   class: "w-10 h-10 overflow-hidden rounded-md border border-color-2 flex-shrink-0"
-}, ss = ["src"], is = { class: "min-w-0" }, us = { class: "text-sm text-input-text truncate" }, ds = { class: "text-xs text-input-text opacity-80" }, cs = ["onClick"], fs = {
+}, os = ["src"], ss = { class: "min-w-0" }, is = { class: "text-sm text-input-text truncate" }, us = { class: "text-xs text-input-text opacity-80" }, ds = ["onClick"], cs = {
   __name: "FileUpload",
   props: {
     modelValue: { type: Array, default: () => [] },
@@ -7638,18 +7633,18 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 readonly: z.readonly,
                 required: z.required,
                 onChange: $
-              }, null, 40, ts),
-              d("div", ls, [
+              }, null, 40, es),
+              d("div", ts, [
                 K(A, {
                   name: "arrow-up-tray",
                   size: "16"
                 }),
-                d("div", ns, [
+                d("div", ls, [
                   R[0] || (R[0] = d("div", { class: "text-sm text-input-text truncate" }, [
                     d("span", { class: "font-medium" }, "Click to upload"),
                     fe(" or drag and drop ")
                   ], -1)),
-                  d("div", rs, T(p.value), 1)
+                  d("div", ns, T(p.value), 1)
                 ])
               ]),
               K(w, {
@@ -7664,26 +7659,26 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 ])]),
                 _: 1
               }, 8, ["disabled", "rounded"])
-            ], 42, es)
+            ], 42, _o)
           ]),
           _: 1
         }, 16, ["persistent-hint", "error", "is-open"]),
-        y.value.length ? (n(), a("div", as, [
+        y.value.length ? (n(), a("div", rs, [
           (n(!0), a(oe, null, ie(y.value, (z, N) => (n(), a("div", {
             key: z._id,
             class: f(["flex items-center gap-3 p-2 border bg-color-1 ", e.border, e.rounded ? F(we)[e.rounded] : "rounded-md"])
           }, [
-            e.showPreview && Y(z.file) ? (n(), a("div", os, [
+            e.showPreview && Y(z.file) ? (n(), a("div", as, [
               d("img", {
                 src: z.preview,
                 alt: "preview",
                 class: "w-full h-full object-cover",
                 loading: "lazy"
-              }, null, 8, ss)
+              }, null, 8, os)
             ])) : v("", !0),
-            d("div", is, [
-              d("div", us, T(z.file.name), 1),
-              d("div", ds, T(re(z.file.size)), 1)
+            d("div", ss, [
+              d("div", is, T(z.file.name), 1),
+              d("div", us, T(re(z.file.size)), 1)
             ]),
             d("button", {
               type: "button",
@@ -7704,19 +7699,19 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                   d: "M6 18 18 6M6 6l12 12"
                 })
               ], -1)
-            ])], 8, cs)
+            ])], 8, ds)
           ], 2))), 128))
         ])) : v("", !0)
       ], 2);
     };
   }
-}, gs = ["disabled"], ms = ["disabled"], ps = { class: "flex items-center w-full h-full" }, vs = {
+}, fs = ["disabled"], gs = ["disabled"], ms = { class: "flex items-center w-full h-full" }, ps = {
   key: 0,
   class: "flex flex-col border-r border-color-3 h-full"
-}, ys = ["disabled"], bs = ["disabled"], hs = ["value", "placeholder", "disabled", "readonly", "onBlur", "onFocus"], xs = {
+}, vs = ["disabled"], ys = ["disabled"], bs = ["value", "placeholder", "disabled", "readonly", "onBlur", "onFocus"], hs = {
   key: 3,
   class: "flex flex-col border-l border-color-3 h-full"
-}, ws = ["disabled"], ks = ["disabled"], Ss = {
+}, xs = ["disabled"], ws = ["disabled"], ks = {
   __name: "InputNumber",
   props: {
     modelValue: {
@@ -7869,8 +7864,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         focused: c.value
       }), Re({
         control: te(({ attrs: ye, events: Ae }) => [
-          d("div", ps, [
-            e.showControls && e.controlsPosition === "stacked-left" ? (n(), a("div", vs, [
+          d("div", ms, [
+            e.showControls && e.controlsPosition === "stacked-left" ? (n(), a("div", ps, [
               d("button", {
                 type: "button",
                 disabled: e.disabled || h.value,
@@ -7889,7 +7884,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                   name: "chevron-up",
                   size: C.value.stackedIcon
                 }, null, 8, ["size"])
-              ], 42, ys),
+              ], 42, vs),
               d("button", {
                 type: "button",
                 disabled: e.disabled || $.value,
@@ -7908,7 +7903,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                   name: "chevron-down",
                   size: C.value.stackedIcon
                 }, null, 8, ["size"])
-              ], 42, bs)
+              ], 42, ys)
             ])) : v("", !0),
             e.prefix ? (n(), a("span", {
               key: 1,
@@ -7939,12 +7934,12 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               },
               onKeydown: O,
               onWheel: R
-            }, null, 42, hs),
+            }, null, 42, bs),
             e.suffix ? (n(), a("span", {
               key: 2,
               class: f(["ui-text-secondary select-none", C.value.affix])
             }, T(e.suffix), 3)) : v("", !0),
-            e.showControls && e.controlsPosition === "stacked-right" ? (n(), a("div", xs, [
+            e.showControls && e.controlsPosition === "stacked-right" ? (n(), a("div", hs, [
               d("button", {
                 type: "button",
                 disabled: e.disabled || h.value,
@@ -7963,7 +7958,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                   name: "chevron-up",
                   size: C.value.stackedIcon
                 }, null, 8, ["size"])
-              ], 42, ws),
+              ], 42, xs),
               d("button", {
                 type: "button",
                 disabled: e.disabled || $.value,
@@ -7982,7 +7977,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                   name: "chevron-down",
                   size: C.value.stackedIcon
                 }, null, 8, ["size"])
-              ], 42, ks)
+              ], 42, ws)
             ])) : v("", !0)
           ])
         ]),
@@ -8011,7 +8006,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 name: "minus",
                 size: C.value.icon
               }, null, 8, ["size"])
-            ], 42, gs)
+            ], 42, fs)
           ]),
           key: "0"
         } : void 0,
@@ -8038,20 +8033,20 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 name: "plus",
                 size: C.value.icon
               }, null, 8, ["size"])
-            ], 42, ms)
+            ], 42, gs)
           ]),
           key: "1"
         } : void 0
       ]), 1040, ["model-value", "dir", "lang", "readonly", "disabled", "clearable", "focused"]);
     };
   }
-}, Cs = { class: "flex items-center w-full gap-0" }, $s = {
+}, Ss = { class: "flex items-center w-full gap-0" }, Cs = {
   key: 0,
   class: "text-sm ui-text-secondary whitespace-nowrap px-2"
-}, zs = ["type", "value", "placeholder"], Bs = {
+}, $s = ["type", "value", "placeholder"], zs = {
   key: 1,
   class: "text-sm ui-text-secondary whitespace-nowrap px-2"
-}, Is = {
+}, Bs = {
   key: 2,
   class: "animate-spin h-4 w-4",
   fill: "none",
@@ -8165,8 +8160,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           rules: e.rules
         }), Re({
           control: te(({ attrs: re, events: O }) => [
-            d("div", Cs, [
-              e.prefix ? (n(), a("span", $s, T(e.prefix), 1)) : v("", !0),
+            d("div", Ss, [
+              e.prefix ? (n(), a("span", Cs, T(e.prefix), 1)) : v("", !0),
               d("input", ve({
                 ref_key: "inputRef",
                 ref: m
@@ -8179,8 +8174,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 onKeydown: pe(H, ["enter"]),
                 onFocus: C,
                 onBlur: q
-              }), null, 16, zs),
-              e.suffix ? (n(), a("span", Bs, T(e.suffix), 1)) : v("", !0)
+              }), null, 16, $s),
+              e.suffix ? (n(), a("span", zs, T(e.suffix), 1)) : v("", !0)
             ])
           ]),
           _: 2
@@ -8202,7 +8197,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 name: "eye-slash",
                 type: e.iconType == "outline" ? "outline" : "solid"
               }, null, 8, ["size", "type"])) : v("", !0),
-              e.loading ? (n(), a("svg", Is, [...L[2] || (L[2] = [
+              e.loading ? (n(), a("svg", Bs, [...L[2] || (L[2] = [
                 d("circle", {
                   class: "opacity-25",
                   cx: "12",
@@ -8224,7 +8219,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ], 2);
     };
   }
-}, Vs = ["value", "placeholder"], Ts = {
+}, Is = ["value", "placeholder"], Vs = {
   __name: "SearchInput",
   props: {
     modelValue: { type: [String, Number], default: "" },
@@ -8340,7 +8335,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             onKeydown: pe(C, ["enter"]),
             onFocus: h,
             onBlur: B
-          }), null, 16, Vs)
+          }), null, 16, Is)
         ]),
         _: 2
       }, [
@@ -8372,24 +8367,24 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ]), 1032, ["model-value", "label", "hint", "persistent-hint", "disabled", "readonly", "required", "error", "error-messages", "clearable", "size", "id", "prepend", "append", "is-open", "bg", "border", "text-color", "rounded", "dir", "lang", "width", "rules"])
     ], 2));
   }
-}, Ls = /* @__PURE__ */ de(Ts, [["__scopeId", "data-v-47a0ae0a"]]), Ms = {
+}, Ts = /* @__PURE__ */ de(Vs, [["__scopeId", "data-v-47a0ae0a"]]), Ls = {
   class: /* @__PURE__ */ f(["flex", "items-center", "gap-2", "justify-between", "w-full", "h-full"])
-}, As = ["id", "disabled", "required", "dir", "placeholder"], Ps = {
+}, Ms = ["id", "disabled", "required", "dir", "placeholder"], As = {
   key: 0,
   class: /* @__PURE__ */ f(["absolute left-0 right-8 px-3 truncate pointer-events-none text-gray-400"])
-}, Ds = {
+}, Ps = {
   key: 1,
   class: /* @__PURE__ */ f(["absolute left-0 right-8 px-3 truncate pointer-events-none"])
-}, Es = {
+}, Ds = {
   key: 2,
   class: "absolute right-8 group-hover/select:right-14 flex gap-2 items-center flex-wrap"
-}, Os = { class: "truncate max-w-[100px]" }, js = { class: "" }, Ns = { class: "p-1.5" }, Rs = {
+}, Es = { class: "truncate max-w-[100px]" }, Os = { class: "" }, js = { class: "p-1.5" }, Ns = {
   key: 0,
   class: /* @__PURE__ */ f(["px-2.5 py-1.5 ui-text-secondary text-center text-sm rounded-lg"])
-}, Hs = ["onMousedown"], Us = { class: "flex items-center gap-2 w-full" }, qs = {
+}, Rs = ["onMousedown"], Hs = { class: "flex items-center gap-2 w-full" }, Us = {
   key: 1,
   class: "flex-1"
-}, Fs = {
+}, qs = {
   key: 2,
   xmlns: "http://www.w3.org/2000/svg",
   fill: "none",
@@ -8397,7 +8392,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
   "stroke-width": "2",
   stroke: "text-input-text",
   class: "w-4 h-4"
-}, Ws = {
+}, Fs = {
   __name: "Select",
   props: {
     modelValue: {
@@ -8624,7 +8619,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           "onClick:clear": R
         }), {
           control: te(({ attrs: se, events: Ce }) => [
-            d("div", Ms, [
+            d("div", Ls, [
               ze(d("input", {
                 "onUpdate:modelValue": J[0] || (J[0] = (ke) => o.value = ke),
                 id: se.id,
@@ -8637,12 +8632,12 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 onFocus: L,
                 onBlur: G,
                 onKeydown: pe(O, ["enter"])
-              }, null, 42, As), [
+              }, null, 42, Ms), [
                 [mt, o.value]
               ]),
-              !z.value && !e.multiple && !o.value && !e.label ? (n(), a("div", Ps, T(e.placeholder), 1)) : v("", !0),
-              z.value && !e.multiple && !o.value ? (n(), a("div", Ds, T(z.value), 1)) : v("", !0),
-              e.multiple && w.value.length > 0 ? (n(), a("div", Es, [
+              !z.value && !e.multiple && !o.value && !e.label ? (n(), a("div", As, T(e.placeholder), 1)) : v("", !0),
+              z.value && !e.multiple && !o.value ? (n(), a("div", Ps, T(z.value), 1)) : v("", !0),
+              e.multiple && w.value.length > 0 ? (n(), a("div", Ds, [
                 w.value.length < 2 ? (n(!0), a(oe, { key: 0 }, ie(w.value, (ke) => (n(), a("div", { key: ke }, [
                   d("div", {
                     class: f([
@@ -8652,7 +8647,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                       e.rounded ? F(we)[e.rounded] : ""
                     ])
                   }, [
-                    d("div", Os, T(k(ke)), 1),
+                    d("div", Es, T(k(ke)), 1),
                     K(ne, {
                       onClick: ee((bt) => Ae(ke), ["stop"]),
                       name: "x-mark",
@@ -8670,7 +8665,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                     e.rounded ? F(we)[e.rounded] : ""
                   ])
                 }, [
-                  d("div", js, T(w.value.length) + " selected", 1)
+                  d("div", Os, T(w.value.length) + " selected", 1)
                 ], 2))
               ])) : v("", !0)
             ])
@@ -8708,8 +8703,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 ]),
                 style: ue({ ...x.value, ...e.menuStyle })
               }, [
-                d("ul", Ns, [
-                  N.value.length === 0 ? (n(), a("li", Rs, [
+                d("ul", js, [
+                  N.value.length === 0 ? (n(), a("li", Ns, [
                     D(U.$slots, "no-data", {}, () => [
                       J[2] || (J[2] = fe("No items found", -1))
                     ], !0)
@@ -8730,7 +8725,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                       index: Ce,
                       selected: j(S(se))
                     }, () => [
-                      d("div", Us, [
+                      d("div", Hs, [
                         e.multiple ? (n(), Z(F(Et), {
                           key: 0,
                           "model-value": j(S(se)),
@@ -8741,8 +8736,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                           onClick: J[1] || (J[1] = ee(() => {
                           }, ["stop"]))
                         }, null, 8, ["model-value", "value", "label"])) : v("", !0),
-                        e.multiple ? v("", !0) : (n(), a("span", qs, T(V(se)), 1)),
-                        !e.multiple && j(S(se)) ? (n(), a("svg", Fs, [...J[3] || (J[3] = [
+                        e.multiple ? v("", !0) : (n(), a("span", Us, T(V(se)), 1)),
+                        !e.multiple && j(S(se)) ? (n(), a("svg", qs, [...J[3] || (J[3] = [
                           d("path", {
                             "stroke-linecap": "round",
                             "stroke-linejoin": "round",
@@ -8751,7 +8746,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                         ])])) : v("", !0)
                       ])
                     ], !0)
-                  ], 42, Hs))), 128))
+                  ], 42, Rs))), 128))
                 ])
               ], 6)) : v("", !0)
             ]),
@@ -8763,7 +8758,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ]);
     };
   }
-}, Ks = /* @__PURE__ */ de(Ws, [["__scopeId", "data-v-991f3bea"]]), Gs = ["value", "placeholder", "rows", "maxlength"], Ys = {
+}, Ws = /* @__PURE__ */ de(Fs, [["__scopeId", "data-v-991f3bea"]]), Ks = ["value", "placeholder", "rows", "maxlength"], Gs = {
   __name: "Textarea",
   props: {
     modelValue: { type: [String, Number], default: "" },
@@ -8860,7 +8855,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             onKeydown: pe(B, ["enter"]),
             onFocus: $,
             onBlur: h
-          }), null, 16, Gs)
+          }), null, 16, Ks)
         ]),
         _: 2
       }, [
@@ -8892,7 +8887,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ]), 1040, ["model-value", "error", "clearable", "id", "is-open", "dir", "lang", "rules"])
     ], 2));
   }
-}, Xs = /* @__PURE__ */ de(Ys, [["__scopeId", "data-v-8f88b0b8"]]), lt = /* @__PURE__ */ Ie({
+}, Ys = /* @__PURE__ */ de(Gs, [["__scopeId", "data-v-8f88b0b8"]]), lt = /* @__PURE__ */ Ie({
   inheritAttrs: !1,
   __name: "Icon",
   props: {
@@ -8940,7 +8935,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       (n(), Z(Oe(s.value)))
     ], 16));
   }
-}), Js = {
+}), Xs = {
   UiButton: ml,
   UiRadio: Sl,
   UiRadioGroup: Il,
@@ -8962,56 +8957,56 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
   UiGroupCard: wr,
   UiLayout: Cr,
   UiSplitLayout: $r,
-  UiNavBar: Rr,
-  UiOverlay: Hr,
-  UiPagination: na,
-  UiSideBar: Sa,
+  UiNavBar: Nr,
+  UiOverlay: Rr,
+  UiPagination: la,
+  UiSideBar: ka,
   UiSideBarItem: Dt,
-  UiSnackbar: Ma,
-  UiThemeToggle: io,
-  UiTimeline: qa,
-  UiTimelineItem: Xa,
-  UiTab: lo,
-  UiToolbar: uo,
-  UiTable: fo,
-  UiTableHead: go,
-  UiTableBody: mo,
-  UiTableRow: vo,
-  UiTh: ko,
-  UiTd: So,
-  UiTableEmpty: Io,
-  UiTableSkeleton: Vo,
+  UiSnackbar: La,
+  UiThemeToggle: so,
+  UiTimeline: Ua,
+  UiTimelineItem: Ya,
+  UiTab: to,
+  UiToolbar: io,
+  UiTable: co,
+  UiTableHead: fo,
+  UiTableBody: go,
+  UiTableRow: po,
+  UiTh: wo,
+  UiTd: ko,
+  UiTableEmpty: Bo,
+  UiTableSkeleton: Io,
   UiBase: De,
   UiCheckbox: Et,
   UiChip: Ot,
   UiChipGroup: jt,
   UiDatepicker: Vt,
   UiDatePicker: Vt,
-  UiFile: fs,
-  UiInputNumber: Ss,
+  UiFile: cs,
+  UiInputNumber: ks,
   UiInputText: yt,
-  UiSearchInput: Ls,
-  UiSelect: Ks,
-  UiTextarea: Xs,
+  UiSearchInput: Ts,
+  UiSelect: Ws,
+  UiTextarea: Ys,
   UiIcon: lt
-}, Qs = {
+}, Js = {
   install(e) {
-    for (const [r, t] of Object.entries(Js)) {
+    for (const [r, t] of Object.entries(Xs)) {
       e.component(r, t);
       const l = r.replace(/^Ui/, "");
       e.component(l, t);
     }
   }
 };
-function ni(e) {
+function li(e) {
   const r = i(
     () => typeof e == "boolean" ? e : Te.value
   ), t = i(() => r.value ? "rtl" : "ltr");
   return { isRtl: r, rtlClass: t };
 }
-const Tt = rl(), ri = {
+const Tt = rl(), ni = {
   install(e, r = {}) {
-    ol(r), e.provide("snackbar", Tt), e.config.globalProperties.$snackbar = Tt, e.use(Qs), e.use(Yt), e.use(Xt), e.directive("tooltip", ll);
+    ol(r), e.provide("snackbar", Tt), e.config.globalProperties.$snackbar = Tt, e.use(Js), e.use(Yt), e.use(Xt), e.directive("tooltip", ll);
   }
 };
 export {
@@ -9033,48 +9028,48 @@ export {
   Ln as Dropdown,
   En as DropdownItem,
   Jn as Expansion,
-  fs as File,
+  cs as File,
   yr as Footer,
   br as Form,
   wr as GroupCard,
   lt as Icon,
-  Ss as InputNumber,
+  ks as InputNumber,
   yt as InputText,
   Cr as Layout,
-  Rr as NavBar,
-  Hr as Overlay,
-  na as Pagination,
+  Nr as NavBar,
+  Rr as Overlay,
+  la as Pagination,
   Sl as Radio,
   Il as RadioGroup,
   Ml as RadioItem,
-  Ls as SearchInput,
-  Ks as Select,
-  Sa as SideBar,
+  Ts as SearchInput,
+  Ws as Select,
+  ka as SideBar,
   Dt as SideBarItem,
-  Ma as Snackbar,
+  La as Snackbar,
   $r as SplitLayout,
   Nl as Switch,
-  lo as Tab,
-  fo as Table,
-  mo as TableBody,
-  Io as TableEmpty,
-  go as TableHead,
-  vo as TableRow,
-  Vo as TableSkeleton,
-  So as Td,
-  Xs as Textarea,
-  ko as Th,
-  io as ThemeToggle,
-  qa as Timeline,
-  Xa as TimelineItem,
-  uo as Toolbar,
-  ri as default,
-  ti as defineUiConfig,
+  to as Tab,
+  co as Table,
+  go as TableBody,
+  Bo as TableEmpty,
+  fo as TableHead,
+  po as TableRow,
+  Io as TableSkeleton,
+  ko as Td,
+  Ys as Textarea,
+  wo as Th,
+  so as ThemeToggle,
+  Ua as Timeline,
+  Ya as TimelineItem,
+  io as Toolbar,
+  ni as default,
+  ei as defineUiConfig,
   he as getDefault,
   xn as useConfirm,
   Xe as useI18n,
-  ni as useRtl,
+  li as useRtl,
   rl as useSnackbar,
-  li as useUiConfig
+  ti as useUiConfig
 };
 //# sourceMappingURL=index.js.map
