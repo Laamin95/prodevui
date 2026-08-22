@@ -3819,7 +3819,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
   }
 }), zr = { class: "relative" }, Br = { class: "flex items-center gap-2 text-gray-500" }, Ir = { class: "flex items-center gap-2 cursor-pointer px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700" }, Vr = {
   key: 1,
-  class: "text-sm font-medium truncate"
+  class: "text-sm font-medium break-words min-w-0"
 }, Tr = {
   key: 1,
   class: "px-3 py-2"
@@ -4012,7 +4012,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                         key: 0,
                         name: e.avatarName || "",
                         size: "sm",
-                        variant: "primary"
+                        variant: "primary",
+                        class: "flex-shrink-0"
                       }, null, 8, ["name"])) : v("", !0),
                       e.avatarName && !m.value ? (n(), a("span", Vr, T(e.avatarName), 1)) : v("", !0)
                     ])
@@ -4166,7 +4167,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ]);
     };
   }
-}, Rr = /* @__PURE__ */ de(Nr, [["__scopeId", "data-v-adfae791"]]), Hr = {
+}, Rr = /* @__PURE__ */ de(Nr, [["__scopeId", "data-v-3a288b96"]]), Hr = {
   __name: "Overlay",
   props: {
     modelValue: {
