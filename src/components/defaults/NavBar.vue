@@ -21,14 +21,14 @@
       >
         <!-- Header -->
         <div v-if="$slots.prepend || avatarName"
-            class="flex items-center gap-2 px-4 py-4 border-b border-color-3"
+            class="flex items-center gap-2 px-4 py-4 border-b border-color-3 w-full min-w-0"
             :class="isCollapsed ? 'justify-center' : ''"
         >
           <slot name="prepend">
             <!-- Avatar + name -->
-            <div class="flex items-center gap-2 cursor-pointer px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 flex-1 min-w-0">
+            <div class="flex items-center gap-2 cursor-pointer px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 flex-1 min-w-0 overflow-hidden">
               <Avatar v-if="avatarName" :name="avatarName || ''" size="sm" variant="primary" class="flex-shrink-0" />
-              <span v-if="avatarName && !isCollapsed" class="text-sm font-medium break-words min-w-0">{{ avatarName }}</span>
+              <span v-if="avatarName && !isCollapsed" class="text-sm font-medium break-words min-w-0 flex-1">{{ avatarName }}</span>
             </div>
           </slot>
 
@@ -327,7 +327,7 @@ const navStyles = computed(() => {
 // Computed: Navigation classes
 const navClasses = computed(() => {
   const classes = [
-    'fixed bottom-0 z-40 flex flex-col',
+    'fixed bottom-0 z-40 flex flex-col overflow-x-hidden',
     'bg-color-1 ui-text-secondary',
   ]
 

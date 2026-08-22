@@ -3817,9 +3817,9 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ]))
     ], 6));
   }
-}), zr = { class: "relative" }, Br = { class: "flex items-center gap-2 cursor-pointer px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 flex-1 min-w-0" }, Ir = {
+}), zr = { class: "relative" }, Br = { class: "flex items-center gap-2 cursor-pointer px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 flex-1 min-w-0 overflow-hidden" }, Ir = {
   key: 1,
-  class: "text-sm font-medium break-words min-w-0"
+  class: "text-sm font-medium break-words min-w-0 flex-1"
 }, Vr = {
   key: 1,
   class: "px-3 py-2"
@@ -3908,7 +3908,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       return w;
     }), $ = i(() => {
       const w = [
-        "fixed bottom-0 z-40 flex flex-col",
+        "fixed bottom-0 z-40 flex flex-col overflow-x-hidden",
         "bg-color-1 ui-text-secondary"
       ];
       return l.location === "right" ? w.push("right-0") : w.push("left-0"), l.bordered && (w.push(l.location === "right" ? "border-l" : "border-r"), w.push("border-color-3")), (l.elevated || l.temporary) && w.push("shadow-lg"), l.floating && w.push("m-4 rounded-lg"), l.color && w.push(l.color), w;
@@ -4003,7 +4003,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             }, [
               w.$slots.prepend || e.avatarName ? (n(), a("div", {
                 key: 0,
-                class: f(["flex items-center gap-2 px-4 py-4 border-b border-color-3", m.value ? "justify-center" : ""])
+                class: f(["flex items-center gap-2 px-4 py-4 border-b border-color-3 w-full min-w-0", m.value ? "justify-center" : ""])
               }, [
                 D(w.$slots, "prepend", {}, () => [
                   d("div", Br, [
@@ -4162,7 +4162,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ]);
     };
   }
-}, Nr = /* @__PURE__ */ de(jr, [["__scopeId", "data-v-fa2c91fa"]]), Rr = {
+}, Nr = /* @__PURE__ */ de(jr, [["__scopeId", "data-v-d65d7651"]]), Rr = {
   __name: "Overlay",
   props: {
     modelValue: {
