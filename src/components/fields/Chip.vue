@@ -218,43 +218,43 @@ const variantClasses = computed(() => {
       default: 'bg-primary/10 text-primary hover:bg-primary/20',
       outlined: 'bg-transparent text-primary border border-primary/30 hover:bg-primary/50',
       filled: 'bg-primary text-white hover:bg-primary/80',
-      tonal: 'bg-primary/20 text-primary hover:bg-primary/50'
+      tonal: 'bg-primary/10 text-primary hover:bg-primary/20'
     },
     secondary: {
-      default: 'bg-gray-100 text-gray-800 hover:bg-gray-200',
-      outlined: 'bg-transparent text-gray-500 border border-gray-300 hover:bg-gray-50',
+      default: 'bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600',
+      outlined: 'bg-transparent text-gray-500 border border-gray-300 hover:bg-gray-50 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-800',
       filled: 'bg-gray-600 text-white hover:bg-gray-700',
-      tonal: 'bg-gray-50 text-gray-500 hover:bg-gray-100'
+      tonal: 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700/50 dark:text-gray-300 dark:hover:bg-gray-700'
     },
     success: {
-      default: 'bg-green-100 text-green-800 hover:bg-green-200',
-      outlined: 'bg-transparent text-green-600 border border-green-300 hover:bg-green-50',
+      default: 'bg-green-100 text-green-800 hover:bg-green-200 dark:bg-green-900/30 dark:text-green-400 dark:hover:bg-green-900/50',
+      outlined: 'bg-transparent text-green-600 border border-green-300 hover:bg-green-50 dark:text-green-400 dark:border-green-700 dark:hover:bg-green-900/20',
       filled: 'bg-green-600 text-white hover:bg-green-700',
-      tonal: 'bg-green-50 text-green-700 hover:bg-green-100'
+      tonal: 'bg-green-100 text-green-700 hover:bg-green-200 dark:bg-green-900/30 dark:text-green-400 dark:hover:bg-green-900/50'
     },
     warning: {
-      default: 'bg-yellow-100 text-yellow-800 hover:bg-yellow-200',
-      outlined: 'bg-transparent text-yellow-600 border border-yellow-300 hover:bg-yellow-50',
+      default: 'bg-yellow-100 text-yellow-800 hover:bg-yellow-200 dark:bg-yellow-900/30 dark:text-yellow-400 dark:hover:bg-yellow-900/50',
+      outlined: 'bg-transparent text-yellow-600 border border-yellow-300 hover:bg-yellow-50 dark:text-yellow-400 dark:border-yellow-700 dark:hover:bg-yellow-900/20',
       filled: 'bg-yellow-600 text-white hover:bg-yellow-700',
-      tonal: 'bg-yellow-50 text-yellow-700 hover:bg-yellow-100'
+      tonal: 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200 dark:bg-yellow-900/30 dark:text-yellow-400 dark:hover:bg-yellow-900/50'
     },
     error: {
-      default: 'bg-red-100 text-red-800 hover:bg-red-200',
-      outlined: 'bg-transparent text-red-600 border border-red-300 hover:bg-red-50',
+      default: 'bg-red-100 text-red-800 hover:bg-red-200 dark:bg-red-900/30 dark:text-red-400 dark:hover:bg-red-900/50',
+      outlined: 'bg-transparent text-red-600 border border-red-300 hover:bg-red-50 dark:text-red-400 dark:border-red-700 dark:hover:bg-red-900/20',
       filled: 'bg-red-600 text-white hover:bg-red-700',
-      tonal: 'bg-red-50 text-red-700 hover:bg-red-100'
+      tonal: 'bg-red-100 text-red-700 hover:bg-red-200 dark:bg-red-900/30 dark:text-red-400 dark:hover:bg-red-900/50'
     },
     info: {
-      default: 'bg-cyan-100 text-cyan-800 hover:bg-cyan-200',
-      outlined: 'bg-transparent text-cyan-600 border border-cyan-300 hover:bg-cyan-50',
+      default: 'bg-cyan-100 text-cyan-800 hover:bg-cyan-200 dark:bg-cyan-900/30 dark:text-cyan-400 dark:hover:bg-cyan-900/50',
+      outlined: 'bg-transparent text-cyan-600 border border-cyan-300 hover:bg-cyan-50 dark:text-cyan-400 dark:border-cyan-700 dark:hover:bg-cyan-900/20',
       filled: 'bg-cyan-600 text-white hover:bg-cyan-700',
-      tonal: 'bg-cyan-50 text-cyan-700 hover:bg-cyan-100'
+      tonal: 'bg-cyan-100 text-cyan-700 hover:bg-cyan-200 dark:bg-cyan-900/30 dark:text-cyan-400 dark:hover:bg-cyan-900/50'
     },
     gray: {
-      default: 'bg-neutral-100 text-neutral-800 hover:bg-neutral-200',
-      outlined: 'bg-transparent text-neutral-600 border border-neutral-300 hover:bg-neutral-50',
+      default: 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600',
+      outlined: 'bg-transparent text-neutral-600 border border-neutral-300 hover:bg-neutral-50 dark:text-neutral-400 dark:border-neutral-600 dark:hover:bg-neutral-800',
       filled: 'bg-neutral-600 text-white hover:bg-neutral-700',
-      tonal: 'bg-neutral-50 text-neutral-700 hover:bg-neutral-100'
+      tonal: 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-700/50 dark:text-neutral-300 dark:hover:bg-neutral-700'
     }
   }
 
