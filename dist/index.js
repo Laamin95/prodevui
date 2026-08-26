@@ -6884,10 +6884,10 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       }
       const u = {
         primary: {
-          default: "bg-primary-100 text-primary-800 hover:bg-primary-200",
-          outlined: "bg-transparent text-primary-600 border border-primary-300 hover:bg-primary-50",
-          filled: "bg-primary-600 text-white hover:bg-primary-700",
-          tonal: "bg-primary-50 text-primary-700 hover:bg-primary-100"
+          default: "bg-primary/10 text-primary hover:bg-primary/20",
+          outlined: "bg-transparent text-primary border border-primary/30 hover:bg-primary/50",
+          filled: "bg-primary text-white hover:bg-primary/80",
+          tonal: "bg-primary/20 text-primary hover:bg-primary/50"
         },
         secondary: {
           default: "bg-gray-100 text-gray-800 hover:bg-gray-200",
@@ -7055,7 +7055,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ])) : v("", !0)
     ], 42, Ro));
   }
-}, Ot = /* @__PURE__ */ de(Ko, [["__scopeId", "data-v-9fbddcc0"]]), Go = ["aria-label"], Yo = {
+}, Ot = /* @__PURE__ */ de(Ko, [["__scopeId", "data-v-01706d34"]]), Go = ["aria-label"], Yo = {
   __name: "ChipGroup",
   props: {
     // Data
