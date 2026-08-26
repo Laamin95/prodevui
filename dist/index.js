@@ -6884,16 +6884,16 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       }
       const u = {
         primary: {
-          default: "bg-blue-100 text-blue-800 hover:bg-blue-200",
-          outlined: "bg-transparent text-blue-600 border border-blue-300 hover:bg-blue-50",
-          filled: "bg-blue-600 text-white hover:bg-blue-700",
-          tonal: "bg-blue-50 text-blue-700 hover:bg-blue-100"
+          default: "bg-primary-100 text-primary-800 hover:bg-primary-200",
+          outlined: "bg-transparent text-primary-600 border border-primary-300 hover:bg-primary-50",
+          filled: "bg-primary-600 text-white hover:bg-primary-700",
+          tonal: "bg-primary-50 text-primary-700 hover:bg-primary-100"
         },
         secondary: {
           default: "bg-gray-100 text-gray-800 hover:bg-gray-200",
-          outlined: "bg-transparent text-gray-600 border border-gray-300 hover:bg-gray-50",
+          outlined: "bg-transparent text-gray-500 border border-gray-300 hover:bg-gray-50",
           filled: "bg-gray-600 text-white hover:bg-gray-700",
-          tonal: "bg-gray-50 text-gray-700 hover:bg-gray-100"
+          tonal: "bg-gray-50 text-gray-500 hover:bg-gray-100"
         },
         success: {
           default: "bg-green-100 text-green-800 hover:bg-green-200",
@@ -7055,7 +7055,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ])) : v("", !0)
     ], 42, Ro));
   }
-}, Ot = /* @__PURE__ */ de(Ko, [["__scopeId", "data-v-013c4835"]]), Go = ["aria-label"], Yo = {
+}, Ot = /* @__PURE__ */ de(Ko, [["__scopeId", "data-v-9fbddcc0"]]), Go = ["aria-label"], Yo = {
   __name: "ChipGroup",
   props: {
     // Data
