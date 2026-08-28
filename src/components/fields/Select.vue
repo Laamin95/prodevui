@@ -26,26 +26,7 @@
       @click:clear="clear"
     >
       <template #control="{ attrs, events }">
-        <div :class="['flex', 'items-center', 'gap-1', 'w-full', 'h-full', 'min-w-0']">
-
-          <!-- Multi-select badges — in flex flow so they are naturally left-aligned -->
-          <div v-if="multiple && selectedValues.length > 0" class="flex items-center gap-1 flex-shrink-0 overflow-hidden">
-            <!-- Single badge -->
-            <template v-if="selectedValues.length < 2">
-              <div v-for="value in selectedValues" :key="value">
-                <div :class="[`px-2 py-0.5 text-xs flex items-center gap-1 border border-dashed whitespace-nowrap`, textColor, border, rounded ? roundedMap[rounded] : '']">
-                  <div class="truncate max-w-[100px]">{{ getDisplayTextForValue(value) }}</div>
-                  <Icon @click.stop="removeValue(value)" name="x-mark" type="outline" size="10" color="text-current" />
-                </div>
-              </div>
-            </template>
-            <!-- Count badge (2+) -->
-            <template v-else>
-              <div :class="[`px-2 py-0.5 text-xs flex items-center gap-1 border border-dashed whitespace-nowrap flex-shrink-0`, textColor, border, rounded ? roundedMap[rounded] : '']">
-                <div>{{ selectedValues.length }} selected</div>
-              </div>
-            </template>
-          </div>
+        <div :class="['flex', 'items-center', 'gap-2', 'justify-between', 'w-full','h-full']">
 
           <!-- Search input -->
           <input
@@ -64,12 +45,32 @@
 
           <!-- Single select label -->
           <div v-if="!selectedLabel && !multiple && !searchQuery && !label"
-               class="absolute left-0 right-8 px-3 truncate pointer-events-none text-gray-400">
-            {{ placeholder }}
+              :class="['absolute left-0 right-8 px-3 truncate pointer-events-none text-gray-400',]">
+              {{ placeholder }}
           </div>
           <div v-if="selectedLabel && !multiple && !searchQuery"
-               class="absolute left-0 right-8 px-3 truncate pointer-events-none">
-            {{ selectedLabel }}
+              :class="['absolute left-0 right-8 px-3 truncate pointer-events-none',]">
+              {{ selectedLabel }}
+          </div>
+
+          <!-- Multi-select badges — absolute but anchored from left-3 to align with px-3 padding -->
+          <div v-if="multiple && selectedValues.length > 0"
+               class="absolute inset-y-0 left-3 right-8 group-hover/select:right-14 flex items-center gap-1 overflow-hidden">
+              <!-- Single badge -->
+              <template v-if="selectedValues.length < 2">
+                  <div v-for="value in selectedValues" :key="value">
+                      <div :class="[`px-2 py-0.5 text-xs flex items-center gap-1 border border-dashed whitespace-nowrap`, textColor, border, rounded ? roundedMap[rounded] : '']">
+                          <div class="truncate max-w-[100px]">{{ getDisplayTextForValue(value) }}</div>
+                          <Icon @click.stop="removeValue(value)" name="x-mark" type="outline" size="10" color="text-current" />
+                      </div>
+                  </div>
+              </template>
+              <!-- Count badge (2+) -->
+              <template v-else>
+                  <div :class="[`px-2 py-0.5 text-xs flex items-center gap-1 border border-dashed whitespace-nowrap flex-shrink-0`, textColor, border, rounded ? roundedMap[rounded] : '']">
+                      <div>{{ selectedValues.length }} selected</div>
+                  </div>
+              </template>
           </div>
         </div>
       </template>
