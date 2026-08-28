@@ -55,7 +55,7 @@
 
           <!-- Multi-select badges — absolute but anchored from left-3 to align with px-3 padding -->
           <div v-if="multiple && selectedValues.length > 0"
-               class="absolute inset-y-0 left-3 right-8 group-hover/select:right-14 flex items-center gap-1 overflow-hidden">
+               class="absolute inset-y-0 left-3 right-14 flex items-center gap-1 overflow-hidden">
               <!-- Single badge -->
               <template v-if="selectedValues.length < 2">
                   <div v-for="value in selectedValues" :key="value">
