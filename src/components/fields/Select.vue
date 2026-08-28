@@ -53,7 +53,7 @@
                 {{ selectedLabel }}
             </div>
             <!-- Multi-select badges - Show BEFORE input -->
-            <div v-if="multiple && selectedValues.length > 0" class="absolute right-8 group-hover/select:right-14 flex gap-2 items-center flex-wrap">
+            <div v-if="multiple && selectedValues.length > 0" class="absolute left-0 right-8 group-hover/select:right-14 pl-3 flex gap-2 items-center flex-wrap overflow-hidden">
                 <!-- Show all badges when less than 2 items -->
                 <template v-if="selectedValues.length < 2">
                     <div v-for="value in selectedValues" :key="value" >

@@ -8379,7 +8379,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
   class: /* @__PURE__ */ f(["absolute left-0 right-8 px-3 truncate pointer-events-none"])
 }, Ps = {
   key: 2,
-  class: "absolute right-8 group-hover/select:right-14 flex gap-2 items-center flex-wrap"
+  class: "absolute left-0 right-8 group-hover/select:right-14 pl-3 flex gap-2 items-center flex-wrap overflow-hidden"
 }, Ds = { class: "truncate max-w-[100px]" }, Es = { class: "" }, Os = { class: "p-1.5" }, js = {
   key: 0,
   class: /* @__PURE__ */ f(["px-2.5 py-1.5 ui-text-secondary text-center text-sm rounded-lg"])
@@ -8760,7 +8760,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ]);
     };
   }
-}, Fs = /* @__PURE__ */ de(qs, [["__scopeId", "data-v-991f3bea"]]), Ws = ["value", "placeholder", "rows", "maxlength"], Ks = {
+}, Fs = /* @__PURE__ */ de(qs, [["__scopeId", "data-v-15ee83fd"]]), Ws = ["value", "placeholder", "rows", "maxlength"], Ks = {
   __name: "Textarea",
   props: {
     modelValue: { type: [String, Number], default: "" },
