@@ -36,6 +36,7 @@
             :required="attrs.required"
             :dir="attrs.dir"
             type="text"
+            size="1"
             :placeholder="(isFocused && !searchQuery && !selectedLabel) || (!searchQuery && !label) ? placeholder : ''"
             :class="inputClasses"
             @focus="handleFocus"
@@ -196,6 +197,7 @@
     itemValue: { type: String, default: 'value' },
     multiple: { type: Boolean, default: false },
     searchable: { type: Boolean, default: false },
+    clearable: { type: Boolean, default: true },
     disabled: { type: Boolean, default: false },
     errorMessages: { type: Array, default: () => [] },
     rounded: { type: String, default: () => getDefault('Select', 'rounded') },
@@ -233,7 +235,7 @@
 
   // Filter props to only pass Base-compatible props to Base component
   const baseProps = computed(() => {
-    const basePropsKeys = ['modelValue', 'label', 'dir', 'placeholder', 'prepend', 'append', 'disabled', 'readonly', 'required', 'clearable', 'errorMessages', 'rounded', 'size', 'border', 'textColor', 'bg', 'width', 'hint', 'lang', 'rules', 'error', 'errorMessage', 'messages', 'hideDetails', 'id', 'height', 'margin', 'hover', 'focus', 'bgColorVariant', 'borderColorVariant', 'textColorVariant', 'labelTextSize', 'iconType', 'labelTextColor']
+    const basePropsKeys = ['modelValue', 'label', 'dir', 'placeholder', 'prepend', 'append', 'disabled', 'readonly', 'required', 'clearable', 'multiple', 'errorMessages', 'rounded', 'size', 'border', 'textColor', 'bg', 'width', 'hint', 'lang', 'rules', 'error', 'errorMessage', 'messages', 'hideDetails', 'id', 'height', 'margin', 'hover', 'focus', 'bgColorVariant', 'borderColorVariant', 'textColorVariant', 'labelTextSize', 'iconType', 'labelTextColor']
     const result = {}
     basePropsKeys.forEach(key => {
       if (key in props) result[key] = props[key]
@@ -335,8 +337,8 @@
     }
 
     const clear = () => {
-        emit('update:modelValue', '')
-        emit('clear')
+        // delegate so multi-selects clear to [] rather than '' — see clearSelection
+        clearSelection()
         searchInputRef.value?.focus()
     }
 

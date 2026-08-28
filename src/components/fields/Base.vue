@@ -18,18 +18,18 @@
         {{ selectedlabels ? selectedlabels.label : label }} <span v-if="isRequired" class="text-red-500">*</span>
       </div>
       <!-- main -->
-      <div class="flex items-center w-full gap-2">
-        <div v-if="$slots.prepend || prepend" class="">
+      <div class="flex items-center w-full gap-2 min-w-0">
+        <div v-if="$slots.prepend || prepend" class="flex-shrink-0">
           <slot name="prepend">
             <Icon :size="iconSizes[size]" :name="prepend" :type="iconType == 'outline' ? 'outline' : 'solid'" :color="iconColor" />
           </slot>
         </div>
-        <div class="flex-1 w-full">
+        <div class="flex-1 w-full min-w-0">
           <slot name="control" :attrs="controlAttrs" :events="controlEvents" />
         </div>
       </div>
       <!-- Icons -->
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-2 flex-shrink-0">
         <button
           v-if="clearable && hasValue && !disabled"
           class="hover:text-input-focus-border text-input-text flex items-center invisible group-hover/select:visible transition-all cursor-pointer"

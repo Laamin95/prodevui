@@ -1,4 +1,4 @@
-import { computed as i, ref as M, watch as ge, shallowRef as Nt, triggerRef as xt, readonly as Rt, reactive as tt, inject as ce, createElementBlock as a, openBlock as n, normalizeClass as f, createCommentVNode as v, createElementVNode as d, renderSlot as D, createBlock as Z, unref as F, toDisplayString as T, createTextVNode as fe, Fragment as oe, renderList as ie, withModifiers as ee, createVNode as K, Transition as xe, withCtx as te, provide as We, toRef as et, resolveComponent as me, normalizeStyle as ue, onMounted as Be, onBeforeUnmount as $e, withDirectives as ze, vShow as Ee, defineComponent as Ie, useSlots as nt, nextTick as Le, Teleport as Ye, withKeys as pe, vModelText as mt, resolveDynamicComponent as Oe, createSlots as Re, onUpdated as Ht, isRef as wt, createStaticVNode as Ut, mergeProps as ve, getCurrentInstance as qt, toHandlers as pt, useAttrs as Ft, defineAsyncComponent as it, normalizeProps as Wt, guardReactiveProps as Kt } from "vue";
+import { computed as i, ref as M, watch as ge, shallowRef as Nt, triggerRef as xt, readonly as Rt, reactive as tt, inject as ce, createElementBlock as a, openBlock as n, normalizeClass as f, createCommentVNode as v, createElementVNode as d, renderSlot as D, createBlock as Z, unref as F, toDisplayString as T, createTextVNode as fe, Fragment as oe, renderList as ie, withModifiers as ee, createVNode as K, Transition as xe, withCtx as te, provide as We, toRef as et, resolveComponent as me, normalizeStyle as ue, onMounted as Be, onBeforeUnmount as $e, withDirectives as ze, vShow as Ee, defineComponent as Ie, useSlots as nt, nextTick as Le, Teleport as Ye, withKeys as pe, vModelText as mt, resolveDynamicComponent as Oe, createSlots as Re, onUpdated as Ht, isRef as wt, createStaticVNode as Ut, mergeProps as ye, getCurrentInstance as qt, toHandlers as pt, useAttrs as Ft, defineAsyncComponent as it, normalizeProps as Wt, guardReactiveProps as Kt } from "vue";
 import { vOnClickOutside as Lt } from "@vueuse/components";
 import { VueDatePicker as Gt } from "@vuepic/vue-datepicker";
 const ft = {
@@ -4927,7 +4927,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       z.value && (N = window.setTimeout(() => {
         w.value = !1;
       }, 150));
-    }, k = i(() => t.rail && !w.value), j = i(() => t.location === "right" ? "right-0" : "left-0"), X = i(() => k.value ? typeof t.railWidth == "number" ? `w-[${t.railWidth}px]` : String(t.railWidth) : typeof t.width == "number" ? `w-[${t.width}px]` : String(t.width)), ye = i(() => {
+    }, k = i(() => t.rail && !w.value), j = i(() => t.location === "right" ? "right-0" : "left-0"), X = i(() => k.value ? typeof t.railWidth == "number" ? `w-[${t.railWidth}px]` : String(t.railWidth) : typeof t.width == "number" ? `w-[${t.width}px]` : String(t.width)), be = i(() => {
       const P = ["fixed", "h-full", "overflow-hidden", "flex", "flex-col"];
       return t.isStuck && P.push("top-0"), t.location === "right" ? P.push("right-0") : P.push("left-0"), t.rail && P.push("transition-all"), ge(
         () => t.rail,
@@ -4935,7 +4935,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           $();
         }
       ), P.join(" ");
-    }), Ae = i(() => t.rail ? "drawer-rail" : ""), be = i(() => t.rail && !k.value ? "drawer-expanded" : ""), Je = i(() => !(t.rail && k.value)), He = i(() => t.location === "right" ? "translate-x-full" : "-translate-x-full"), rt = i(() => t.zIndex !== void 0 && typeof t.zIndex == "string" && t.zIndex.startsWith("z-") ? t.zIndex : t.overlayAppBar ? "z-50" : "z-10"), U = i(() => {
+    }), Ae = i(() => t.rail ? "drawer-rail" : ""), ve = i(() => t.rail && !k.value ? "drawer-expanded" : ""), Je = i(() => !(t.rail && k.value)), He = i(() => t.location === "right" ? "translate-x-full" : "-translate-x-full"), rt = i(() => t.zIndex !== void 0 && typeof t.zIndex == "string" && t.zIndex.startsWith("z-") ? t.zIndex : t.overlayAppBar ? "z-50" : "z-10"), U = i(() => {
       if (t.zIndex !== void 0 && typeof t.zIndex == "number")
         return { zIndex: t.zIndex };
     }), J = i(() => {
@@ -5007,10 +5007,10 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             rt.value,
             t.location === "right" ? "border-l" : "border",
             "border-color-2 transform transition-transform duration-200 ease-in-out",
-            ye.value,
+            be.value,
             j.value,
             Ae.value,
-            be.value,
+            ve.value,
             e.color,
             X.value,
             !L.value && !e.permanent ? He.value : "translate-x-0"
@@ -5798,7 +5798,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       let V = z;
       const S = (k, j) => {
         let X = k;
-        for (let ye = 0; ye < N; ye++)
+        for (let be = 0; be < N; be++)
           if (X = (X + j + N) % N, !o.value[X]?.disabled)
             return X;
         return k;
@@ -6082,7 +6082,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
   },
   setup(e) {
     return (r, t) => (n(), a("div", io, [
-      d("table", ve({ class: "w-full caption-bottom text-sm" }, r.$attrs), [
+      d("table", ye({ class: "w-full caption-bottom text-sm" }, r.$attrs), [
         D(r.$slots, "default")
       ], 16)
     ]));
@@ -6091,7 +6091,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
   inheritAttrs: !1,
   __name: "TableHead",
   setup(e) {
-    return (r, t) => (n(), a("thead", ve({ class: "bg-color-1 [&_tr]:border-b [&_tr]:border-color-3" }, r.$attrs), [
+    return (r, t) => (n(), a("thead", ye({ class: "bg-color-1 [&_tr]:border-b [&_tr]:border-color-3" }, r.$attrs), [
       D(r.$slots, "default")
     ], 16));
   }
@@ -6099,7 +6099,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
   inheritAttrs: !1,
   __name: "TableBody",
   setup(e) {
-    return (r, t) => (n(), a("tbody", ve({ class: "[&_tr:last-child]:border-0 divide-y divide-color-3" }, r.$attrs), [
+    return (r, t) => (n(), a("tbody", ye({ class: "[&_tr:last-child]:border-0 divide-y divide-color-3" }, r.$attrs), [
       D(r.$slots, "default")
     ], 16));
   }
@@ -6110,7 +6110,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
     selected: { type: Boolean }
   },
   setup(e) {
-    return (r, t) => (n(), a("tr", ve({
+    return (r, t) => (n(), a("tr", ye({
       class: ["border-b border-color-3 transition-colors", [
         e.selected ? "bg-color-2" : "hover:bg-color-1/60"
       ]],
@@ -6152,7 +6152,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       center: "text-center",
       right: "text-right"
     })[t.align ?? "left"]);
-    return (s, b) => (n(), a("th", ve({
+    return (s, b) => (n(), a("th", ye({
       class: ["h-11 px-4 align-middle text-xs font-semibold uppercase tracking-wider ui-text-secondary whitespace-nowrap", [
         o.value,
         e.sortable ? "cursor-pointer select-none hover:text-foreground group" : ""
@@ -6201,7 +6201,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       center: "text-center",
       right: "text-right"
     })[r.align ?? "left"]);
-    return (l, o) => (n(), a("td", ve({
+    return (l, o) => (n(), a("td", ye({
       class: ["px-4 py-3 align-middle", [
         t.value,
         e.muted ? "ui-text-secondary text-xs" : "",
@@ -6271,10 +6271,10 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
 }), Io = ["dir"], Vo = {
   key: 0,
   class: "text-red-500"
-}, To = { class: "flex items-center w-full gap-2" }, Lo = {
+}, To = { class: "flex items-center w-full gap-2 min-w-0" }, Lo = {
   key: 0,
-  class: ""
-}, Mo = { class: "flex-1 w-full" }, Ao = { class: "flex items-center gap-2" }, Po = {
+  class: "flex-shrink-0"
+}, Mo = { class: "flex-1 w-full min-w-0" }, Ao = { class: "flex items-center gap-2 flex-shrink-0" }, Po = {
   key: 1,
   class: ""
 }, De = {
@@ -6523,8 +6523,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           key: 0,
           class: f(["mt-1 text-xs", H.value === "dv" ? "text-right" : "text-left", "ui-text-secondary"])
         }, [
-          (n(!0), a(oe, null, ie(R.value, (X, ye) => (n(), a("div", {
-            key: ye,
+          (n(!0), a(oe, null, ie(R.value, (X, be) => (n(), a("div", {
+            key: be,
             class: f(u.value ? "text-red-500" : "")
           }, T(F(Ke)(X, H.value, "")), 3))), 128))
         ], 2)) : v("", !0)
@@ -7209,21 +7209,21 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         g.$slots.chip ? {
           name: "default",
           fn: te((u) => [
-            D(g.$slots, "chip", ve({ ref_for: !0 }, { ...u, chip: m, index: p }), void 0, !0)
+            D(g.$slots, "chip", ye({ ref_for: !0 }, { ...u, chip: m, index: p }), void 0, !0)
           ]),
           key: "0"
         } : void 0,
         g.$slots.prepend ? {
           name: "prepend",
           fn: te((u) => [
-            D(g.$slots, "prepend", ve({ ref_for: !0 }, { ...u, chip: m, index: p }), void 0, !0)
+            D(g.$slots, "prepend", ye({ ref_for: !0 }, { ...u, chip: m, index: p }), void 0, !0)
           ]),
           key: "1"
         } : void 0,
         g.$slots.append ? {
           name: "append",
           fn: te((u) => [
-            D(g.$slots, "append", ve({ ref_for: !0 }, { ...u, chip: m, index: p }), void 0, !0)
+            D(g.$slots, "append", ye({ ref_for: !0 }, { ...u, chip: m, index: p }), void 0, !0)
           ]),
           key: "2"
         } : void 0
@@ -7363,7 +7363,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ref: u,
       class: f(["relative", e.width, e.margin])
     }, [
-      K(F(De), ve(I.value, {
+      K(F(De), ye(I.value, {
         "model-value": H.value,
         "onUpdate:modelValue": E,
         "onClick:clear": R,
@@ -7601,7 +7601,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       return n(), a("div", {
         class: f([b.value, e.width])
       }, [
-        K(F(De), ve(O.$props, {
+        K(F(De), ye(O.$props, {
           "persistent-hint": !!e.hint,
           error: I.value.length > 0,
           "is-open": s.value,
@@ -7800,8 +7800,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       if (k === "" || k === null || k === void 0) return null;
       let j = String(k);
       if (o.thousandSeparator) {
-        const ye = o.thousandSeparator === !0 ? "," : o.thousandSeparator;
-        j = j.split(ye).join("");
+        const be = o.thousandSeparator === !0 ? "," : o.thousandSeparator;
+        j = j.split(be).join("");
       }
       o.decimalSeparator !== "." && (j = j.replace(o.decimalSeparator, "."));
       const X = parseFloat(j);
@@ -7821,8 +7821,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
     }, O = (k) => {
       if (o.disabled || o.readonly) return;
       k.key === "ArrowUp" ? (k.preventDefault(), w()) : k.key === "ArrowDown" ? (k.preventDefault(), z()) : k.key === "Enter" && G(k);
-      const j = ["Backspace", "Delete", "Tab", "Escape", "Enter", "ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"], X = /^[0-9]$/.test(k.key), ye = k.key === o.decimalSeparator || k.key === ".", Ae = k.key === "-" && o.allowNegative, be = k.ctrlKey || k.metaKey;
-      !j.includes(k.key) && !X && !ye && !Ae && !be && k.preventDefault();
+      const j = ["Backspace", "Delete", "Tab", "Escape", "Enter", "ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"], X = /^[0-9]$/.test(k.key), be = k.key === o.decimalSeparator || k.key === ".", Ae = k.key === "-" && o.allowNegative, ve = k.ctrlKey || k.metaKey;
+      !j.includes(k.key) && !X && !be && !Ae && !ve && k.preventDefault();
     }, R = (k) => {
       !o.mouseWheel || o.disabled || o.readonly || !c.value || (k.preventDefault(), k.deltaY < 0 ? w() : z());
     }, A = (k) => {
@@ -7854,7 +7854,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       decrement: z
     }), (k, j) => {
       const X = me("Icon");
-      return n(), Z(F(De), ve(I.value, {
+      return n(), Z(F(De), ye(I.value, {
         "model-value": q.value,
         "onUpdate:modelValue": L,
         "onClick:clear": S,
@@ -7865,7 +7865,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         clearable: e.clearable,
         focused: c.value
       }), Re({
-        control: te(({ attrs: ye, events: Ae }) => [
+        control: te(({ attrs: be, events: Ae }) => [
           d("div", gs, [
             e.showControls && e.controlsPosition === "stacked-left" ? (n(), a("div", ms, [
               d("button", {
@@ -7878,7 +7878,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                   e.disabled || h.value ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
                 ]),
                 onClick: w,
-                onMousedown: j[4] || (j[4] = (be) => N("increment")),
+                onMousedown: j[4] || (j[4] = (ve) => N("increment")),
                 onMouseup: V,
                 onMouseleave: V
               }, [
@@ -7897,7 +7897,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                   e.disabled || $.value ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
                 ]),
                 onClick: z,
-                onMousedown: j[5] || (j[5] = (be) => N("decrement")),
+                onMousedown: j[5] || (j[5] = (ve) => N("decrement")),
                 onMouseup: V,
                 onMouseleave: V
               }, [
@@ -7927,12 +7927,12 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 e.disabled ? "cursor-not-allowed" : "",
                 e.readonly ? "cursor-default" : ""
               ]),
-              onInput: j[6] || (j[6] = (be) => L(be.target.value)),
-              onBlur: (be) => {
-                G(be), Ae.blur?.(be);
+              onInput: j[6] || (j[6] = (ve) => L(ve.target.value)),
+              onBlur: (ve) => {
+                G(ve), Ae.blur?.(ve);
               },
-              onFocus: (be) => {
-                re(be), Ae.focus?.(be);
+              onFocus: (ve) => {
+                re(ve), Ae.focus?.(ve);
               },
               onKeydown: O,
               onWheel: R
@@ -7952,7 +7952,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                   e.disabled || h.value ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
                 ]),
                 onClick: w,
-                onMousedown: j[7] || (j[7] = (be) => N("increment")),
+                onMousedown: j[7] || (j[7] = (ve) => N("increment")),
                 onMouseup: V,
                 onMouseleave: V
               }, [
@@ -7971,7 +7971,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                   e.disabled || $.value ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
                 ]),
                 onClick: z,
-                onMousedown: j[8] || (j[8] = (be) => N("decrement")),
+                onMousedown: j[8] || (j[8] = (ve) => N("decrement")),
                 onMouseup: V,
                 onMouseleave: V
               }, [
@@ -7998,10 +7998,10 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 e.disabled || $.value ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
               ]),
               onClick: z,
-              onMousedown: j[0] || (j[0] = (ye) => N("decrement")),
+              onMousedown: j[0] || (j[0] = (be) => N("decrement")),
               onMouseup: V,
               onMouseleave: V,
-              onTouchstart: j[1] || (j[1] = ee((ye) => N("decrement"), ["prevent"])),
+              onTouchstart: j[1] || (j[1] = ee((be) => N("decrement"), ["prevent"])),
               onTouchend: V
             }, [
               K(X, {
@@ -8025,10 +8025,10 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 e.disabled || h.value ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
               ]),
               onClick: w,
-              onMousedown: j[2] || (j[2] = (ye) => N("increment")),
+              onMousedown: j[2] || (j[2] = (be) => N("increment")),
               onMouseup: V,
               onMouseleave: V,
-              onTouchstart: j[3] || (j[3] = ee((ye) => N("increment"), ["prevent"])),
+              onTouchstart: j[3] || (j[3] = ee((be) => N("increment"), ["prevent"])),
               onTouchend: V
             }, [
               K(X, {
@@ -8135,7 +8135,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         ref: p,
         class: f(["relative", e.containerClass, e.width])
       }, [
-        K(F(De), ve(g.value, {
+        K(F(De), ye(g.value, {
           "model-value": e.modelValue,
           label: e.label,
           hint: e.hint,
@@ -8164,7 +8164,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           control: te(({ attrs: re, events: O }) => [
             d("div", ks, [
               e.prefix ? (n(), a("span", Ss, T(e.prefix), 1)) : v("", !0),
-              d("input", ve({
+              d("input", ye({
                 ref_key: "inputRef",
                 ref: m
               }, re, pt(O, !0), {
@@ -8325,7 +8325,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         rules: e.rules
       }, Re({
         control: te(({ attrs: Q, events: L }) => [
-          d("input", ve({
+          d("input", ye({
             ref_key: "inputRef",
             ref: I
           }, Q, pt(L, !0), {
@@ -8414,6 +8414,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
     itemValue: { type: String, default: "value" },
     multiple: { type: Boolean, default: !1 },
     searchable: { type: Boolean, default: !1 },
+    clearable: { type: Boolean, default: !0 },
     disabled: { type: Boolean, default: !1 },
     errorMessages: { type: Array, default: () => [] },
     rounded: { type: String, default: () => he("Select", "rounded") },
@@ -8445,7 +8446,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
     const I = M(!1), g = M(!1), c = M(null), m = M([]);
     M([]);
     const p = e, u = ce("parentDir", ""), $ = ce("parentLang", ""), h = ce("formContext", null), B = ce("api", null), C = i(() => p.dir || u), q = i(() => p.lang || $), H = i(() => {
-      const U = ["modelValue", "label", "dir", "placeholder", "prepend", "append", "disabled", "readonly", "required", "clearable", "errorMessages", "rounded", "size", "border", "textColor", "bg", "width", "hint", "lang", "rules", "error", "errorMessage", "messages", "hideDetails", "id", "height", "margin", "hover", "focus", "bgColorVariant", "borderColorVariant", "textColorVariant", "labelTextSize", "iconType", "labelTextColor"], J = {};
+      const U = ["modelValue", "label", "dir", "placeholder", "prepend", "append", "disabled", "readonly", "required", "clearable", "multiple", "errorMessages", "rounded", "size", "border", "textColor", "bg", "width", "hint", "lang", "rules", "error", "errorMessage", "messages", "hideDetails", "id", "height", "margin", "hover", "focus", "bgColorVariant", "borderColorVariant", "textColorVariant", "labelTextSize", "iconType", "labelTextColor"], J = {};
       return U.forEach((ne) => {
         ne in p && (J[ne] = p[ne]);
       }), J;
@@ -8499,7 +8500,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
     }, O = (U) => {
       l("enter", p.modelValue), l("search", p.modelValue);
     }, R = () => {
-      l("update:modelValue", ""), l("clear"), s.value?.focus();
+      ve(), s.value?.focus();
     }, A = i(() => [
       "bg-transparent outline-none border-none flex-1 min-w-0 max-w-auto",
       "placeholder:text-neutral-300",
@@ -8530,7 +8531,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         Ce > -1 ? ne.splice(Ce, 1) : ne.push(se), l("update:modelValue", ne);
       } else
         l("update:modelValue", J), l("change", J), l("select", U), E.value = !1, o.value = "";
-    }, ye = (U) => {
+    }, be = (U) => {
       if (!p.multiple) {
         He();
         return;
@@ -8541,7 +8542,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         const J = w.value.filter((ne) => String(ne) !== String(U));
         l("update:modelValue", J), l("change", J);
       }
-    }, be = () => {
+    }, ve = () => {
       const U = p.multiple ? [] : "";
       l("update:modelValue", U), l("change", U), l("clear");
     }, Je = async () => {
@@ -8584,7 +8585,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
     return r({
       close: He,
       open: () => Je(),
-      clear: be,
+      clear: ve,
       refresh: Q,
       focus: () => {
         p.searchable && E.value && s.value?.focus();
@@ -8596,7 +8597,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         ref: b,
         class: f(["relative group", e.width, e.margin])
       }, [
-        K(F(De), ve(H.value, {
+        K(F(De), ye(H.value, {
           "model-value": e.modelValue,
           "onUpdate:modelValue": re,
           dir: C.value,
@@ -8629,6 +8630,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 required: se.required,
                 dir: se.dir,
                 type: "text",
+                size: "1",
                 placeholder: I.value && !o.value && !z.value || !o.value && !e.label ? e.placeholder : "",
                 class: f(A.value),
                 onFocus: L,
@@ -8746,11 +8748,11 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           })
         ]))
       ], 2)), [
-        [F(Lt), [ye, { ignore: [y.value] }]]
+        [F(Lt), [be, { ignore: [y.value] }]]
       ]);
     };
   }
-}, qs = /* @__PURE__ */ de(Us, [["__scopeId", "data-v-9d5c30fa"]]), Fs = ["value", "placeholder", "rows", "maxlength"], Ws = {
+}, qs = /* @__PURE__ */ de(Us, [["__scopeId", "data-v-f9464775"]]), Fs = ["value", "placeholder", "rows", "maxlength"], Ws = {
   __name: "Textarea",
   props: {
     modelValue: { type: [String, Number], default: "" },
@@ -8821,7 +8823,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ref: g,
       class: f(["relative", e.containerClass, e.width])
     }, [
-      K(F(De), ve(H.$props, {
+      K(F(De), ye(H.$props, {
         "model-value": e.modelValue,
         error: !!e.error || e.errorMessages.length > 0,
         clearable: e.clearable && !e.loading,
@@ -8833,7 +8835,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         rules: e.rules
       }), Re({
         control: te(({ attrs: Y, events: Q }) => [
-          d("textarea", ve({
+          d("textarea", ye({
             ref_key: "inputRef",
             ref: I
           }, Y, pt(Q, !0), {
