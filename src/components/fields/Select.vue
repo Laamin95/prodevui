@@ -26,7 +26,26 @@
       @click:clear="clear"
     >
       <template #control="{ attrs, events }">
-        <div :class="['flex', 'items-center', 'gap-2', 'justify-between', 'w-full','h-full']">
+        <div :class="['flex', 'items-center', 'gap-1', 'w-full', 'h-full', 'min-w-0']">
+
+          <!-- Multi-select badges — in flex flow so they are naturally left-aligned -->
+          <div v-if="multiple && selectedValues.length > 0" class="flex items-center gap-1 flex-shrink-0 overflow-hidden">
+            <!-- Single badge -->
+            <template v-if="selectedValues.length < 2">
+              <div v-for="value in selectedValues" :key="value">
+                <div :class="[`px-2 py-0.5 text-xs flex items-center gap-1 border border-dashed whitespace-nowrap`, textColor, border, rounded ? roundedMap[rounded] : '']">
+                  <div class="truncate max-w-[100px]">{{ getDisplayTextForValue(value) }}</div>
+                  <Icon @click.stop="removeValue(value)" name="x-mark" type="outline" size="10" color="text-current" />
+                </div>
+              </div>
+            </template>
+            <!-- Count badge (2+) -->
+            <template v-else>
+              <div :class="[`px-2 py-0.5 text-xs flex items-center gap-1 border border-dashed whitespace-nowrap flex-shrink-0`, textColor, border, rounded ? roundedMap[rounded] : '']">
+                <div>{{ selectedValues.length }} selected</div>
+              </div>
+            </template>
+          </div>
 
           <!-- Search input -->
           <input
@@ -43,48 +62,15 @@
             @keydown.enter="handleEnter"
           />
 
-            <!-- Single select label -->
-            <div v-if="!selectedLabel && !multiple && !searchQuery && !label"
-                :class="['absolute left-0 right-8 px-3 truncate pointer-events-none text-gray-400',]">
-                {{ placeholder }}
-            </div>
-            <div v-if="selectedLabel && !multiple && !searchQuery"
-                :class="['absolute left-0 right-8 px-3 truncate pointer-events-none',]">
-                {{ selectedLabel }}
-            </div>
-            <!-- Multi-select badges - Show BEFORE input -->
-            <div v-if="multiple && selectedValues.length > 0" class="absolute left-0 right-8 group-hover/select:right-14 pl-3 flex gap-2 items-center flex-wrap overflow-hidden">
-                <!-- Show all badges when less than 2 items -->
-                <template v-if="selectedValues.length < 2">
-                    <div v-for="value in selectedValues" :key="value" >
-                        <div
-                        :class="[
-                            `px-2 py-0.5 text-xs flex items-center gap-1 border border-dashed whitespace-nowrap`,
-                            textColor,
-                            border,
-                            rounded ? roundedMap[rounded] : ''
-                        ]"
-                        >
-                            <div class="truncate max-w-[100px]">{{ getDisplayTextForValue(value) }}</div>
-                            <Icon @click.stop="removeValue(value)" name="x-mark" type="outline" size="10" color="text-current" />
-                        </div>
-                    </div>
-                </template>
-                
-                <!-- Show count when 2 or more items -->
-                <template v-else>
-                    <div
-                        :class="[
-                        `px-2 py-1 text-xs flex items-center gap-1 border border-dashed whitespace-nowrap flex-shrink-0`,
-                        textColor,
-                        border,
-                        rounded ? roundedMap[rounded] : ''
-                        ]"
-                    >
-                        <div class="">{{ selectedValues.length }} selected</div>
-                    </div>
-                </template>
-            </div>
+          <!-- Single select label -->
+          <div v-if="!selectedLabel && !multiple && !searchQuery && !label"
+               class="absolute left-0 right-8 px-3 truncate pointer-events-none text-gray-400">
+            {{ placeholder }}
+          </div>
+          <div v-if="selectedLabel && !multiple && !searchQuery"
+               class="absolute left-0 right-8 px-3 truncate pointer-events-none">
+            {{ selectedLabel }}
+          </div>
         </div>
       </template>
 
