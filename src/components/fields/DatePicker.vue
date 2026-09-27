@@ -1,5 +1,5 @@
 <template>
-    <div ref="containerRef" v-on-click-outside="close" :class="['relative', width, margin]">
+    <div ref="containerRef" v-on-click-outside="handleClickOutside" :class="['relative', width, margin]">
     <Base v-bind="baseProps"
         :model-value="formattedDate"
         @update:model-value="handleUpdate"
@@ -64,12 +64,13 @@
     <Teleport to="body">
     <Transition name="fade">
     <div
+        ref="panelRef"
         v-if="isOpen"
         :class="[
-            'fixed mt-1 z-[9999] w-fit',
+            'w-fit',
             menuClass
         ]"
-        :style="floatingStyle"
+        :style="{ ...panelStyle, ...menuStyle }"
     >
         <VueDatePicker
             v-model="internalDate"
@@ -172,19 +173,33 @@
     const displayValue = ref('')
     const inputRef = ref(null)
     const containerRef = ref(null)
+    const panelRef = ref(null)
     const isTyping = ref(false)
     const isFocused = ref(false)
 
-    // Position the teleported calendar below the input
-    const floatingStyle = computed(() => {
-        if (!containerRef.value) return { ...props.menuStyle }
+    // Position the teleported calendar below the input.
+    // Recomputed on every open — `getBoundingClientRect()` isn't reactive, so a
+    // computed would cache the first position and go stale after any scroll.
+    const panelStyle = ref({ position: 'fixed', zIndex: 9999 })
+
+    const updatePanelPosition = () => {
+        if (!containerRef.value) return
         const rect = containerRef.value.getBoundingClientRect()
-        return {
-            top: `${rect.bottom + window.scrollY}px`,
-            left: `${rect.left + window.scrollX}px`,
-            ...props.menuStyle,
+        // `fixed` is viewport-relative — never add scrollX/scrollY here.
+        panelStyle.value = {
+            position: 'fixed',
+            top: `${rect.bottom + 4}px`,
+            left: `${rect.left}px`,
+            zIndex: 9999,
         }
-    })
+    }
+
+    const open = () => {
+        if (isOpen.value) return
+        updatePanelPosition()
+        isOpen.value = true
+        emit('open')
+    }
 
     // Date formatter function
     const formatDate = (date, format) => {
@@ -327,21 +342,28 @@
     const handleFocus = () => {
         isFocused.value = true
         // Open picker when focusing on input
-        if (!isOpen.value) {
-            isOpen.value = true
-            emit('open')
-        }
+        open()
     }
 
     const handleInputBlur = () => {
         isFocused.value = false
+        const wasTyping = isTyping.value
         isTyping.value = false  // Reset typing flag on blur
-        
+
+        // Clicking the calendar's month/year arrows focuses those buttons, which
+        // blurs this input. Re-committing the text here would reassign
+        // internalDate and snap the calendar back to the model's month, so only
+        // parse text the user actually typed.
+        if (!wasTyping) {
+            displayValue.value = formattedDate.value
+            return
+        }
+
         if (!displayValue.value) {
             clearSelection()
             return
         }
-        
+
         const parsedDate = parseDate(displayValue.value, props.format)
         if (parsedDate && !isNaN(parsedDate.getTime())) {
             // JavaScript Date auto-corrects invalid dates (e.g., month 13 becomes month 1 of next year)
@@ -365,29 +387,39 @@ const handleDateSelect = (date) => {
     if (Array.isArray(date) && date[0] && date[1]) {
       displayValue.value =
         `${formatDate(date[0], props.format)} - ${formatDate(date[1], props.format)}`
-      isOpen.value = false
+      close()
     }
   } else {
     displayValue.value = formatDate(date, props.format)
-    isOpen.value = false
+    close()
   }
 }
 
     const toggleOpen = () => {
-        if (!props.disabled) {
-            isOpen.value = !isOpen.value
-
-            if (isOpen.value) {
-                emit('open')
-            } else {
-                emit('close')
-            }
-        }
+        if (props.disabled) return
+        if (isOpen.value) close()
+        else open()
     }
 
     const close = () => {
+        if (!isOpen.value) return
         isOpen.value = false
         emit('close')
+    }
+
+    // The calendar is teleported to <body>, so every click inside it counts as a
+    // click "outside" this container. Without this guard the month/year arrows
+    // close the picker, making it impossible to navigate off the current month.
+    const isInsidePanel = (event) => {
+        const panel = panelRef.value
+        if (!panel || !event) return false
+        if (typeof event.composedPath === 'function') return event.composedPath().includes(panel)
+        return event.target instanceof Node && panel.contains(event.target)
+    }
+
+    const handleClickOutside = (event) => {
+        if (isInsidePanel(event)) return
+        close()
     }
 
     const clearSelection = () => {
@@ -402,7 +434,7 @@ const handleDateSelect = (date) => {
     // Expose methods
     defineExpose({
         close,
-        open: () => toggleOpen(),
+        open,
         clear: clearSelection,
     })
 </script>
