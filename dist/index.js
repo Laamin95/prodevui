@@ -106,8 +106,8 @@ const Xt = {
   lg: "text-md px-5 py-3",
   xl: "text-lg px-6 py-4"
 }, Ae = {
-  xs: 10,
-  sm: 15,
+  xs: 14,
+  sm: 16,
   md: 18,
   lg: 20,
   xl: 24

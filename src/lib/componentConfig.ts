@@ -10,8 +10,8 @@ export const sizes = {
 }
 
 export const iconSizes = {
-  xs: 10,
-  sm: 15,
+  xs: 14,
+  sm: 16,
   md: 18,
   lg: 20,
   xl: 24,
