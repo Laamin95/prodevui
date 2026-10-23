@@ -132,6 +132,10 @@
     display: block;
     width: 100%;
     height: 100%;
+    /* Icon.vue sets --hero-stroke on the span for small outline icons so the
+       stroke does not scale down into sub-pixel territory. Solid icons paint
+       no stroke, so the fallback is inert for them. */
+    stroke-width: var(--hero-stroke, 1.5);
   }
 
   /* hide native scrollbars when we intentionally don't want scrolling visible */

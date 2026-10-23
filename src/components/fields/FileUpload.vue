@@ -136,6 +136,12 @@ const props = defineProps({
   disabled: { type: Boolean, default: false },
   readonly: { type: Boolean, default: false },
   required: { type: Boolean, default: false },
+  // Singular form. Must be declared or it never reaches Base: the forwarding
+
+  // below (and v-bind="$props") only sees declared props.
+
+  errorMessage: { type: [String, Array], default: '' },
+
   errorMessages: { type: Array, default: () => [] },
   prepend: { type: String, default: '' },
   append: { type: String, default: '' },

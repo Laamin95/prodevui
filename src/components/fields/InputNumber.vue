@@ -191,6 +191,12 @@ const props = defineProps({
     readonly: { type: Boolean, default: false },
     required: { type: Boolean, default: false },
     clearable: { type: Boolean, default: false },
+    // Singular form. Must be declared or it never reaches Base: the forwarding
+
+    // below (and v-bind="$props") only sees declared props.
+
+    errorMessage: { type: [String, Array], default: '' },
+
     errorMessages: { type: Array, default: () => [] },
     rounded: { type: String, default: () => getDefault('InputNumber', 'rounded') },
     size: { type: String, default: () => getDefault('InputNumber', 'size') },

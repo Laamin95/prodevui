@@ -199,6 +199,12 @@
     searchable: { type: Boolean, default: false },
     clearable: { type: Boolean, default: true },
     disabled: { type: Boolean, default: false },
+    // Singular form. Must be declared or it never reaches Base: the forwarding
+
+    // below (and v-bind="$props") only sees declared props.
+
+    errorMessage: { type: [String, Array], default: '' },
+
     errorMessages: { type: Array, default: () => [] },
     rounded: { type: String, default: () => getDefault('Select', 'rounded') },
     size: { type: String },
