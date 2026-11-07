@@ -159,6 +159,14 @@ const props = defineProps({
 
   // Behavior
   vertical: { type: Boolean, default: false },
+
+  // Horizontal placement of the tab strip. Ignored when vertical, and when
+  // fullWidth is set (the tabs already span the whole row).
+  align: {
+    type: String,
+    default: 'left',
+    validator: (v) => ['left', 'center', 'right'].includes(v)
+  },
   closable: { type: Boolean, default: false },
   disabled: { type: Boolean, default: false },
   lazy: { type: Boolean, default: false },
@@ -207,6 +215,26 @@ const getListOverflowClasses = computed(() => {
   return props.vertical ? 'overflow-y-auto' : 'overflow-x-auto'
 })
 
+// Variants that draw a box around the tabs (a pill, or free-standing buttons)
+// shrink to their content, so they are positioned with align-self.
+// Variants that draw a full-width rule under the tabs must keep spanning the
+// row, so their buttons are positioned with justify-content instead.
+const BOXED_VARIANTS = ['default', 'pills']
+
+const alignSelfClass = computed(() => (
+  { left: 'self-start', center: 'self-center', right: 'self-end' }[props.align] || 'self-start'
+))
+
+const alignJustifyClass = computed(() => (
+  { left: 'justify-start', center: 'justify-center', right: 'justify-end' }[props.align] || 'justify-start'
+))
+
+/** Class that places the tab strip horizontally, or '' when placement is moot. */
+const getAlignClass = computed(() => {
+  if (props.vertical || props.fullWidth) return ''
+  return BOXED_VARIANTS.includes(props.variant) ? alignSelfClass.value : alignJustifyClass.value
+})
+
 // List container classes (the wrapper around tabs)
 const getListClasses = computed(() => {
   const base = []
@@ -215,13 +243,13 @@ const getListClasses = computed(() => {
     if (props.vertical) {
       base.push('inline-flex flex-col h-auto items-stretch rounded-lg bg-color-2 p-1 ui-text-secondary')
     } else {
-      base.push('inline-flex h-10 items-center justify-center rounded-lg bg-color-2 p-1 ui-text-secondary')
+      base.push('inline-flex h-10 items-center rounded-lg bg-color-2 p-1 ui-text-secondary')
     }
   } else if (props.variant === 'outline') {
     if (props.vertical) {
       base.push('flex flex-col space-y-1 border-r border-color-3 pr-4')
     } else {
-      base.push('border-b border-color-3')
+      base.push('flex border-b border-color-3')
     }
   } else if (props.variant === 'pills') {
     base.push('flex gap-2')
@@ -232,7 +260,7 @@ const getListClasses = computed(() => {
     if (props.vertical) {
       base.push('flex flex-col space-y-1 border-r-2 border-color-3 pr-4')
     } else {
-      base.push('border-b-2 border-color-3')
+      base.push('flex border-b-2 border-color-3')
     }
   }
   
@@ -240,6 +268,10 @@ const getListClasses = computed(() => {
     base.push('w-full')
   }
   
+  if (getAlignClass.value) {
+    base.push(getAlignClass.value)
+  }
+
   return base.join(' ')
 })
 
