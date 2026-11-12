@@ -1,4 +1,4 @@
-import { computed as i, ref as L, watch as pe, shallowRef as Nt, triggerRef as xt, readonly as Rt, reactive as tt, inject as ge, createElementBlock as a, openBlock as r, normalizeClass as m, createCommentVNode as b, createElementVNode as f, renderSlot as E, createBlock as Z, unref as q, toDisplayString as I, createTextVNode as me, Fragment as se, renderList as de, withModifiers as ee, createVNode as K, Transition as ke, withCtx as te, provide as Ke, toRef as et, resolveComponent as ve, normalizeStyle as ce, onMounted as Ve, onBeforeUnmount as Be, withDirectives as Ie, vShow as je, defineComponent as Te, useSlots as nt, nextTick as Ae, Teleport as Xe, withKeys as be, vModelText as mt, resolveDynamicComponent as Ne, createSlots as Ue, onUpdated as Ht, isRef as wt, createStaticVNode as Ut, mergeProps as xe, getCurrentInstance as Ft, toHandlers as pt, useAttrs as qt, defineAsyncComponent as it, normalizeProps as Wt, guardReactiveProps as Kt } from "vue";
+import { computed as i, ref as L, watch as pe, shallowRef as Nt, triggerRef as xt, readonly as Rt, reactive as tt, inject as ge, createElementBlock as a, openBlock as r, normalizeClass as m, createCommentVNode as b, createElementVNode as f, renderSlot as O, createBlock as Z, unref as q, toDisplayString as I, createTextVNode as me, Fragment as se, renderList as de, withModifiers as ee, createVNode as K, Transition as ke, withCtx as te, provide as Ke, toRef as et, resolveComponent as ve, normalizeStyle as ce, onMounted as Ve, onBeforeUnmount as Be, withDirectives as Ie, vShow as je, defineComponent as Te, useSlots as nt, nextTick as Ae, Teleport as Xe, withKeys as be, vModelText as mt, resolveDynamicComponent as Ne, createSlots as Ue, onUpdated as Ht, isRef as wt, createStaticVNode as Ut, mergeProps as xe, getCurrentInstance as Ft, toHandlers as pt, useAttrs as qt, defineAsyncComponent as it, normalizeProps as Wt, guardReactiveProps as Kt } from "vue";
 import { vOnClickOutside as Mt } from "@vueuse/components";
 import { VueDatePicker as Gt } from "@vuepic/vue-datepicker";
 const ft = {
@@ -540,7 +540,7 @@ const fe = (e, n) => {
     }, [
       p.$slots.prepend || e.prependIcon || e.loading ? (r(), a("span", il, [
         e.loading ? (r(), a("span", ul)) : b("", !0),
-        e.loading ? b("", !0) : E(p.$slots, "prepend", { key: 1 }, () => [
+        e.loading ? b("", !0) : O(p.$slots, "prepend", { key: 1 }, () => [
           e.prependIcon ? (r(), Z(q(lt), {
             key: 0,
             name: e.prependIcon,
@@ -552,7 +552,7 @@ const fe = (e, n) => {
         ], !0)
       ])) : b("", !0),
       f("span", dl, [
-        E(p.$slots, "default", {}, () => [
+        O(p.$slots, "default", {}, () => [
           e.icon ? (r(), Z(q(lt), {
             key: 0,
             name: e.icon,
@@ -565,7 +565,7 @@ const fe = (e, n) => {
         ], !0)
       ]),
       p.$slots.append || e.appendIcon ? (r(), a("span", fl, [
-        E(p.$slots, "append", {}, () => [
+        O(p.$slots, "append", {}, () => [
           e.appendIcon ? (r(), Z(q(lt), {
             key: 0,
             name: e.appendIcon,
@@ -971,7 +971,7 @@ const fe = (e, n) => {
           e.inline ? "flex-row flex-wrap gap-x-6 gap-y-2" : "flex-col gap-2"
         ])
       }, [
-        E(s.$slots, "default")
+        O(s.$slots, "default")
       ], 2),
       e.error ? (r(), a("p", zl, [
         x[0] || (x[0] = f("svg", {
@@ -1136,7 +1136,7 @@ const fe = (e, n) => {
             e.disabled ? "" : "group-hover:text-primary"
           ])
         }, [
-          E(d.$slots, "default", {}, () => [
+          O(d.$slots, "default", {}, () => [
             me(I(e.label), 1)
           ], !0),
           e.required ? (r(), a("span", Tl, "*")) : b("", !0)
@@ -1160,10 +1160,10 @@ const fe = (e, n) => {
 }, Dl = {
   key: 0,
   class: "text-red-500 ml-0.5"
-}, El = {
+}, Ol = {
   key: 0,
   class: "mt-1.5 text-sm text-red-500 flex items-center gap-1"
-}, Ol = {
+}, El = {
   key: 1,
   class: "mt-1.5 text-sm ui-text-secondary"
 }, jl = {
@@ -1493,7 +1493,7 @@ const fe = (e, n) => {
               !e.disabled && !e.loading ? "group-hover:text-primary" : ""
             ])
           }, [
-            E(w.$slots, "default", {}, () => [
+            O(w.$slots, "default", {}, () => [
               me(I(e.label), 1)
             ], !0),
             e.required ? (r(), a("span", Dl, "*")) : b("", !0)
@@ -1507,7 +1507,7 @@ const fe = (e, n) => {
           }, I(e.description), 3)) : b("", !0)
         ])) : b("", !0)
       ], 2),
-      e.error ? (r(), a("p", El, [
+      e.error ? (r(), a("p", Ol, [
         $[5] || ($[5] = f("svg", {
           class: "w-4 h-4 flex-shrink-0",
           fill: "none",
@@ -1523,7 +1523,7 @@ const fe = (e, n) => {
         ], -1)),
         me(" " + I(typeof e.error == "string" ? e.error : ""), 1)
       ])) : b("", !0),
-      e.hint && !e.error ? (r(), a("p", Ol, I(e.hint), 1)) : b("", !0)
+      e.hint && !e.error ? (r(), a("p", El, I(e.hint), 1)) : b("", !0)
     ], 2));
   }
 }, Nl = /* @__PURE__ */ fe(jl, [["__scopeId", "data-v-cc32aa31"]]), Rl = ["src", "alt"], Hl = { key: 0 }, Ul = {
@@ -1773,7 +1773,7 @@ const fe = (e, n) => {
         }, [
           e.badge ? (r(), a("span", Hl, I(e.badge), 1)) : b("", !0)
         ], 6)) : b("", !0),
-        E(S.$slots, "default", {}, void 0, !0)
+        O(S.$slots, "default", {}, void 0, !0)
       ], 6);
     };
   }
@@ -1877,18 +1877,18 @@ const fe = (e, n) => {
         f("div", {
           class: m(["w-full flex items-center justify-between", y.value, e.dense ? "h-12" : "h-16"])
         }, [
-          (r(!0), a(se, null, de(z.value, (O) => (r(), a(se, { key: O }, [
-            O === "prepend" ? (r(), a("div", {
+          (r(!0), a(se, null, de(z.value, (E) => (r(), a(se, { key: E }, [
+            E === "prepend" ? (r(), a("div", {
               key: 0,
               class: m(["flex items-center", g.value])
             }, [
-              E(V.$slots, "prepend"),
+              O(V.$slots, "prepend"),
               e.drawer || e.menu ? (r(), a("button", {
                 key: 0,
                 onClick: G[0] || (G[0] = (R) => V.$emit("toggle-drawer")),
                 class: "inline-flex items-center justify-center .vts-pa-2 rounded-md"
               }, [
-                E(V.$slots, "drawer-icon", {}, () => [
+                O(V.$slots, "drawer-icon", {}, () => [
                   K(ie, {
                     name: "bars-3",
                     size: "24",
@@ -1899,24 +1899,24 @@ const fe = (e, n) => {
               f("div", {
                 class: m(["flex-shrink-0 flex items-center", u.value, p.value])
               }, [
-                E(V.$slots, "title", {}, () => [
+                O(V.$slots, "title", {}, () => [
                   f("span", {
                     class: m(["font-semibold", e.titleClass])
                   }, I(e.title), 3)
                 ])
               ], 2)
             ], 2)) : b("", !0),
-            O === "nav" ? (r(), a("nav", {
+            E === "nav" ? (r(), a("nav", {
               key: 1,
               class: m(d.value)
             }, [
-              E(V.$slots, "nav")
+              O(V.$slots, "nav")
             ], 2)) : b("", !0),
-            O === "actions" ? (r(), a("div", {
+            E === "actions" ? (r(), a("div", {
               key: 2,
               class: m(["flex items-center", C.value])
             }, [
-              E(V.$slots, "actions"),
+              O(V.$slots, "actions"),
               e.overflowActions.length ? (r(), a("div", ql, [
                 f("button", {
                   onClick: S,
@@ -1948,13 +1948,13 @@ const fe = (e, n) => {
                   ])
                 ], 2)) : b("", !0)
               ])) : b("", !0),
-              E(V.$slots, "append")
+              O(V.$slots, "append")
             ], 2)) : b("", !0)
           ], 64))), 128))
         ], 2),
         Ie(f("div", Gl, [
           f("div", Yl, [
-            E(V.$slots, "mobile-nav")
+            O(V.$slots, "mobile-nav")
           ])
         ], 512), [
           [je, X.value]
@@ -2163,7 +2163,7 @@ const fe = (e, n) => {
           key: 2,
           class: m(u.value)
         }, [
-          E(C.$slots, "default", {}, () => [
+          O(C.$slots, "default", {}, () => [
             me(I(e.content), 1)
           ], !0)
         ], 2)) : b("", !0),
@@ -2325,7 +2325,7 @@ const fe = (e, n) => {
             class: m(g.value)
           }, [
             N.$slots.prepend || z.value ? (r(), a("div", Zl, [
-              E(N.$slots, "prepend", {}, () => [
+              O(N.$slots, "prepend", {}, () => [
                 z.value === "info" ? (r(), a("svg", _l, [...A[0] || (A[0] = [
                   f("path", {
                     "fill-rule": "evenodd",
@@ -2358,7 +2358,7 @@ const fe = (e, n) => {
                 key: 0,
                 class: m(u.value)
               }, [
-                E(N.$slots, "title", {}, () => [
+                O(N.$slots, "title", {}, () => [
                   me(I(e.title), 1)
                 ], !0)
               ], 2)) : b("", !0),
@@ -2366,13 +2366,13 @@ const fe = (e, n) => {
                 key: 1,
                 class: m(p.value)
               }, [
-                E(N.$slots, "default", {}, () => [
+                O(N.$slots, "default", {}, () => [
                   me(I(e.message), 1)
                 ], !0)
               ], 2)) : b("", !0)
             ]),
             N.$slots.actions || e.closeable ? (r(), a("div", rn, [
-              E(N.$slots, "actions", {}, void 0, !0),
+              O(N.$slots, "actions", {}, void 0, !0),
               e.closeable ? (r(), a("button", {
                 key: 0,
                 onClick: $,
@@ -2544,7 +2544,7 @@ const fe = (e, n) => {
             key: d,
             class: "flex items-center"
           }, [
-            E(y.$slots, "item", {
+            O(y.$slots, "item", {
               item: p,
               index: d,
               isLast: d === e.items.length - 1
@@ -2593,7 +2593,7 @@ const fe = (e, n) => {
               class: m(["mx-2", k.value]),
               "aria-hidden": "true"
             }, [
-              E(y.$slots, "separator", {}, () => [
+              O(y.$slots, "separator", {}, () => [
                 e.separatorIcon ? (r(), Z(u, {
                   key: 0,
                   name: e.separatorIcon,
@@ -2682,7 +2682,7 @@ const fe = (e, n) => {
       class: m([x.value, e.margin, e.border, q(Se)[e.rounded], e.shadow, e.cardClass, e.width, e.bg, "relative"])
     }, [
       k.$slots.header || e.title || e.labels && (e.labels.en.title !== "" || e.labels.dv.title !== "") ? (r(), a("div", bn, [
-        E(k.$slots, "header", {}, () => [
+        O(k.$slots, "header", {}, () => [
           f("div", {
             class: m([e.headerClass, e.headerBg, e.headerPadding, q(Qt)[e.rounded], e.headerBd, e.headerText, "overflow-hidden"])
           }, [
@@ -2695,7 +2695,7 @@ const fe = (e, n) => {
       f("div", {
         class: m([e.bodyClass, e.padding, e.textColor, e.textSize])
       }, [
-        E(k.$slots, "default", { attrs: s.value }, () => [
+        O(k.$slots, "default", { attrs: s.value }, () => [
           me(I(h.value.body ? h.value.body : ""), 1)
         ])
       ], 2),
@@ -2703,7 +2703,7 @@ const fe = (e, n) => {
         key: 1,
         class: m([e.footerClass, e.footerBg, e.footerText, e.footerTextSize, e.footerBd, e.footerMargin, e.footerPadding, q(Zt)[e.rounded]])
       }, [
-        E(k.$slots, "footer", {}, () => [
+        O(k.$slots, "footer", {}, () => [
           me(I(h.value.footer ? h.value.footer : ""), 1)
         ])
       ], 2)) : b("", !0)
@@ -2924,7 +2924,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         key: 0,
         class: m(["flex-shrink-0", y.value])
       }, [
-        E(g.$slots, "default", {}, () => [
+        O(g.$slots, "default", {}, () => [
           me(I(e.text), 1)
         ], !0)
       ], 2)) : b("", !0),
@@ -2942,7 +2942,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         key: 1,
         class: m(["flex-shrink-0", y.value])
       }, [
-        E(g.$slots, "default", {}, () => [
+        O(g.$slots, "default", {}, () => [
           me(I(e.text), 1)
         ], !0)
       ], 2)) : b("", !0),
@@ -2960,7 +2960,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         key: 3,
         class: m(["flex-shrink-0", y.value])
       }, [
-        E(g.$slots, "default", {}, () => [
+        O(g.$slots, "default", {}, () => [
           me(I(e.text), 1)
         ], !0)
       ], 2)) : b("", !0)
@@ -3038,8 +3038,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         height: window.innerHeight
       };
       let V = A.bottom + l.offsetY, G = A.left + l.offsetX;
-      const ie = V + Y.height > X.height, O = G + Y.width > X.width;
-      ie && (V = A.top - Y.height - l.offsetY), l.align === "right" ? G = A.right - Y.width + l.offsetX : l.align === "center" && (G = A.left + A.width / 2 - Y.width / 2 + l.offsetX), O && (G = X.width - Y.width - 8), G < 8 && (G = 8);
+      const ie = V + Y.height > X.height, E = G + Y.width > X.width;
+      ie && (V = A.top - Y.height - l.offsetY), l.align === "right" ? G = A.right - Y.width + l.offsetX : l.align === "center" && (G = A.left + A.width / 2 - Y.width / 2 + l.offsetX), E && (G = X.width - Y.width - 8), G < 8 && (G = 8);
       const R = l.width === "auto" ? `${Math.max(A.width, parseInt(l.minWidth))}px` : typeof l.width == "number" ? `${l.width}px` : l.width;
       k.value = {
         position: "fixed",
@@ -3068,11 +3068,11 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         onClick: p,
         class: "inline-block"
       }, [
-        E(A.$slots, "trigger", {}, () => [
+        O(A.$slots, "trigger", {}, () => [
           f("button", {
             class: m(y.value)
           }, [
-            E(A.$slots, "label", {}, () => [
+            O(A.$slots, "label", {}, () => [
               me(I(e.label), 1)
             ], !0),
             (r(), a("svg", {
@@ -3108,7 +3108,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               style: ce(k.value),
               class: m(g.value)
             }, [
-              E(A.$slots, "default", {}, () => [
+              O(A.$slots, "default", {}, () => [
                 (r(!0), a(se, null, de(e.items, (X, V) => (r(), a("div", {
                   key: V,
                   onClick: (G) => w(X),
@@ -3128,7 +3128,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
 }, Pn = { class: "flex-1" }, Dn = {
   key: 1,
   class: "ml-2"
-}, En = {
+}, On = {
   __name: "DropdownItem",
   props: {
     disabled: { type: Boolean, default: !1 },
@@ -3200,7 +3200,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         tabindex: e.disabled ? -1 : 0
       }, [
         y.$slots.prepend || e.prependIcon ? (r(), a("span", An, [
-          E(y.$slots, "prepend", {}, () => [
+          O(y.$slots, "prepend", {}, () => [
             e.prependIcon ? (r(), Z(u, {
               key: 0,
               name: e.prependIcon,
@@ -3211,12 +3211,12 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           ])
         ])) : b("", !0),
         f("span", Pn, [
-          E(y.$slots, "default", {}, () => [
+          O(y.$slots, "default", {}, () => [
             me(I(z.value), 1)
           ])
         ]),
         y.$slots.append || e.appendIcon ? (r(), a("span", Dn, [
-          E(y.$slots, "append", {}, () => [
+          O(y.$slots, "append", {}, () => [
             e.appendIcon ? (r(), Z(u, {
               key: 0,
               name: e.appendIcon,
@@ -3230,7 +3230,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ], 10, Ln);
     };
   }
-}, On = ["onClick", "onKeydown", "aria-expanded", "aria-controls"], jn = {
+}, En = ["onClick", "onKeydown", "aria-expanded", "aria-controls"], jn = {
   key: 0,
   class: "flex-shrink-0 mr-3"
 }, Nn = { class: "w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold" }, Rn = { class: "flex-1 min-w-0" }, Hn = { class: "font-semibold ui-text-color truncate" }, Un = {
@@ -3345,7 +3345,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             ]])
           }, [
             e.hasLeftIcon ? (r(), a("div", jn, [
-              E(g.$slots, "left-icon", {
+              O(g.$slots, "left-icon", {
                 item: d,
                 index: C
               }, () => [
@@ -3375,7 +3375,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               size: "16",
               class: m(["transition-transform duration-200", s.value === C ? "rotate-180" : "", "text-input-border"])
             }, null, 8, ["class"])
-          ], 42, On),
+          ], 42, En),
           K(ke, {
             name: "expand",
             onEnter: z,
@@ -3388,14 +3388,14 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 class: "overflow-hidden"
               }, [
                 f("div", Kn, [
-                  E(g.$slots, "content", {
+                  O(g.$slots, "content", {
                     item: d,
                     index: C
                   }, () => [
                     me(I(d.content), 1)
                   ], !0),
                   d.actions || g.$slots.actions ? (r(), a("div", Gn, [
-                    E(g.$slots, "actions", {
+                    O(g.$slots, "actions", {
                       item: d,
                       index: C
                     }, () => [
@@ -3681,7 +3681,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
     }), ($, S) => (r(), a("form", {
       onSubmit: ee(w, ["prevent"])
     }, [
-      E($.$slots, "default", {
+      O($.$slots, "default", {
         isValid: d.value,
         validate: y,
         reset: g,
@@ -3705,7 +3705,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       e.title ? (r(), a("div", hr, [
         f("span", xr, I(e.title), 1)
       ])) : b("", !0),
-      E(n.$slots, "default")
+      O(n.$slots, "default")
     ], 2));
   }
 }, kr = { class: "min-h-screen w-full bg-bg-color" }, Sr = { class: "w-full px-6 py-5" }, Cr = {
@@ -3731,14 +3731,14 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       return (n.navPermanent || n.navRail) && !n.navTemporary && n.navWidth && (n.navLocation === "right" ? l.marginRight = n.navWidth : l.marginLeft = n.navWidth), l;
     });
     return (l, o) => (r(), a("div", kr, [
-      E(l.$slots, "sidebar"),
-      E(l.$slots, "appbar"),
+      O(l.$slots, "sidebar"),
+      O(l.$slots, "appbar"),
       f("main", {
         class: "",
         style: ce(t.value)
       }, [
         f("div", Sr, [
-          E(l.$slots, "default")
+          O(l.$slots, "default")
         ])
       ], 4)
     ]));
@@ -3784,7 +3784,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         class: m(["flex-shrink-0 flex flex-col overflow-hidden", e.leftClass]),
         style: ce(h.value)
       }, [
-        E(g.$slots, "left")
+        O(g.$slots, "left")
       ], 6),
       f("div", {
         class: "relative flex-shrink-0 w-[5px] cursor-col-resize group z-10",
@@ -3805,7 +3805,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       f("div", {
         class: m(["flex-1 min-w-0 flex flex-col overflow-hidden", e.rightClass])
       }, [
-        E(g.$slots, "right")
+        O(g.$slots, "right")
       ], 2),
       (r(), Z(Xe, { to: "body" }, [
         s.value ? (r(), a("div", {
@@ -3833,10 +3833,10 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
   key: 0,
   class: "flex-shrink-0 w-5 h-5 flex items-center justify-center",
   style: { "min-width": "20px", "max-width": "20px", "min-height": "20px", "max-height": "20px", overflow: "hidden" }
-}, Dr = { class: "truncate" }, Er = {
+}, Dr = { class: "truncate" }, Or = {
   key: 2,
   class: "mt-auto border-t border-color-3 px-4 py-4"
-}, Or = {
+}, Er = {
   __name: "NavBar",
   props: {
     modelValue: { type: Boolean, default: !0 },
@@ -3959,7 +3959,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           k.value = !1;
         }, M);
       }
-    }, O = (M) => {
+    }, E = (M) => {
       if (o("item-click", M), M.children) {
         const j = h.value.indexOf(M.id);
         j > -1 ? h.value.splice(j, 1) : h.value.push(M.id);
@@ -4005,7 +4005,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 key: 0,
                 class: m(["flex items-center gap-2 border-b border-color-3 w-full min-w-0", u.value ? "justify-center px-2 py-4" : "px-4 py-4 overflow-hidden"])
               }, [
-                E(M.$slots, "prepend", {}, () => [
+                O(M.$slots, "prepend", {}, () => [
                   f("div", {
                     class: m(["flex items-center gap-2 cursor-pointer px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700", u.value ? "" : "flex-1 min-w-0 overflow-hidden"])
                   }, [
@@ -4081,7 +4081,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                     }, [
                       (r(), Z(Ne(c.href ? "a" : "div"), {
                         href: c.href,
-                        onClick: ee((T) => O(c), ["prevent"]),
+                        onClick: ee((T) => E(c), ["prevent"]),
                         class: m([
                           "group flex items-center gap-3 w-full text-sm font-medium transition-colors",
                           u.value ? "justify-center px-2 py-2.5" : "px-3 py-2",
@@ -4125,7 +4125,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                             }, [
                               (r(), Z(Ne(T.href ? "a" : "div"), {
                                 href: T.href,
-                                onClick: ee((P) => O(T), ["prevent"]),
+                                onClick: ee((P) => E(T), ["prevent"]),
                                 class: m([
                                   "flex items-center gap-3 w-full px-3 py-2 text-sm transition-colors",
                                   T.active ? "bg-color-3 ui-text-secondary" : "ui-text-secondary hover:bg-color-1",
@@ -4150,10 +4150,10 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                       }, 1024)
                     ]))), 128))
                   ])
-                ], 64))), 128)) : E(M.$slots, "default", { key: 1 }, void 0, !0)
+                ], 64))), 128)) : O(M.$slots, "default", { key: 1 }, void 0, !0)
               ]),
-              M.$slots.append ? (r(), a("div", Er, [
-                E(M.$slots, "append", {}, void 0, !0)
+              M.$slots.append ? (r(), a("div", Or, [
+                O(M.$slots, "append", {}, void 0, !0)
               ])) : b("", !0)
             ], 38), [
               [je, g.value]
@@ -4164,7 +4164,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ]);
     };
   }
-}, jr = /* @__PURE__ */ fe(Or, [["__scopeId", "data-v-bf734b18"]]), Nr = {
+}, jr = /* @__PURE__ */ fe(Er, [["__scopeId", "data-v-bf734b18"]]), Nr = {
   __name: "Overlay",
   props: {
     modelValue: {
@@ -4319,7 +4319,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                             })
                           ], -1)
                         ])])) : b("", !0),
-                        E(g.$slots, "default")
+                        O(g.$slots, "default")
                       ], 2)
                     ]),
                     _: 2
@@ -4327,14 +4327,14 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                     g.$slots.header ? {
                       name: "header",
                       fn: te(() => [
-                        E(g.$slots, "header")
+                        O(g.$slots, "header")
                       ]),
                       key: "0"
                     } : void 0,
                     g.$slots.footer ? {
                       name: "footer",
                       fn: te(() => [
-                        E(g.$slots, "footer")
+                        O(g.$slots, "footer")
                       ]),
                       key: "1"
                     } : void 0
@@ -4497,15 +4497,15 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       };
       return V[l.variant] || V.default;
     }), d = i(() => "hover:bg-color-3 hover:border-color-3"), C = i(() => "opacity-50 cursor-not-allowed"), w = i(() => {
-      const V = [], G = l.totalPages, ie = s.value, O = l.maxVisiblePages;
-      if (G <= O)
+      const V = [], G = l.totalPages, ie = s.value, E = l.maxVisiblePages;
+      if (G <= E)
         for (let R = 1; R <= G; R++)
           V.push(R);
       else {
         V.push(1);
-        const R = Math.floor(O / 2);
+        const R = Math.floor(E / 2);
         let J = ie - R, M = ie + R;
-        J < 2 && (J = 2, M = O - 1), M > G - 1 && (M = G - 1, J = G - O + 2), J > 2 && V.push("...");
+        J < 2 && (J = 2, M = E - 1), M > G - 1 && (M = G - 1, J = G - E + 2), J > 2 && V.push("...");
         for (let j = J; j <= M; j++)
           V.push(j);
         M < G - 1 && V.push("..."), V.push(G);
@@ -4552,7 +4552,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             f("button", {
               type: "button",
               disabled: s.value === 1 || e.disabled,
-              onClick: G[0] || (G[0] = (O) => F(1)),
+              onClick: G[0] || (G[0] = (E) => F(1)),
               class: m([
                 "inline-flex items-center justify-center transition-all",
                 h.value,
@@ -4592,8 +4592,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               }, null, 8, ["size", "type"]))
             ], 10, Wr)
           ])) : b("", !0),
-          (r(!0), a(se, null, de(w.value, (O) => (r(), a("li", { key: O }, [
-            O === "..." ? (r(), a("span", {
+          (r(!0), a(se, null, de(w.value, (E) => (r(), a("li", { key: E }, [
+            E === "..." ? (r(), a("span", {
               key: 0,
               class: m([
                 "inline-flex items-center justify-center",
@@ -4604,18 +4604,18 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               key: 1,
               type: "button",
               disabled: e.disabled,
-              onClick: (R) => F(O),
+              onClick: (R) => F(E),
               class: m([
                 "inline-flex items-center justify-center transition-all font-medium",
                 h.value,
                 g.value,
-                O === s.value ? u.value : p.value,
+                E === s.value ? u.value : p.value,
                 e.rounded && y.value,
-                !e.disabled && O !== s.value && d.value
+                !e.disabled && E !== s.value && d.value
               ]),
-              "aria-label": `Page ${O}`,
-              "aria-current": O === s.value ? "page" : void 0
-            }, I(O), 11, Gr))
+              "aria-label": `Page ${E}`,
+              "aria-current": E === s.value ? "page" : void 0
+            }, I(E), 11, Gr))
           ]))), 128)),
           e.showPrevNext ? (r(), a("li", Yr, [
             f("button", {
@@ -4643,7 +4643,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             f("button", {
               type: "button",
               disabled: s.value === e.totalPages || e.disabled,
-              onClick: G[1] || (G[1] = (O) => F(e.totalPages)),
+              onClick: G[1] || (G[1] = (E) => F(e.totalPages)),
               class: m([
                 "inline-flex items-center justify-center transition-all",
                 h.value,
@@ -4815,20 +4815,20 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         const oe = W.querySelector("svg");
         oe && !oe.classList.contains("rail-icon") && oe.classList.add("rail-icon"), Array.from(W.childNodes).forEach((Me) => {
           if (Me.nodeType === Node.TEXT_NODE) {
-            const Ee = Me.textContent?.trim();
-            if (Ee && Ee.length) {
+            const Oe = Me.textContent?.trim();
+            if (Oe && Oe.length) {
               const _e = document.createElement("span");
-              _e.className = "rail-label", _e.textContent = Ee, W.replaceChild(_e, Me);
+              _e.className = "rail-label", _e.textContent = Oe, W.replaceChild(_e, Me);
             }
           } else if (Me.nodeType === Node.ELEMENT_NODE) {
-            const Ee = Me;
-            if (Ee.classList.contains("rail-label") || Ee.classList.contains("rail-icon")) return;
-            Array.from(Ee.childNodes).forEach((at) => {
+            const Oe = Me;
+            if (Oe.classList.contains("rail-label") || Oe.classList.contains("rail-icon")) return;
+            Array.from(Oe.childNodes).forEach((at) => {
               if (at.nodeType === Node.TEXT_NODE) {
                 const ot = at.textContent?.trim();
                 if (ot && ot.length) {
                   const st = document.createElement("span");
-                  st.className = "rail-label", st.textContent = ot, Ee.replaceChild(st, at);
+                  st.className = "rail-label", st.textContent = ot, Oe.replaceChild(st, at);
                 }
               }
             });
@@ -4889,15 +4889,15 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       t.permanent || (o.value = !1);
     }, ie = () => {
       t.closeOnScrimClick && G();
-    }, O = (D) => {
+    }, E = (D) => {
       D.key === "Escape" && (t.temporary || t.persistent) && G();
     };
     Ve(() => {
-      document.addEventListener("keydown", O), document.addEventListener("click", X), C();
+      document.addEventListener("keydown", E), document.addEventListener("click", X), C();
     }), Ht(() => {
       C();
     }), Be(() => {
-      document.removeEventListener("keydown", O), document.removeEventListener("click", X), window.removeEventListener("resize", Ce);
+      document.removeEventListener("keydown", E), document.removeEventListener("click", X), window.removeEventListener("resize", Ce);
     });
     let R = null;
     function J(D) {
@@ -5021,11 +5021,11 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         }, [
           f("div", ra, [
             f("div", aa, [
-              ye.value ? E(D.$slots, "prepend", { key: 0 }, () => [
+              ye.value ? O(D.$slots, "prepend", { key: 0 }, () => [
                 _[1] || (_[1] = f("span", { class: "font-semibold" }, "Menu", -1))
               ], !0) : b("", !0),
               f("div", oa, [
-                E(D.$slots, "append", {}, void 0, !0),
+                O(D.$slots, "append", {}, void 0, !0),
                 !e.permanent && !e.temporary ? (r(), a("button", sa, [
                   e.location === "left" && !q(Le) && c.value && !e.rail ? (r(), Z(ne, {
                     key: 0,
@@ -5184,11 +5184,11 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                   ])
                 ], 2))), 128))
               ])) : (r(), a("div", ba, [
-                E(D.$slots, "default", {}, void 0, !0)
+                O(D.$slots, "default", {}, void 0, !0)
               ]))
             ]),
             f("div", ha, [
-              E(D.$slots, "footer", {}, void 0, !0)
+              O(D.$slots, "footer", {}, void 0, !0)
             ])
           ])
         ], 14, na)
@@ -5240,8 +5240,8 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         href: e.href,
         class: "flex items-center w-full"
       }, [
-        E(z.$slots, "default", {}, void 0, !0)
-      ], 8, Sa)) : E(z.$slots, "default", { key: 1 }, void 0, !0)
+        O(z.$slots, "default", {}, void 0, !0)
+      ], 8, Sa)) : O(z.$slots, "default", { key: 1 }, void 0, !0)
     ], 42, ka));
   }
 }, Dt = /* @__PURE__ */ fe(Ca, [["__scopeId", "data-v-464014e1"]]), $a = {
@@ -5420,7 +5420,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
 }, Da = {
   key: 2,
   class: "text-sm"
-}, Ea = ["onClick", "onKeydown"], Oa = {
+}, Oa = ["onClick", "onKeydown"], Ea = {
   key: 0,
   class: "font-semibold mb-1"
 }, ja = {
@@ -5591,11 +5591,11 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               be(ee((S) => p("item-click", { item: w, index: $ }), ["prevent"]), ["space"])
             ]
           }, [
-            x.value ? E(d.$slots, "item", {
+            x.value ? O(d.$slots, "item", {
               key: 0,
               item: w,
               index: $
-            }, void 0, !0) : h.value ? E(d.$slots, "default", {
+            }, void 0, !0) : h.value ? O(d.$slots, "default", {
               key: 1,
               item: w,
               index: $
@@ -5641,20 +5641,20 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               be(ee((S) => p("item-click", { item: w, index: $ }), ["prevent"]), ["space"])
             ]
           }, [
-            x.value ? E(d.$slots, "item", {
+            x.value ? O(d.$slots, "item", {
               key: 0,
               item: w,
               index: $
-            }, void 0, !0) : h.value ? E(d.$slots, "default", {
+            }, void 0, !0) : h.value ? O(d.$slots, "default", {
               key: 1,
               item: w,
               index: $
             }, void 0, !0) : (r(), a(se, { key: 2 }, [
-              w.title ? (r(), a("div", Oa, I(w.title), 1)) : b("", !0),
+              w.title ? (r(), a("div", Ea, I(w.title), 1)) : b("", !0),
               w.time ? (r(), a("div", ja, I(w.time), 1)) : b("", !0),
               w.content ? (r(), a("div", Na, I(w.content), 1)) : b("", !0)
             ], 64))
-          ], 42, Ea)
+          ], 42, Oa)
         ]))), 128))
       ], 2))
     ], 2));
@@ -5689,19 +5689,19 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       "v-timeline-item--alternate": n?.align === "alternate"
     })), (t, l) => (r(), a("div", Ua, [
       f("div", Fa, [
-        E(t.$slots, "opposite", {}, void 0, !0)
+        O(t.$slots, "opposite", {}, void 0, !0)
       ]),
       e.hideDot ? b("", !0) : (r(), a("div", {
         key: 0,
         class: "v-timeline-item__dot rounded-full mt-3",
         style: ce({ background: e.color })
       }, [
-        E(t.$slots, "icon", {}, () => [
+        O(t.$slots, "icon", {}, () => [
           e.icon ? (r(), a("span", qa, I(e.icon), 1)) : b("", !0)
         ], !0)
       ], 4)),
       f("div", Wa, [
-        E(t.$slots, "default", {}, void 0, !0)
+        O(t.$slots, "default", {}, void 0, !0)
       ])
     ]));
   }
@@ -5797,7 +5797,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           U < re ? P.scrollTo({ left: U - 8, behavior: "smooth" }) : he > ye && P.scrollTo({ left: he - P.clientWidth + 8, behavior: "smooth" });
         }
       }));
-    }, O = (v) => {
+    }, E = (v) => {
       l("close", v);
     }, R = (v, c) => {
       l("keydown", v, c);
@@ -5926,7 +5926,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               type: "button",
               "aria-label": `Close ${T.label}`,
               class: "ml-1 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
-              onClick: ee((U) => O(P), ["stop"])
+              onClick: ee((U) => E(P), ["stop"])
             }, [...c[2] || (c[2] = [
               f("svg", {
                 class: "h-3.5 w-3.5",
@@ -5999,7 +5999,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
             tabindex: 0,
             class: m(["focus-visible:outline-none", G.value])
           }, [
-            E(v.$slots, `content-${P}`, { tab: T }, () => [
+            O(v.$slots, `content-${P}`, { tab: T }, () => [
               me(I(T.content), 1)
             ])
           ], 10, _a)), [
@@ -6072,13 +6072,13 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
     return (n, t) => (r(), a("div", {
       class: m(["flex items-center justify-between gap-4", e.bg, e.border, q(Se)[e.rounded], e.padding, e.margin, e.width, e.height, e.elevation])
     }, [
-      E(n.$slots, "title", {}, () => [
+      O(n.$slots, "title", {}, () => [
         e.title ? (r(), a("h1", {
           key: 0,
           class: m([n.textClass ?? "text-2xl font-semibold md:text-nowrap md:whitespace-nowrap"])
         }, I(e.title), 3)) : b("", !0)
       ]),
-      E(n.$slots, "default")
+      O(n.$slots, "default")
     ], 2));
   }
 }, io = { class: "relative w-full overflow-auto rounded-lg border border-color-3" }, uo = /* @__PURE__ */ Te({
@@ -6090,7 +6090,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
   setup(e) {
     return (n, t) => (r(), a("div", io, [
       f("table", xe({ class: "w-full caption-bottom text-sm" }, n.$attrs), [
-        E(n.$slots, "default")
+        O(n.$slots, "default")
       ], 16)
     ]));
   }
@@ -6099,7 +6099,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
   __name: "TableHead",
   setup(e) {
     return (n, t) => (r(), a("thead", xe({ class: "bg-color-1 [&_tr]:border-b [&_tr]:border-color-3" }, n.$attrs), [
-      E(n.$slots, "default")
+      O(n.$slots, "default")
     ], 16));
   }
 }), fo = /* @__PURE__ */ Te({
@@ -6107,7 +6107,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
   __name: "TableBody",
   setup(e) {
     return (n, t) => (r(), a("tbody", xe({ class: "[&_tr:last-child]:border-0 divide-y divide-color-3" }, n.$attrs), [
-      E(n.$slots, "default")
+      O(n.$slots, "default")
     ], 16));
   }
 }), go = ["data-state"], mo = /* @__PURE__ */ Te({
@@ -6123,7 +6123,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ]],
       "data-state": e.selected ? "selected" : void 0
     }, n.$attrs), [
-      E(n.$slots, "default")
+      O(n.$slots, "default")
     ], 16, go));
   }
 }), po = { class: "inline-flex items-center gap-1" }, vo = {
@@ -6168,7 +6168,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       onClick: x[0] || (x[0] = (h) => e.sortable ? l("sort") : void 0)
     }), [
       f("div", po, [
-        E(s.$slots, "default"),
+        O(s.$slots, "default"),
         e.sortable ? (r(), a("span", vo, [
           e.sortDirection === "asc" ? (r(), a("svg", yo, [...x[1] || (x[1] = [
             f("path", {
@@ -6215,7 +6215,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         e.mono ? "font-mono text-xs" : ""
       ]]
     }, l.$attrs), [
-      E(l.$slots, "default")
+      O(l.$slots, "default")
     ], 16));
   }
 }), ko = ["colspan"], So = { class: "flex flex-col items-center gap-2 ui-text-secondary" }, Co = {
@@ -6246,9 +6246,9 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               d: "M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0112 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-1.5-3.75c-.621 0-1.125.504-1.125 1.125"
             }, null, -1)
           ])])),
-          E(n.$slots, "icon"),
+          O(n.$slots, "icon"),
           f("span", $o, I(e.message ?? "No results found."), 1),
-          E(n.$slots, "default")
+          O(n.$slots, "default")
         ])
       ], 8, ko)
     ]));
@@ -6284,7 +6284,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
 }, Lo = { class: "flex-1 w-full min-w-0" }, Ao = { class: "flex items-center gap-2 flex-shrink-0" }, Po = {
   key: 1,
   class: ""
-}, Oe = {
+}, Ee = {
   __name: "Base",
   props: {
     modelValue: [String, Number, Boolean, Object, Array, null],
@@ -6383,7 +6383,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
     }, G = i(() => z.value || w.value || s.isOpen ? "-top-[1px]" : "top-[48%]"), ie = i(() => {
       let v = "", c = "";
       return s.size === "xs" ? (c = "text-xs", v = s.prepend || l.prepend ? "inset-4" : "inset-3") : s.size === "sm" ? (c = "text-sm", v = s.prepend || l.prepend ? "inset-8" : "inset-3") : s.size === "md" ? (c = "text-md", v = s.prepend || l.prepend ? "inset-10" : "inset-3") : s.size === "lg" ? (c = "text-lg", v = s.prepend || l.prepend ? "inset-12" : "inset-3") : s.size === "xl" ? (c = "text-lg", v = s.prepend || l.prepend ? "inset-14" : "inset-3") : (c = "text-sm", v = s.prepend || l.prepend ? "inset-8" : "inset-3"), (p.value || w.value || s.isOpen) && (N.value === "dv" ? v = "right-8" : v = "left-8", c = "text-xs"), v + " " + c;
-    }), O = i(() => {
+    }), E = i(() => {
       const v = ["absolute flex gap-1 px-2 items-center transition-all pointer-events-none h-[1px]", ie.value, G.value];
       return p.value || w.value || s.isOpen ? v.push("bg-inherit") : v.push("bg-transparent"), d.value ? v.push("text-error") : p.value ? v.push("border-input-focus-border") : v.push("text-input-text"), v;
     }), R = i(() => {
@@ -6467,7 +6467,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         }, [
           e.label ? (r(), a("div", {
             key: 0,
-            class: m(O.value),
+            class: m(E.value),
             "aria-hidden": "true"
           }, [
             me(I(Y.value ? Y.value.label : e.label) + " ", 1),
@@ -6475,7 +6475,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           ], 2)) : b("", !0),
           f("div", To, [
             v.$slots.prepend || e.prepend ? (r(), a("div", Mo, [
-              E(v.$slots, "prepend", {}, () => [
+              O(v.$slots, "prepend", {}, () => [
                 K(T, {
                   size: q(Pe)[e.size],
                   name: e.prepend,
@@ -6485,7 +6485,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               ])
             ])) : b("", !0),
             f("div", Lo, [
-              E(v.$slots, "control", {
+              O(v.$slots, "control", {
                 attrs: X.value,
                 events: V
               })
@@ -6515,7 +6515,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               ], -1)
             ])])) : b("", !0),
             v.$slots.append || e.append ? (r(), a("div", Po, [
-              E(v.$slots, "append", {}, () => [
+              O(v.$slots, "append", {}, () => [
                 K(T, {
                   size: q(Pe)[e.size],
                   name: e.append,
@@ -6541,10 +6541,10 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
 }, Do = {
   key: 0,
   class: "flex flex-col"
-}, Eo = {
+}, Oo = {
   key: 0,
   class: "text-red-500 ml-0.5"
-}, Oo = {
+}, Eo = {
   key: 0,
   class: "mt-1 text-sm text-red-500"
 }, jo = {
@@ -6772,10 +6772,10 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               k.value
             ])
           }, [
-            E(p.$slots, "default", {}, () => [
+            O(p.$slots, "default", {}, () => [
               me(I(e.label), 1)
             ], !0),
-            e.required ? (r(), a("span", Eo, "*")) : b("", !0)
+            e.required ? (r(), a("span", Oo, "*")) : b("", !0)
           ], 2)) : b("", !0),
           e.description ? (r(), a("span", {
             key: 1,
@@ -6786,11 +6786,11 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           }, I(e.description), 3)) : b("", !0)
         ])) : b("", !0)
       ], 2),
-      e.error ? (r(), a("p", Oo, I(typeof e.error == "string" ? e.error : ""), 1)) : b("", !0),
+      e.error ? (r(), a("p", Eo, I(typeof e.error == "string" ? e.error : ""), 1)) : b("", !0),
       e.hint && !e.error ? (r(), a("p", jo, I(e.hint), 1)) : b("", !0)
     ], 2));
   }
-}, Et = /* @__PURE__ */ fe(No, [["__scopeId", "data-v-2c11cca3"]]), Ro = ["tabindex", "onKeydown"], Ho = {
+}, Ot = /* @__PURE__ */ fe(No, [["__scopeId", "data-v-2c11cca3"]]), Ro = ["tabindex", "onKeydown"], Ho = {
   key: 0,
   class: "flex items-center"
 }, Uo = ["src", "alt"], Fo = { class: "flex items-center gap-1 min-w-0" }, qo = {
@@ -6991,7 +6991,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ]
     }, [
       d.$slots.prepend || e.avatar || e.prependIcon ? (r(), a("div", Ho, [
-        E(d.$slots, "prepend", {}, () => [
+        O(d.$slots, "prepend", {}, () => [
           e.avatar ? (r(), a("img", {
             key: 0,
             src: e.avatar,
@@ -7020,13 +7020,13 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         f("span", {
           class: m(["truncate", h.value])
         }, [
-          E(d.$slots, "default", {}, () => [
+          O(d.$slots, "default", {}, () => [
             me(I(e.label), 1)
           ], !0)
         ], 2)
       ]),
       d.$slots.append || e.appendIcon || e.closable ? (r(), a("div", qo, [
-        E(d.$slots, "append", {}, () => [
+        O(d.$slots, "append", {}, () => [
           e.closable ? (r(), a("button", {
             key: 0,
             type: "button",
@@ -7062,7 +7062,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ])) : b("", !0)
     ], 42, Ro));
   }
-}, Ot = /* @__PURE__ */ fe(Ko, [["__scopeId", "data-v-87c674ac"]]), Go = ["aria-label"], Yo = {
+}, Et = /* @__PURE__ */ fe(Ko, [["__scopeId", "data-v-87c674ac"]]), Go = ["aria-label"], Yo = {
   __name: "ChipGroup",
   props: {
     // Data
@@ -7191,7 +7191,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       role: "group",
       "aria-label": e.ariaLabel
     }, [
-      (r(!0), a(se, null, de(e.chips, (u, p) => (r(), Z(q(Ot), {
+      (r(!0), a(se, null, de(e.chips, (u, p) => (r(), Z(q(Et), {
         key: x(u, p),
         label: h(u),
         variant: u.variant || e.variant,
@@ -7216,21 +7216,21 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         y.$slots.chip ? {
           name: "default",
           fn: te((d) => [
-            E(y.$slots, "chip", xe({ ref_for: !0 }, { ...d, chip: u, index: p }), void 0, !0)
+            O(y.$slots, "chip", xe({ ref_for: !0 }, { ...d, chip: u, index: p }), void 0, !0)
           ]),
           key: "0"
         } : void 0,
         y.$slots.prepend ? {
           name: "prepend",
           fn: te((d) => [
-            E(y.$slots, "prepend", xe({ ref_for: !0 }, { ...d, chip: u, index: p }), void 0, !0)
+            O(y.$slots, "prepend", xe({ ref_for: !0 }, { ...d, chip: u, index: p }), void 0, !0)
           ]),
           key: "1"
         } : void 0,
         y.$slots.append ? {
           name: "append",
           fn: te((d) => [
-            E(y.$slots, "append", xe({ ref_for: !0 }, { ...d, chip: u, index: p }), void 0, !0)
+            O(y.$slots, "append", xe({ ref_for: !0 }, { ...d, chip: u, index: p }), void 0, !0)
           ]),
           key: "2"
         } : void 0
@@ -7274,6 +7274,12 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
     autoApply: { type: Boolean, default: !0 },
     multiCalendars: { type: Number },
     enableTimePicker: { type: Boolean, default: !0 },
+    // With autoApply on, the picker commits on every change — the date
+    // click, and then each hour and minute. The panel closes on each
+    // commit, which makes a time impossible to finish choosing. Set this
+    // false for date+time fields: the value still updates live, and the
+    // panel stays open until the user clicks away.
+    closeOnSelect: { type: Boolean, default: !0 },
     weekPicker: { type: Boolean, default: !1 },
     monthPicker: { type: Boolean, default: !1 },
     yearPicker: { type: Boolean, default: !1 },
@@ -7351,7 +7357,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       }
     }, ie = () => {
       $.value = !0, N();
-    }, O = () => {
+    }, E = () => {
       $.value = !1;
       const B = w.value;
       if (w.value = !1, !B) {
@@ -7365,7 +7371,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       const v = Y(u.value, o.format);
       v && !isNaN(v.getTime()) ? (u.value = A(v, o.format), l("update:modelValue", v), l("change", v), g.value = v) : u.value = X.value;
     }, R = (B) => {
-      g.value = B, l("update:modelValue", B), l("change", B), o.range ? Array.isArray(B) && B[0] && B[1] && (u.value = `${A(B[0], o.format)} - ${A(B[1], o.format)}`, J()) : (u.value = A(B, o.format), J());
+      g.value = B, l("update:modelValue", B), l("change", B), o.range ? Array.isArray(B) && B[0] && B[1] && (u.value = `${A(B[0], o.format)} - ${A(B[1], o.format)}`, o.closeOnSelect && J()) : (u.value = A(B, o.format), o.closeOnSelect && J());
     }, J = () => {
       y.value && (y.value = !1, l("close"));
     }, M = (B) => {
@@ -7385,7 +7391,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ref: d,
       class: m(["relative", e.width, e.margin])
     }, [
-      K(q(Oe), xe(z.value, {
+      K(q(Ee), xe(z.value, {
         "model-value": X.value,
         "onUpdate:modelValue": V,
         "onClick:clear": le,
@@ -7431,7 +7437,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               onInput: G,
               onFocus: ie,
               onBlur: (P) => {
-                O(), T.blur(P);
+                E(), T.blur(P);
               }
             }, null, 40, Jo), [
               [mt, u.value]
@@ -7485,7 +7491,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       [q(Mt), j]
     ]);
   }
-}, Vt = /* @__PURE__ */ fe(Qo, [["__scopeId", "data-v-30588515"]]), Zo = ["aria-disabled", "onKeydown"], _o = ["id", "accept", "multiple", "disabled", "readonly", "required"], es = { class: "w-full flex items-center gap-2 sm:gap-3 flex-wrap" }, ts = { class: "" }, ls = { class: "text-xs text-input-text mt-1 hidden sm:block" }, ns = {
+}, Vt = /* @__PURE__ */ fe(Qo, [["__scopeId", "data-v-e4e6bd4f"]]), Zo = ["aria-disabled", "onKeydown"], _o = ["id", "accept", "multiple", "disabled", "readonly", "required"], es = { class: "w-full flex items-center gap-2 sm:gap-3 flex-wrap" }, ts = { class: "" }, ls = { class: "text-xs text-input-text mt-1 hidden sm:block" }, ns = {
   key: 0,
   class: "mt-2 space-y-2"
 }, rs = {
@@ -7520,18 +7526,18 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
   emits: ["update:modelValue", "change", "error", "select", "drop", "remove"],
   setup(e, { emit: n }) {
     const t = e, l = n, o = L(null), s = L(!0), x = L(""), h = L([]), k = L([]), z = i(() => {
-      const O = Array.isArray(t.errorMessages) ? t.errorMessages : [], R = Array.isArray(k.value) ? k.value : [];
-      return [...O, ...R];
+      const E = Array.isArray(t.errorMessages) ? t.errorMessages : [], R = Array.isArray(k.value) ? k.value : [];
+      return [...E, ...R];
     });
     pe(
       () => t.modelValue,
-      (O) => {
-        h.value = y(O);
+      (E) => {
+        h.value = y(E);
       },
       { immediate: !0 }
     );
-    function y(O) {
-      return (Array.isArray(O) ? O : []).map((J) => ({ file: J.file ?? J, preview: J.preview ?? null, _id: g() }));
+    function y(E) {
+      return (Array.isArray(E) ? E : []).map((J) => ({ file: J.file ?? J, preview: J.preview ?? null, _id: g() }));
     }
     function g() {
       return Math.random().toString(36).slice(2);
@@ -7542,16 +7548,16 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       "cursor-pointer select-none transition",
       "bg-input-background"
     ]), p = i(() => {
-      const O = t.accept && t.accept.length ? t.accept : "any file";
-      return `${t.multiple ? "Upload multiple " : "Upload "}(${O}) • Max ${t.maxSizeMB}MB each`;
+      const E = t.accept && t.accept.length ? t.accept : "any file";
+      return `${t.multiple ? "Upload multiple " : "Upload "}(${E}) • Max ${t.maxSizeMB}MB each`;
     });
     function d() {
       t.disabled || t.readonly || o.value?.click();
     }
-    function C(O) {
-      if (!O.target.files) return;
-      const R = Array.from(O.target.files);
-      N(R), O.target.value = "";
+    function C(E) {
+      if (!E.target.files) return;
+      const R = Array.from(E.target.files);
+      N(R), E.target.value = "";
     }
     function w() {
       t.disabled || (s.value = !0);
@@ -7562,15 +7568,15 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
     function S() {
       s.value = !1;
     }
-    function F(O) {
+    function F(E) {
       if (s.value = !1, t.disabled) return;
-      const R = O.dataTransfer, J = R ? Array.from(R.files || []) : [];
+      const R = E.dataTransfer, J = R ? Array.from(R.files || []) : [];
       l("drop", J), N(J);
     }
-    function N(O) {
+    function N(E) {
       k.value = [];
       const R = [], J = t.maxSizeMB * 1024 * 1024, M = V(t.accept);
-      for (const B of O) {
+      for (const B of E) {
         if (B.size > J) {
           k.value.push(`${B.name} exceeds ${t.maxSizeMB}MB`), l("error", { type: "size", file: B });
           continue;
@@ -7585,28 +7591,28 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       const j = R.map((B) => ({ file: B, preview: A(B), _id: g() })), le = t.multiple ? h.value.concat(j) : j.slice(0, 1);
       h.value = le, l("select", R), l("update:modelValue", le.map((B) => ({ file: B.file, preview: B.preview }))), l("change", le.map((B) => B.file));
     }
-    function A(O) {
-      if (!Y(O)) return null;
+    function A(E) {
+      if (!Y(E)) return null;
       try {
-        return URL.createObjectURL(O);
+        return URL.createObjectURL(E);
       } catch {
         return null;
       }
     }
-    function Y(O) {
-      return /^image\//.test(O.type);
+    function Y(E) {
+      return /^image\//.test(E.type);
     }
-    function X(O) {
-      const R = h.value.splice(O, 1);
+    function X(E) {
+      const R = h.value.splice(E, 1);
       l("remove", R[0]?.file), l("update:modelValue", h.value.map((J) => ({ file: J.file, preview: J.preview }))), l("change", h.value.map((J) => J.file));
     }
-    function V(O) {
+    function V(E) {
       const R = /* @__PURE__ */ new Set();
-      return O && O.split(",").map((J) => J.trim()).filter(Boolean).forEach((J) => R.add(J.toLowerCase())), R;
+      return E && E.split(",").map((J) => J.trim()).filter(Boolean).forEach((J) => R.add(J.toLowerCase())), R;
     }
-    function G(O, R) {
+    function G(E, R) {
       if (!R || !R.size) return !0;
-      const J = O.type.toLowerCase(), M = O.name.toLowerCase().split(".").pop();
+      const J = E.type.toLowerCase(), M = E.name.toLowerCase().split(".").pop();
       for (const j of R)
         if (j.includes("/")) {
           const [le, B] = j.split("/"), [v, c] = J.split("/");
@@ -7618,17 +7624,17 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           return !0;
       return !1;
     }
-    function ie(O) {
-      if (O < 1024) return `${O} B`;
-      const R = O / 1024;
+    function ie(E) {
+      if (E < 1024) return `${E} B`;
+      const R = E / 1024;
       return R < 1024 ? `${R.toFixed(1)} KB` : `${(R / 1024).toFixed(2)} MB`;
     }
-    return (O, R) => {
+    return (E, R) => {
       const J = ve("Icon"), M = ve("Button");
       return r(), a("div", {
         class: m([x.value, e.width])
       }, [
-        K(q(Oe), xe(O.$props, {
+        K(q(Ee), xe(E.$props, {
           "persistent-hint": !!e.hint,
           error: z.value.length > 0,
           "is-open": s.value,
@@ -7848,7 +7854,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       P !== null && (P = Y(P), P = X(P)), l("update:modelValue", P), l("blur", c), l("change", P);
     }, ie = (c) => {
       g.value = !0, l("focus", c);
-    }, O = (c) => {
+    }, E = (c) => {
       if (o.disabled || o.readonly) return;
       c.key === "ArrowUp" ? (c.preventDefault(), M()) : c.key === "ArrowDown" ? (c.preventDefault(), j()) : c.key === "Enter" && G(c);
       const T = ["Backspace", "Delete", "Tab", "Escape", "Enter", "ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"], P = /^[0-9]$/.test(c.key), U = c.key === o.decimalSeparator || c.key === ".", he = c.key === "-" && o.allowNegative, re = c.ctrlKey || c.metaKey;
@@ -7884,7 +7890,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       decrement: j
     }), (c, T) => {
       const P = ve("Icon");
-      return r(), Z(q(Oe), xe(z.value, {
+      return r(), Z(q(Ee), xe(z.value, {
         "model-value": F.value,
         "onUpdate:modelValue": V,
         "onClick:clear": v,
@@ -7964,7 +7970,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
               onFocus: (re) => {
                 ie(re), he.focus?.(re);
               },
-              onKeydown: O,
+              onKeydown: E,
               onWheel: R
             }, null, 42, ys),
             e.suffix ? (r(), a("span", {
@@ -8168,7 +8174,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         ref: p,
         class: m(["relative", e.containerClass, e.width])
       }, [
-        K(q(Oe), xe(y.value, {
+        K(q(Ee), xe(y.value, {
           "model-value": e.modelValue,
           label: e.label,
           hint: e.hint,
@@ -8194,13 +8200,13 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
           width: e.width,
           rules: e.rules
         }), Ue({
-          control: te(({ attrs: ie, events: O }) => [
+          control: te(({ attrs: ie, events: E }) => [
             f("div", ks, [
               e.prefix ? (r(), a("span", Ss, I(e.prefix), 1)) : b("", !0),
               f("input", xe({
                 ref_key: "inputRef",
                 ref: u
-              }, ie, pt(O, !0), {
+              }, ie, pt(E, !0), {
                 type: e.type === "password" ? z.value : e.type,
                 value: e.modelValue,
                 placeholder: d.value && !e.modelValue ? e.placeholder : "",
@@ -8334,7 +8340,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ref: y,
       class: m(["relative", e.containerClass, e.width])
     }, [
-      K(q(Oe), {
+      K(q(Ee), {
         "model-value": e.modelValue,
         label: e.label,
         hint: e.hint,
@@ -8417,7 +8423,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
 }, Ps = {
   key: 2,
   class: "absolute inset-y-0 left-3 right-14 flex items-center gap-1 overflow-hidden"
-}, Ds = { class: "truncate max-w-[100px]" }, Es = { class: "p-1.5" }, Os = {
+}, Ds = { class: "truncate max-w-[100px]" }, Os = { class: "p-1.5" }, Es = {
   key: 0,
   class: /* @__PURE__ */ m(["px-2.5 py-1.5 ui-text-secondary text-center text-sm rounded-lg"])
 }, js = ["onMousedown"], Ns = { class: "flex items-center gap-2 w-full" }, Rs = {
@@ -8537,7 +8543,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       z.value = !1, l("blur", H);
     }, ie = (H) => {
       l("update:modelValue", H);
-    }, O = (H) => {
+    }, E = (H) => {
       l("enter", p.modelValue), l("search", p.modelValue);
     }, R = () => {
       re(), s.value?.focus();
@@ -8637,7 +8643,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
         ref: x,
         class: m(["relative group", e.width, e.margin])
       }, [
-        K(q(Oe), xe(N.value, {
+        K(q(Ee), xe(N.value, {
           "model-value": e.modelValue,
           "onUpdate:modelValue": ie,
           dir: S.value,
@@ -8675,7 +8681,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 class: m(J.value),
                 onFocus: V,
                 onBlur: G,
-                onKeydown: be(O, ["enter"])
+                onKeydown: be(E, ["enter"])
               }, null, 42, Ms), [
                 [mt, o.value]
               ]),
@@ -8737,9 +8743,9 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                 ]),
                 style: ce({ ...k.value, ...e.menuStyle })
               }, [
-                f("ul", Es, [
-                  le.value.length === 0 ? (r(), a("li", Os, [
-                    E(H.$slots, "no-data", {}, () => [
+                f("ul", Os, [
+                  le.value.length === 0 ? (r(), a("li", Es, [
+                    O(H.$slots, "no-data", {}, () => [
                       Q[2] || (Q[2] = me("No items found", -1))
                     ], !0)
                   ])) : b("", !0),
@@ -8754,13 +8760,13 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
                       e.itemHoverClass
                     ])
                   }, [
-                    E(H.$slots, "item", {
+                    O(H.$slots, "item", {
                       item: ue,
                       index: ze,
                       selected: T(v(ue))
                     }, () => [
                       f("div", Ns, [
-                        e.multiple ? (r(), Z(q(Et), {
+                        e.multiple ? (r(), Z(q(Ot), {
                           key: 0,
                           "model-value": T(v(ue)),
                           value: ze,
@@ -8866,7 +8872,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
       ref: y,
       class: m(["relative", e.containerClass, e.width])
     }, [
-      K(q(Oe), xe(N.$props, {
+      K(q(Ee), xe(N.$props, {
         "model-value": e.modelValue,
         error: !!e.error || e.errorMessages.length > 0,
         clearable: e.clearable && !e.loading,
@@ -9020,7 +9026,7 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
   UiConfirmDialog: $n,
   UiDivider: In,
   UiDropdown: Mn,
-  UiDropdownItem: En,
+  UiDropdownItem: On,
   UiExpansion: Jn,
   UiFooter: yr,
   UiForm: br,
@@ -9046,9 +9052,9 @@ const wn = { class: "px-3 pt-6 pb-2 flex flex-col items-center text-center gap-3
   UiTd: wo,
   UiTableEmpty: zo,
   UiTableSkeleton: Bo,
-  UiBase: Oe,
-  UiCheckbox: Et,
-  UiChip: Ot,
+  UiBase: Ee,
+  UiCheckbox: Ot,
+  UiChip: Et,
   UiChipGroup: jt,
   UiDatepicker: Vt,
   UiDatePicker: Vt,
@@ -9084,19 +9090,19 @@ export {
   Pt as Avatar,
   Ql as Badge,
   on as Banner,
-  Oe as Base,
+  Ee as Base,
   vn as Breadcrumbs,
   ml as Button,
   hn as Card,
-  Et as Checkbox,
-  Ot as Chip,
+  Ot as Checkbox,
+  Et as Chip,
   jt as ChipGroup,
   $n as ConfirmDialog,
   Vt as DatePicker,
   Vt as Datepicker,
   In as Divider,
   Mn as Dropdown,
-  En as DropdownItem,
+  On as DropdownItem,
   Jn as Expansion,
   ds as File,
   yr as Footer,

@@ -144,6 +144,12 @@
         autoApply: { type: Boolean, default: true },
         multiCalendars: { type: Number },
         enableTimePicker: { type: Boolean, default: true },
+        // With autoApply on, the picker commits on every change — the date
+        // click, and then each hour and minute. The panel closes on each
+        // commit, which makes a time impossible to finish choosing. Set this
+        // false for date+time fields: the value still updates live, and the
+        // panel stays open until the user clicks away.
+        closeOnSelect: { type: Boolean, default: true },
         weekPicker: { type: Boolean, default: false },
         monthPicker: { type: Boolean, default: false },
         yearPicker: { type: Boolean, default: false },
@@ -393,11 +399,11 @@ const handleDateSelect = (date) => {
     if (Array.isArray(date) && date[0] && date[1]) {
       displayValue.value =
         `${formatDate(date[0], props.format)} - ${formatDate(date[1], props.format)}`
-      close()
+      if (props.closeOnSelect) close()
     }
   } else {
     displayValue.value = formatDate(date, props.format)
-    close()
+    if (props.closeOnSelect) close()
   }
 }
 

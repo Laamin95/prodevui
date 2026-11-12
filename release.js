@@ -6,6 +6,7 @@
 
 import { execSync } from 'child_process'
 import { readFileSync, writeFileSync } from 'fs'
+import { fileURLToPath } from 'url'
 
 const bump = process.argv[2] ?? 'patch'
 if (!['patch', 'minor', 'major'].includes(bump)) {
@@ -14,7 +15,10 @@ if (!['patch', 'minor', 'major'].includes(bump)) {
 }
 
 // Read and bump version
-const pkgPath = new URL('./package.json', import.meta.url).pathname.replace(/^\/([A-Z]:)/, '$1')
+// fileURLToPath, not .pathname: on Windows the latter yields "/c:/..." and the
+// old regex only stripped an *uppercase* drive letter, so a lowercase cwd
+// produced "c:\c:\...\package.json" and the release failed.
+const pkgPath = fileURLToPath(new URL('./package.json', import.meta.url))
 const pkg = JSON.parse(readFileSync(pkgPath, 'utf8'))
 let [major, minor, patch] = pkg.version.split('.').map(Number)
 if (bump === 'major') { major++; minor = 0; patch = 0 }
