@@ -10,6 +10,7 @@
       :prepend="prepend"
       :append="append"
       :isOpen="isOpen"
+      :focused="isFocused"
       :size="size"
       @click="toggleOpen"
       :disabled="disabled"
@@ -28,8 +29,17 @@
       <template #control="{ attrs, events }">
         <div :class="['flex', 'items-center', 'gap-2', 'justify-between', 'w-full','h-full']">
 
-          <!-- Search input -->
+          <!--
+            Search input.
+
+            @click.stop is load-bearing: this input sits INSIDE Base, whose root
+            carries the @click="toggleOpen" below. Without .stop, clicking the
+            search box to type in it bubbles up and toggles the menu shut again —
+            the label drops back to its resting position and the text being typed
+            lands on top of it. Clicking the box always opens, never toggles.
+          -->
           <input
+            ref="searchInputRef"
             v-model="searchQuery"
             :id="attrs.id"
             :disabled="attrs.disabled"
@@ -39,6 +49,8 @@
             size="1"
             :placeholder="(isFocused && !searchQuery && !selectedLabel) || (!searchQuery && !label) ? placeholder : ''"
             :class="inputClasses"
+            @click.stop="openMenu"
+            @input="handleSearchInput"
             @focus="handleFocus"
             @blur="handleBlur"
             @keydown.enter="handleEnter"
@@ -460,25 +472,42 @@
     emit('clear')
   }
 
+  // Opens, or does nothing if already open. The search box uses this rather
+  // than toggleOpen so that clicking into it can never close the menu.
+  const openMenu = async () => {
+    if (props.disabled || isOpen.value) return
+
+    isOpen.value = true
+
+    if (props.url && !props.eager) {
+      await fetchItems()
+    }
+
+    emit('open')
+    if (props.searchable) {
+      nextTick(() => {
+        searchInputRef.value?.focus()
+      })
+    }
+  }
+
   const toggleOpen = async () => {
-    if (!props.disabled) {
-      isOpen.value = !isOpen.value
+    if (props.disabled) return
 
-      if (isOpen.value) {
-        if (props.url && !props.eager) {
-          await fetchItems()
-        }
+    if (isOpen.value) {
+      isOpen.value = false
+      emit('close')
+      searchQuery.value = ''
+    } else {
+      await openMenu()
+    }
+  }
 
-        emit('open')
-        if (props.searchable) {
-          nextTick(() => {
-            searchInputRef.value?.focus()
-          })
-        }
-      } else {
-        emit('close')
-        searchQuery.value = ''
-      }
+  // Typing is an unambiguous intent to search, so reopen the menu if a previous
+  // selection closed it while the search box still had focus.
+  const handleSearchInput = () => {
+    if (props.searchable && !isOpen.value) {
+      openMenu()
     }
   }
 

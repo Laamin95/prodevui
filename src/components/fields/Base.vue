@@ -270,10 +270,13 @@
     change: e => emit('change', e.target ? e.target.value : e)
   }
 
-  // FIXED: Label positioning logic - use isFocused instead of focused
+  // Label positioning logic - isFocused, not the internal focused ref: fields
+  // that track focus themselves (Select, InputNumber) pass it in as a prop, and
+  // using the internal ref here left the label half-floated for them — shrunk
+  // and moved left by LabelX, but still sitting vertically over the input.
   const labelY = computed(() => {
     // Label should be at top if focused, has value, or is open
-    if (focused.value || hasValue.value || props.isOpen) {
+    if (isFocused.value || hasValue.value || props.isOpen) {
       return '-top-[1px]'
     } else {
       return 'top-[48%]'
