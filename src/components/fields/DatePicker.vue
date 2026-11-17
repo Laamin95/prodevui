@@ -79,7 +79,7 @@
             :range="range"
             :auto-apply="range ? false : autoApply"
             :multi-calendars="multiCalendars"
-            :enable-time-picker="enableTimePicker"
+            :enable-time-picker="showTimePicker"
             :format="format"
             :week-picker="weekPicker"
             :month-picker="monthPicker"
@@ -143,7 +143,23 @@
         range: { type: Boolean, default: false },
         autoApply: { type: Boolean, default: true },
         multiCalendars: { type: Number },
-        enableTimePicker: { type: Boolean, default: true },
+        // What this field collects. 'date' is a day with no time: it switches
+        // the time panel off and keeps the time out of the displayed text.
+        // Anything else, including the default, keeps both.
+        //
+        // This exists because `type="date"` is the obvious thing to write, and
+        // until now it was silently ignored — it was not a declared prop, so it
+        // fell through to the wrapper div and the field still showed a time.
+        type: { type: String, default: '' },
+        // `default: undefined`, not `true`, on purpose. An absent Boolean prop
+        // is otherwise indistinguishable from one passed as false, and telling
+        // those apart is exactly what lets `type` act as the fallback. Vue
+        // skips its absent-Boolean-to-false cast when a default is declared, so
+        // this really does arrive as undefined.
+        //
+        // Read it through showTimePicker, never directly — the default moved
+        // there. Passing it explicitly still wins over `type`.
+        enableTimePicker: { type: Boolean, default: undefined },
         // With autoApply on, the picker commits on every change — the date
         // click, and then each hour and minute. The panel closes on each
         // commit, which makes a time impossible to finish choosing. Set this
@@ -169,6 +185,13 @@
     // Use component's dir if provided, otherwise use card's dir
     const computedDir = computed(() => props.dir || cardDir)
     const computedLang = computed(() => props.lang || cardLang)
+
+    // The one source of truth for whether this field carries a time.
+    // Precedence: an explicit enableTimePicker, then type="date", then on.
+    const showTimePicker = computed(() => {
+        if (props.enableTimePicker !== undefined) return props.enableTimePicker
+        return props.type !== 'date'
+    })
 
     // Filter props to only pass Base-compatible props to Base component
     const baseProps = computed(() => {
@@ -232,8 +255,8 @@
             .replace('MM', month)
             .replace('dd', day)
         
-        // Add time if enableTimePicker is true
-        if (props.enableTimePicker) {
+        // Add the time only for a field that actually carries one
+        if (showTimePicker.value) {
             formatted += ` ${hours}:${minutes}`
         }
         
@@ -272,7 +295,7 @@
         }
         
         // Parse time if present
-        if (date && timePart && props.enableTimePicker) {
+        if (date && timePart && showTimePicker.value) {
             const timeParts = timePart.split(':')
             if (timeParts.length >= 2) {
                 date.setHours(parseInt(timeParts[0], 10) || 0)
